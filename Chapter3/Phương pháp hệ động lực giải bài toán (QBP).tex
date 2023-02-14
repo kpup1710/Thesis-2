@@ -1,0 +1,198 @@
+\section{Phương pháp hệ động lực giải bài toán (QBP)}
+Phần này của chương 3 sẽ áp dụng phương pháp hệ động lực để tìm cận trên và cận dưới cho lược đồ nhánh cận để giải bài toán \eqref{prob_QBP}.
+\subsection{Xác định cận trên $\alpha$}
+Một điểm hữu hiệu yếu của $\mathcal{Z}$ có thể dễ dàng được xác định bởi chú ý sau:\\
+\begin{cy}\label{remark:P_0_v}Cho $\hat{d}>0$ là một vector trong
+$\mathbb{R}^{n}$ và $v$ là một điểm bất kỳ $\mathbb{R}^{p}$.
+Giao điểm $w_{v}$ của tia xuất phát từ $v$ theo hướng
+$\hat{d}$ có thể được xác định bởi
+\begin{equation} \label{eq:bar_w}
+    w_{v}=v+t_{v}\hat{d}
+\end{equation} 
+trong đó $t_{v}$
+là một nghiệm tối ưu của bài toán
+\begin{equation}
+\begin{array}{rl}
+\min & t\tag*{\ensuremath{(P^{0}(v))}}\\
+{\rm s.t.} & v+t\hat{d}\in\mathcal{Z}^{+},\;t\in\mathbb{R}.
+\end{array}\label{eq:P_0_v}
+\end{equation}
+\end{cy}
+
+\begin{bd} \label{lem_bar_w} 
+    Cho $v$ là một điểm bất kỳ trong $\mathbb{R}^{p}$.
+    Tồn tại duy nhất một điểm $w_{v}$ xác định bởi \eqref{eq:bar_w}
+    và là điểm hữu hiệu yếu của $\mathcal{Z}^{+}$.  
+\end{bd}
+
+Ta có thể viết lại \ref{eq:P_0_v} dưới dạng tường minh
+\begin{align}
+\min\,\, & t\tag*{\ensuremath{(P^{1}(v))}}\label{eq:P_1_v}\\
+\mbox{s.t.\,\,} & f(x)-t\hat{d}-v\leq0,\nonumber \\
+ & x\in X,\;t\in\mathbb{R}.\nonumber 
+\end{align}
+Dễ thấy \ref{eq:P_1_v} là một bài toán không lồi. Tuy nhiên, nó lại tương đương với bài toán sau
+\begin{align}
+\min\,\, & \max\{\dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\mid j=1,...,p\}\tag*{\ensuremath{(P^{2}(v))}}\label{eq:Pbarv}\\
+\mbox{s.t.}\;\; & x\in X.\nonumber 
+\end{align}
+và bài toán lúc này có thẻ giải bởi hàm mục tiêu là giả lồi và tập chấp nhận được là tập lồi.
+\begin{bd}\cite{Thang2020}\label{lem_equiv} 
+    Bài toán \ref{eq:P_0_v} và \ref{eq:Pbarv}
+    tương đương, i.e. nếu $(x^{*},t^{*})$ là nhiệm tối ưu của
+    \ref{eq:P_0_v} vậy thì $x^{*}$là nghiệm tối ưu của \ref{eq:Pbarv}.
+    Ngược lại, nếu $x^{*}$ là nghiệm tối ưu và $t^{*}$ là nghiệm tối ưu của \ref{eq:Pbarv} thì $(x^{*},t^{*})$ là nghiệm tối ưu của \ref{eq:P_0_v}. Hơn nữa, bài toán \ref{eq:Pbarv} là quy hoạch giả lồi.
+\end{bd}
+
+Theo bổ đề \ref{lem_equiv}, việc tìm nghiệm cho bài toán \ref{eq:P_0_v} được chuyển thành việc tìm nghiệm tối ưu cho bài toán quy hoạch giả lồi.  Vì hàm mục tiêu của \ref{eq:Pbarv} là hàm không trơn cho dù các hàm ${f_i}$ trơn, phương pháp hệ động lực được sử dụng để giải quyết bài toán này. 
+
+% \begin{proof}We consider this proof under the known equivalence of
+% \ref{eq:P_0_v} and \ref{eq:P_1_v}. Let $(x^{*},t^{*})$ be the optimal
+% solution of \ref{eq:P_1_v}. The feasible condition of \ref{eq:P_1_v}
+% can be rewritten as
+% \[
+% t\geq\max\{\dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\mid j=1,\dots,p\},\;x\in\mathcal{S},\;t\in\Bbb R.
+% \]
+
+% Assuming there exists $x\in\mathcal{S}$ such that $$\max\{\dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\mid j=1,\dots,p\}<\max\{\dfrac{f_{j}(x^{*})-v_{j}}{\hat{d}_{j}}\mid j=1,\dots,p\}.$$Let $t=\max\{\dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\mid j=1,\dots,p\}$
+% then $(x,t)$ is feasible and corresponds to a better objective value
+% of \ref{eq:P_1_v}, which is contrary. Therefore, $$x^{*}=\min\{\max\{\dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\mid j=1,\dots,p\},x\in S\}.$$This is sufficient to conclude that $x^{*}$ is the optimal solution
+% of \ref{eq:Pbarv}.
+
+% On the other hand, let $x^{*}$ be the optimal solution and $t^{*}$
+% be the optimal value of \ref{eq:Pbarv}. We have $x^{*}\in\mathcal{S}$
+% and $t^{*}=\max\{\dfrac{f_{j}(x^{*})-v_{j}}{\hat{d}_{j}}\mid j=1,\dots,p\}\in\Bbb R$
+% so that $(x^{*},t^{*})$ belongs to the feasible domain of \ref{eq:P_1_v}.
+% We now assume there exists $x\in\mathcal{S},t\in\Bbb R$ such that
+% $t<t^{*}$ and $f(x)-t\hat{d}-v\leq0$. This yields that $t\geq\max\{\dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\mid j=1,\dots,p\}$.
+% Therefore, the objective value of $(P^{2}(f(x)))$ is less than $t^{*}$.
+% This contradicts the fact that $t^{*}$ is the optimal value of \ref{eq:Pbarv}.
+% In other words, $(x^{*},t^{*})$ must be the optimal solution of \ref{eq:P_1_v}.
+
+
+Hơn nữa, đối với \ref{eq:Pbarv}, ta tính toán dưới-gradient của $\max\{\dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\mid j=1,...,p\}$ với sự giúp đỡ của mệnh đề \ref{chain_rule} và bổ đề \ref{lem:2.7}. Cụ thể,
+\begin{align}
+    \partial \max\{\dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\mid j=1,...,p\} &= \text{conv} \{\partial \dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\mid j\in I(x) \} \\
+    & = \dfrac{1}{\hat{d_j}}\text{conv} \{\partial f_j(x(t))^\mathrm{T}\dot{x}(t) \}
+\end{align}
+
+\subsection{Xác định cận dưới $\bf{\beta}$}
+Khi $h(x,y)$ là một hàm giả lồi, việc tìm cận dưới
+\[
+\begin{array}{c}
+\beta_{k}=\min\left\{ \varphi(v)\mid v\in V^{k}\right\} ,\\
+\end{array}
+\]
+đòi hỏi việc giải bài toán
+\[
+\varphi(z)=\min\{h(x,y)\mid (x,y)\in\mathcal{G},f(x)\leq z\},
+\]
+\noindent trong dó các hàm $f_{i}$ cũng là tựa lồi và $\mathcal{G}$ là tập lồi compact khác rỗng tạo bởi các hàm tựa lồi $g$. Ta hoàn toàn có thể sử dụng phương pháp hệ động lực với các bài toán này.
+
+\subsection{Lược đồ nhánh cận }
+Phần này của đồ án trình bày thuật toán tìm ra nghiệm tối ưu của\ref{prob_QBP} and \ref{prob_OP}. Cho một sai số $\varepsilon>0$ nhỏ bất kỳ, một điểm $z^{*}\in{\rm WMin}\mathcal{Z}$ được gọi là nghiệm $\varepsilon-$tối ưu cho bài toán \ref{prob_OP} nếu tồn tại một cận trên $\alpha^{*}$ cho bài toán\ref{prob_OP} sao cho $\alpha^{*}-\varphi(z^{*})<\varepsilon(1+\vert\varphi(z^{*})\vert)$. Bất kỳ $x^{*}\in X_{WE}$ thỏa mãn $f(x^{*})\le z^{*}$ là một nghiệm tối ưu xấp xỉ cho bài toán \ref{prob_QBP}.\\
+
+Không gian ảnh được liên tục xấp xỉ bằng việc áp dụng phương pháp nón cắt lên đa hộp đảo phía trong. Bắt đầu từ đa hộp đảo $\mathcal{P}^{0}=\left[M,M\right]$, chúng ta tiến hành thủ tục lặp xây dựng một dãy các đa hộp đảo $\left\{ \mathcal{P}^{k}\right\} $ sao cho
+\[
+\mathcal{P}^{0}\subset\mathcal{P}^{1}\subset\mathcal{P}^{2}\subset\dots\subset\mathcal{P}^{k}\subset\mathcal{P}^{k+1}\subset\dots\subset\mathcal{Z}^{\diamond}.
+\]
+
+% We will make use of following notations:
+% \begin{itemize}
+% \item $V^{k}$ is the set of all co-proper vertices which determines copolyblock
+% $\mathcal{P}^{k}=\mathcal{L}\left(V^{k}\right)$.
+% \item $\alpha_{k}$ is the upper bound, $\beta_{k}$ is the lower bound.
+% \end{itemize}
+% At the initial step with $k=0$, we have $V^{0}=\left\{ M\right\} ,\mathcal{P}^{0}=\left[M,M\right],\alpha_{0}=+\infty$.
+
+
+Tại bước lặp thứ $k$, bằng việc giải bài toán $\min\left\{ \varphi\left(v\right)\mid v\in V^{k}\right\} $
+cận dưới $\beta_{k}$ được tìm thấy, sau đó chúng ta xác định $v^{k}$
+sao cho $\beta_{k}=\varphi\left(v^{k}\right)$. Giải bài toán $\left(P^{2}\left(v^{k}\right)\right)$,
+ta tìm được một điểm hữu hiệu yếu $z^{k}=f\left(x^{k}\right)$
+của $\mathcal{Z}^+$, sau đó chúng ta tìm nghiệm $y^k$ cho bài toán \ref{prob_QBP} với $x^k$ tìm được, nếu bài toán là chấp nhận được, ta sẽ nhận được nghiệm $\left(x^{k},y^{k}\right)$.
+Sau đó ta so sánh $h\left(x^{k},y^{k}\right)$ với
+$\alpha_{k}$ để cập nhật cận trên. Nếu $\alpha_{k}$ và $\beta_{k}$
+thỏa mãn điều kiện dừng, tức là cận trên và cận dưới đủ gần, thuật toán dừng và trả về $\left(\left(x^{k},y^{k}\right),h\left(x^{k},y^{k}\right)\right)$. Ngược lại,một tập các đỉnh chính quy đảo $V^{k+1}$ được sinh ra bởi thủ tục CopolyblockCut, tập xấp xỉ trong mới cho tập ảnh $\mathcal{P}^{k+1}=\mathcal{L}\left(V^{k+1}\right)$ và cận trên của vòng lặp mới được xác định.
+
+
+
+% Because each $f_{j}(x)$ is a pseudoconvex function and each
+% $\hat{d}_{j}>0$, from \cite{Mangasarian1969}, we have that $\max\{\dfrac{f_{j}(x)-v_{j}}{\hat{d}_{j}}\},j=1,\dots,p$
+% are also pseudoconvex functions. Hence, \ref{eq:Pbarv} is
+% a pseudoconvex programming problem.\end{proof} 
+
+\begin{algorithm}[H]
+\SetAlgorithmName{Algorithm}{procedure}{List of Procedures}
+\renewcommand{\thealgocf}{}
+\let\oldnl\nl
+\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
+\caption{\textit{Solve \eqref{prob_OP}}}
+\label{algo:next_time_step}
+\KwIn{Bài toán \eqref{prob_OP}, sai số $\varepsilon > 0$}
+\KwOut{Nghiệm tối ưu xấp xỉ cho bài toán \eqref{prob_OP}}
+Giải các bài toán $(P_{i}^{m})$ và $(P_{i}^{M}),i=1,\dots,p$ để xác định hộp $[m,M]$.
+
+Gán $\mathcal{P}^{0}\gets[M,M]$, $V^{0}\gets\{M\}$ và chọn hướng $\hat{d}\in\mathbb{R}^{p}_{+}$
+(e.g., $\hat{d}=e$).
+
+\For{$i \gets 1$ \textbf{\textup{to}} $p$}{
+    $z^{i} = M-(M_{i}-m_{i})e^{i}$, giải $\varphi(z^{i})$\\
+    \eIf{$\varphi(z^{i})$ có nghiệm $(x^{i},y^{i})$}
+    {$\alpha^{i}=h(x^{i},y^{i})$.}
+    {$\alpha^{i}=\infty$.}
+}
+
+Gán cận trên $\alpha_{0}\gets \min\{\alpha^{i}\mid i=1,2,\dots,p\}$, $k\gets0$ và $update\gets False$.\\
+Gán nghiệm tối ưu tốt nhất hiện tại $x^{*}$ tương ứng với bài toán $\varphi(z^{i})$ thỏa mãn $\varphi(z^{i})=\alpha_{0}$.\\
+
+\SetKwBlock{Begin}{\textbf{for} {$k \gets 1$ \textup{\textbf{to}} $\infty$ \textbf{do}}}{}
+\SetAlgoLined
+\Begin{
+    \ForEach {$v\in V^{k}$}{
+    Giải $\varphi(v)$\\
+    \eIf{$\varphi(v)$ có nghiệm $(x^{*}, y^{*})$}
+    {\eIf{$\nexists i:f_{i}(x^{*})=m_{i}$}
+    {$\beta_{v}\gets \varphi(v)$.}{$V^{k} \gets V^{k}\setminus \{v\}$.}}
+    {$V^{k} \gets V^{k}\setminus \{v\}$.}
+    }
+
+    Cập nhật cận dưới $\beta_{k}\gets\min\{\beta_{v}\mid v\in V^{k}\}$
+    và các đỉnh tương ứng $v^{k}\in V^{k}$ sao cho $\varphi(v^{k})=\beta_{k}$.
+}
+\end{algorithm}
+\begin{algorithm}[H]
+    \LinesNumbered
+    \setcounter{AlgoLine}{26}
+    \SetKwBlock{Begin}{}{end}
+    \Begin{
+    Giải $(P^{2}(v^{k}))$ tìm nghiệm tối ưu $(x^{k},t_{k})$ và gán
+    \begin{alignat*}{2}
+    w^{k} &\quad \gets &&\quad v^{k}+t_{k}\hat{d};\\
+    z^{k} &\quad \gets &&\quad f(x^{k}).
+    \end{alignat*}
+    \If{$w^{k}=z^{k}$ \textbf{\textup{and}} $w^{k}_{i}>m_{i},\forall i$}
+    {Tìm $y^{k}$ thỏa mãn $(x^{k},y^{k})\in \mathcal{G}$.\\
+    \eIf{$y^{k}$ được tìm thấy}{$update \gets True$.}{$update \gets False$.}
+    % \eIf{$g(x^{k},y^{k})\leq 0$}
+    % {$update \gets True$.}
+    % {$update \gets False$.}
+    }
+
+    \If{\textit{update} \textbf{\textup{and}} $h(x^{k},y^{k})<\alpha_{k}$}{Cập nhật cận trên
+    \begin{alignat*}{2}
+    \alpha_{k} &\quad \gets &&\quad h(x^{k},y^{k});\\
+    x^{*} &\quad \gets &&\quad x^{k}.\\
+    y^{*} &\quad \gets &&\quad y^{k}.
+    \end{alignat*}}
+    
+    \uIf{$\alpha_{k}-\beta_{k}\leq\varepsilon (1+|\beta_k|)$}{\textbf{Terminate.}}
+    \Else{Xác định tập $V^{k+1}$ bằng thủ tục \textit{CopolyblockCut};
+    }
+    
+    Xác định xấp xỉ trong mới cho tập ảnh $\mathcal{P}^{k+1} \gets \mathcal{L}(V^{k+1})$;
+    
+    $\alpha_{k+1} \gets \alpha_{k}$;
+}
+\end{algorithm}
+

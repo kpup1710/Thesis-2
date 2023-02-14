@@ -1,0 +1,303 @@
+\section{Thử nghiệm tính toán}
+
+Tính hiệu quả của thuật toán sẽ được minh họa trong phần này của đồ án. Các thử nghiệm được chạy trên phần cứng ....  .Code bằng Matlab.
+\begin{vd}\label{ex_benson2011}Xét bài toán \ref{prob_QBP}
+\[
+\begin{array}{ccl}
+h(x) & = & x_{1}+x_{2}^{2}\\
+f_{1}(x) & = & x_{1}^{2}+x_{2}^{2}+0.4x_{1}-4x_{2}\\
+f_{2}(x) & = & max\{-0.5x_{1}-0.25x_{2}-0.2,-2x_{1}+4.6x_{2}-5.8\}
+\end{array}
+\]
+và
+\[
+X=\{x\in\mathbb{R}^{2}\mid Ax\le b,x\ge0,c(x)\le0\},
+\]
+trong đó
+\[
+A=\left[\begin{array}{cc}
+1.0 & -2.0\\
+-1.0 & 1.0\\
+2.0 & 1.0\\
+2.0 & 5.0\\
+-1.0 & -1.0
+\end{array}\right],b=\left[\begin{array}{c}
+1.0\\
+1.0\\
+4.0\\
+10.0\\
+-1.5
+\end{array}\right],
+\]
+và
+\[
+c(x)=0.5(x_{1}-1)^{2}+1.4(x_{2}-0.5)^{2}-1.1.
+\]
+
+\end{vd}
+\begin{table}
+
+\caption{\label{tab:ex_benson2011}The computational result of Example \ref{ex_benson2011}}
+\centering
+\begin{tabular}{ccccc}
+\hline 
+$k$ & $v^{k}$ & $\alpha^{k}$ & $\beta^{k}$ & Gap\tabularnewline
+\hline 
+\hline 
+1 & (0.4324, 1.0675) & 1.572121 & 1.25 & 0.322121\tabularnewline
+\hline 
+2 & (0.5735, 0.9264) & 1.431824 & 1.25 & 0.181824\tabularnewline
+\hline 
+3 & (0.6889, 0.8110) & 1.346757 & 1.25 & 0.096757\tabularnewline
+\hline 
+31 & (0.99654, 0.5034) & 1.250012 & 1.25 & 0.000012\tabularnewline
+\hline 
+32 & (0.9975, 0.5024) & 1.250006 & 1.25 & 0.000006 \tabularnewline
+\hline 
+\end{tabular}
+\end{table}
+Tại bước khỏi tạo, hộp $[m,M]=[-2.52,0.49,3.29,1.20]$,
+các cận trên và dưới ban đầu $\alpha_{0}=\infty$, $\beta=\varphi(M)=1.25$. Chọn $\hat{d}=(1,1)^{T}$ và $\varepsilon=0.00001$.
+Thuật toán kết thúc sau 32 bước lặp trả về $x^{*}=(0.997561, 0.502439)$ với giá trị tối ưu $h(x^{*})=1.250006$. Kết quả này tốt hơn so với thuật toán được sử dụng trong \cite{Benson2012} với $x=(0.2585,1.2415)$ và $h(x)=1.7989$ và gần với giá trị tối ưu $x^* = (1.0, 0.5)$, $h(x^*) = 1.25$ hơn. Chi tiết tính toán được cho trong bảng \ref{tab:ex_benson2011}.
+
+\begin{vd} Xét bài toán quy hoạch phân thức tựa lồi \label{ex:benson2005}
+
+\noindent 
+\begin{align*}
+    {\rm min}\  h(x) = \dfrac{2x_1 + 3x_2}{4x_1 + 5x_2 + 10}\\
+\end{align*}
+
+trong đó
+\begin{align*}
+    f_1(x) &= \dfrac{(3x_1+x_2)^2}{(3x_1 +x_2-1)^3}\\
+    f_2(x) &= \dfrac{x_{1}^{2}-2x_{1}+x_{2}^{2}-8x_{2}}{x_{2}+1}
+\end{align*}
+với bài toán cấp dưới $\min (f_1(x), f_2(x))$có tập chấp nhận được $$X = \{x_{1},x_{2}\in\mathbb{R} \vert 2x_{1}+x_{2} \leq 6, 3x_{1}+x_{2}  \leq  8, x_{1}-x_{2}  \leq 1, x_{1},x_{2}  \geq 1\}$$
+\end{vd}
+
+Tại bước khỏi tạo, hộp $[m,M]=[0.19,-4.34,0.42,-3.67]$,
+các cận trên và dưới ban đầu $\alpha_{0}=\infty$, $\beta=\varphi(M)=0.276170$. Chọn $\hat{d}=(1,1)^{T}$ và $\varepsilon=0.01$.
+Thuật toán kết thúc sau 6 bước lặp và trả về $x^{*}=(1.020247, 1.835256)$ với giá trị tối ưu $h(x^{*})=0.302334$. Chi tiết tính toán được cho trong bảng \ref{tab:ex_benson2005}.
+
+\begin{table}[h]
+\centering{}\caption{\label{tab:ex_benson2005}The computational result of Example \ref{ex:benson2005}}
+\begin{centering}
+\begin{tabular}{ccccc}
+\hline 
+$k$ & $v^{k}$ & $\alpha^{k}$ & $\beta^{k}$ & Gap\tabularnewline
+\hline 
+\hline 
+1 & (2.095784, 1.712646) &  0.346225 & 0.276170 & 0.070055\tabularnewline
+\hline 
+2 & (1.781338, 2.206333) & 0.346225 & 0.285986 & 0.070055\tabularnewline
+\hline 
+3 & (1.454576, 2.020253) & 0.346067 & 0.285986 & 0.060081\tabularnewline
+\hline 
+4 & (1.161954, 1.887563) & 0.331592 & 0.31198 & 0.030346\tabularnewline
+\hline 
+5 & (1.300950, 1.946424) & 0.331592 & 0.315449 & 0.019604\tabularnewline
+\hline 
+6 & (1.020247, 1.835256) & 0.324469 & 0.315449 & 0.009020\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\end{table}
+
+\begin{vd} 
+\noindent  \label{ex:ex3}
+\begin{align*}
+    \min &\ h(x) = \dfrac{3x_1 + 2x_2 + 10x_3 +11}{x_1 + x_2 +x_3 +10}\\
+\end{align*}
+trong đó 
+\[
+\begin{array}{ccl}
+    f_1(x) & = & \dfrac{2x_{1}+5x_{2}+3x_{3}+10}{3x_{2}+3x_{3}+10} \\
+    f_2(x) & = & \dfrac{2x_{1}+4x_{2}+10}{4x_{1}+4x_{2}+5x_{3}+10} \\
+    f_3(x) & = & \dfrac{x_{1}+2x_{2}+5x_{3}+10}{x_{1}+5x_{2}+5x_{3}+10}\\
+    f_4(x) & = & \dfrac{x_{1}+2x_{2}+4x_{3}+10}{5x_{2}+4x_{3}+10}
+\end{array}
+\]
+Tập chấp nhận được của bài toán cấp dưới là tập con của $\mathbb{R}^3_+$ thỏa mãn
+\begin{align*}
+    2x_{1}+x_{2}+5x_{3} \leq 10, \\
+    x_{1}+6x_{2}+3x_{3} \leq 10,\\ 
+    5x_{1}+9x_{2}+2x_{3} \leq 10,\\ 
+    9x_{1}+7x_{2}+3x_{3} \leq 10
+\end{align*}
+\end{vd}
+
+Tại bước khỏi tạo, hộp $[m,M] =[1.00,0.50,1.65,0.79,1.17,1.00,3.00,1.00]$, $\hat{d}=(1, 1, 1, 1)^{T}$ và $\varepsilon=0.01$.
+Các cận trên và dưới ban đầu $\alpha_{0}=\infty$, $\beta=\varphi(M)=0.604$. Thuật toán kết thúc sau 7 bước lặp và trả về nghiệm $x^{*}=(0.000000, 0.775596, 0.007336)$ với giá trị tối ưu $h(x^{*})=0.607448$. Chi tiết tính toán được cho trong bảng \ref{tab:ex3}.
+
+\begin{table}[h]
+\centering{}\caption{\label{tab:ex3}The computational result of Example \ref{ex:ex3}}
+\begin{centering}
+\begin{tabular}{ccccc}
+\hline 
+$k$ & $v^{k}$ & $\alpha^{k}$ & $\beta^{k}$ & Gap\tabularnewline
+\hline 
+\hline 
+1 & ( 0.000000, 0.483159, 0.697862) & 0.894430 & 0.604000 & 0.29043 \tabularnewline
+\hline 
+2 & (0.000000, 0.783986, 0.483034) & 0.818089 & 0.603704 & 0.214385 \tabularnewline
+\hline 
+3 & (0.000000, 0.877863, 0.084834) & 0.648966 & 0.603704 & 0.045262\tabularnewline
+\hline 
+4 & (0.000000, 0.822004, 0.292454) & 0.648966 & 0.603704 & 0.045262\tabularnewline
+\hline 
+5 & (0.000000, 0.825505, 0.127032) &0.648966 & 0.603704 & 0.045262\tabularnewline
+\hline
+6 & (0.000000, 0.823124, 0.223619) & 0.648966 & 0.603704 & 0.045262\tabularnewline
+\hline 
+7 & (0.000000, 0.775596, 0.007336) &  0.607448 & 0.603704 & 0.003745\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\end{table}
+
+
+\begin{vd} Xét bài toán trong ví dụ của \cite{example4} \label{ex:ex4}
+    \[
+\begin{array}{ccl}
+h(x) & = & -x_{1} - 0.9\\
+f_{1}(x) & = & x_1\\
+f_{2}(x) & = & x_2\\
+g(x) &=& x_1^2 + x_2^2 - 0.81
+\end{array}
+\]
+\[
+X = \{x \in [-1, 1] \vert x_1 + x_2 + 1 \geq 0 \}
+\]
+\end{vd}
+Tại bước khỏi tạo, hộp $[m,M] =[-0.90,-0.90,0.00,-0.00]$, $\hat{d}=(1, 1)^{T}$ và $\varepsilon=0.01$.
+Các cận trên và dưới ban đầu $\alpha_{0}=\infty$, $\beta=\varphi(M)=-1.8$.
+Thuật toán kết thúc sau 17 bước lặp và trả về nghiệm tối ưu $x^{*}=(-0.893699, -0.106301)$ với giá trị tối ưu $h(x^{*})=-1.793699$ rất gần với kết quả được trình bày trong \cite{example4}. Chi tiết tính toán được cho trong bảng \ref{tab:ex4}.
+\begin{table}[h]
+\centering{}\caption{\label{tab:ex4}The computational result of Example \ref{ex:ex4}}
+\begin{centering}
+\begin{tabular}{ccccc}
+\hline 
+$k$ & $v^{k}$ & $\alpha^{k}$ & $\beta^{k}$ & Gap\tabularnewline
+\hline 
+\hline 
+1 & (-0.526290843366367, -0.473709156633633) & -1.426291 & --1.800000 & 0.373709\tabularnewline
+\hline 
+2 & (-0.775599628831051, -0.224400371168949) & -1.675600 & -1.800000 & 0.124400\tabularnewline
+\hline 
+3 & (-0.893699479832796, -0.106300520167204) & -1.793699 & -1.800000 & 0.006301\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\end{table}
+
+
+\begin{vd} Xét một ví dụ khác trong \cite{example4}
+\label{ex:ex5}
+\[
+\begin{array}{ccl}
+    h_1(x) & = & \left(x_1-1\right)^2+\displaystyle\sum_{i=2}^{14} x_i^2+0.25\\
+     f_{1}(x) & = &\displaystyle\sum_{i=1}^{14} x_i^2\\
+    f_{2}(x) & = & \left(x_1-0.5\right)^2+\sum_{i=2}^{14} x_i^2\\
+\end{array}
+\]
+
+\[
+    X =\{ x \in \mathbb{R}^{14} \vert -1 \leq\left(x_1, x_2, \ldots, x_{14}\right) \leq 2 \}
+\]
+\end{vd}
+Tại bước khỏi tạo, hộp  $[m,M] =[0.00,0.00,0.25,0.25]$, $\hat{d}=(1, 1)^{T}$ and $\varepsilon=0.01$. Các cận trên và dưới ban đầu$\alpha_{0}=\infty$, $\beta=\varphi(M)=0.5$.
+Thuật toán kết thúc sau 17 bước lặp và trả về nghiệm tối ưu $x^{*}=(0.5, 0,0,0,0,0,0,0,0,0,0,0,0,0)$ cùng với gia trị $h(x^{*})=0.5$ rất gần với kết quả của \cite{example4}. Chi tiết tính toán được cho trong bảng \ref{tab:ex5}.
+\begin{table}[h]
+\centering{}\caption{\label{tab:ex5}The computational result of Example \ref{ex:ex5}}
+\begin{centering}
+\begin{tabular}{cccc}
+\hline 
+$k$  & $\alpha^{k}$ & $\beta^{k}$ & Gap\tabularnewline
+\hline 
+\hline 
+1  & 0.812500 & 0.500000 & 0.312500\tabularnewline
+\hline 
+2  & 0.566406 & 0.500000 & 0.066406\tabularnewline
+\hline 
+3  & 0.503922 &0.500000 & 0.003922\tabularnewline
+\hline 
+4  & 0.500015 & 0.500000 & 0.000015\tabularnewline
+\hline 
+5  & 0.500000 &0.500000 & 0.000000\tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+\end{table}
+
+\begin{vd}
+\noindent  \label{ex:ex6}
+\begin{align*}
+    \min \ h(x,y) = \max \left\{ \dfrac{3x_1 + 2x_2 +10x_3y_1 +11}{x_3 + 20} ,\dfrac{y_1}{y_2+1} \right\} 
+\end{align*} 
+
+\[
+\begin{array}{ccl}
+    f_1(x) & = & \dfrac{2x_{1}+5x_{2}+3x_{3}+10}{3x_{2}+3x_{3}+10} \\
+    f_2(x) & = & \dfrac{2x_{1}+4x_{2}+10}{4x_{1}+4x_{2}+5x_{3}+10} \\
+    f_3(x) & = & \dfrac{x_{1}+2x_{2}+5x_{3}+10}{x_{1}+5x_{2}+5x_{3}+10}\\
+    f_4(x) & = & \dfrac{x_{1}+2x_{2}+4x_{3}+10}{5x_{2}+4x_{3}+10}
+\end{array}
+\]
+\begin{align*}
+    X = &\{ x \in \mathbb{R}^3_+ \vert 2x_{1}+x_{2}+5x_{3} \leq 10,\\
+     &x_{1}+6x_{2}+3x_{3} \leq 10, 5x_{1}+9x_{2}+2x_{3} \leq 10, 9x_{1}+7x_{2}+3x_{3} \leq 10\} 
+\end{align*}
+\[
+\begin{array}{ccl}
+    g_1(x) &= -x_2 -x_3-2y_1 -y_2 + 2   \\
+     g_2(x)&= x_2 + x_3 -5y_1 +2y_2 - 1 \\
+     y \in \mathbb{R}^2_+
+\end{array}
+\]
+\end{vd}
+
+Tại bước khỏi tạo, hộp $[m,M] =[1.14,0.68,0.99,0.98,1.27,0.92,1.14,1.17]$, $\hat{d}=(1, 1, 1, 1)^{T}$ và $\varepsilon=0.01$. Các cận trên và dưới ban đầu $\alpha_{0}=\infty$, $\beta=\varphi(M)=0.950188$.
+Thuật toán dừng sau 15 bước lặp và trả về nghiệm tối ưu $x^{*}= (0.000000, 0.914574,  0.799711)$ và $y^*$ = $(0.142857, 0.000000)$ cùng với giá trị tối ưu $h(x^{*}, y^*)= 0.959104$. Chi tiết tính toán được cho trong bảng \ref{tab:ex6}.
+
+\begin{table}[h]
+\centering{}\caption{\label{tab:ex6}The computational result of Example \ref{ex:ex6}}
+\begin{centering}
+\begin{tabular}{ccccc}
+\hline 
+$k$ & $v^{k}$ & $\alpha^{k}$ & $\beta^{k}$ & Gap\tabularnewline
+\hline 
+\hline 
+1 & ( 0.000000, 0.422286, 1.291999,  0.142857, 0) & 1.140473 & 0.950188 & 0.190285 \tabularnewline
+\hline 
+2 & ( 0.000000, 0.654617, 1.059668, 0.142857, 0) & 1.054878 & 0.950188 & 0.104690 \tabularnewline
+\hline 
+3 & (0.000000, 0.654617,1.059668, 0.142857, 0) & 1.054878 & 0.950188 & 0.104690 \tabularnewline
+\hline 
+4 & (0.000000, 0.654617,1.059668, 0.142857, 0) & 1.054878 & 0.950188 & 0.104690 \tabularnewline
+\hline 
+5 & (0.000000, 0.773403,0.940881, 0.142857, 0) & 1.011114 & 0.950188 & 0.060926 \tabularnewline
+\hline
+6 & (0.000000, 0.773403, 0.940881, 0.142857, 0) & 1.011114 & 0.950188 & 0.060926 \tabularnewline
+\hline
+7 & (0.000000, 0.822666, 0.891619, 0.142857, 0) & 0.992965 & 0.950188 & 0.042777 \tabularnewline
+\hline
+8 & (0.000000, 0.874935, 0.839350, 0.142857, 0) & 0.973708 & 0.950188 & 0.023520 \tabularnewline
+\hline
+9 & (0.000000, 0.874935, 0.839350, 0.142857, 0) & 0.973708 & 0.950188 & 0.023520 \tabularnewline
+\hline
+10 & (0.000000, 0.792729, 0.921556, 0.142857, 0) & 0.973708 & 0.950188 & 0.023520 \tabularnewline
+\hline
+11 & (0.000000, 0.792729, 0.921556, 0.142857, 0) & 0.973708 & 0.950188 & 0.023520 \tabularnewline
+\hline
+12 & (0.000000, 0.858380, 0.855905, 0.142857, 0) & 0.973708 & 0.950188 & 0.023520 \tabularnewline
+\hline
+13 & (0.000000, 0.858380, 0.855905, 0.142857, 0) & 0.973708 & 0.950188 & 0.023520 \tabularnewline
+\hline
+14 & (0.000000, 0.894634, 0.819651, 0.142857, 0) & 0.966450 & 0.950188 & 0.016263 \tabularnewline
+\hline
+15 & (0.000000, 0.914574, 0.799711, 0.142857, 0) & 0.959104 & 0.950188 & 0.008916 \tabularnewline
+\hline
+\end{tabular}
+\par\end{centering}
+\end{table}
+

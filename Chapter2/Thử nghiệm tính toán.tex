@@ -1,0 +1,16 @@
+\section{Thử nghiệm tính toán}
+Xét ví dụ được trình bày trong nghiên cứu của Liu và các cộng sự \cite{Liu2021},
+\begin{equation}
+    \label{vdchap2}
+    \begin{aligned}
+        \min\ & f(x) = \dfrac{x_1^2 + x_2^2 +3}{1 + 2x_1 + 8x_2}\\
+         s.t\ & g(x) = -x_1^2 - 2x_1x_2 \leq -4,\\
+              & x_1, x_2 \geq 0.
+    \end{aligned}
+\end{equation}
+Hình 2.1 mô tả quá trình thay đổi trạng thái của hệ động lực \eqref{model} với các điểm xuất phát khác nhau. Ta thấy rằng thuật toán hội tụ về nghiệm tối ưu $x^* = (0.8907, 1.8009)^T$.
+\begin{figure}[H]
+    \centering
+    \includegraphics*[width=\textwidth]{Pictures/ex_chapter2.png}
+    \caption{Quá trình thay đổi trạng thái của mô hình \eqref{model} với các trạng thái ban đầu khác nhau hội tụ về nghiệm của bài toán \eqref{vdchap2}}
+\end{figure}

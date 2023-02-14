@@ -1,0 +1,131 @@
+\section{Hàm không trơn}
+Tính chất lồi đóng một vai trò quan trọng trong tối ưu toán học. Đặc biệt, tính lồi của hàm là khái niệm quan trọng nhất trong việc xây dựng các điều kiện tối ưu. Trong lý thuyết tối ưu trơn (khi và đạo hàm là liên tục), tính khả vi đòi hỏi việc xấp xỉ tuyến tính một hàm bởi gradient, kéo theo việc xấp xỉ dưới một hàm lồi. Điều này có thể được mở rộng cho các hàm lồi không trơn dẫn đến khái niện \textit{dưới-gradient} và \textit{dưới-vi phân}. Một dưới-gradient bảo toàn các tính chất của gradient, cung cấp một xấp xỉ dưới cho một hàm số, chỉ có điều xấp xỉ này không phải là duy nhất trong trường hợp hàm không trơn. Vì lẽ đó, thay vì chỉ có duy nhất một vector gradient, ta có môt tập các  dưới-gradient gọi là dưới-vi phân.
+
+\begin{dn} [Clarke \cite{Clarke1983}] \label{daohamtongquat}
+Cho $ f: \R^n \rightarrow \R $ là một hàm liên tục Lipschitz tại $x \in \R^n$. Đạo hàm tổng quát theo hướng $d$ của $f$ tại $x$ được định nghĩa như sau:
+\begin{equation*}
+    f^o(x, d) = \limsup _{y \rightarrow x, t \downarrow 0} \frac{f(x+t d)-f(x)}{t} \text {. }
+\end{equation*}
+\end{dn} 
+
+\begin{dn} [Clarke \cite{Clarke1983}] \label{daohamtheohuong}
+    Cho $ f: \R^n \rightarrow \R $ là một hàm liên tục Lipschitz tại $x \in \R^n$. Đạo hàm theo hướng $d$ của $f$ tại $x$ được định nghĩa như sau:
+    \begin{equation*}
+        f^{\prime}(x ; v)=\lim _{t \downarrow 0} \frac{f(x+t d)-f(x)}{t} \text {, }
+    \end{equation*}
+\end{dn}
+
+\begin{dn} [Clarke \cite{Clarke1983}]
+    Cho $ f: \R^n \rightarrow \R $ là một hàm liên tục Lipschitz tại $x \in \R^n$. Dưới-vi phân của $f$ tại $x$ là tập $\partial f(x)$ các vector $\xi \in \R^n$ thỏa mãn:
+    \begin{equation*}
+        \partial f(x)=\left\{\xi \in \mathbb{R}^n: f^o(x ; v) \geq \xi^{\mathrm{T}} v\right., \forall v \in \left.\mathbb{R}^n\right\}
+    \end{equation*}
+\end{dn}
+
+Dựa trên dưới-gradient và dưới-vi phân, ta có cách định nghĩa khác về hàm lồi như sau,
+\begin{dn} [Penot \& Quang, 1997 \cite{Pen1997}]
+    Cho $S \subset \R^n$ là một tập lồi khác rỗng. Hàm $f: S \rightarrow \R$ được gọi là giả lồi trên $K$, khi và chỉ khi với mọi $x^1, x^2, x^1 \neq x^2$, ta có
+    \begin{equation*}
+        \exists \eta \in \partial f(x): \eta^{\mathrm{T}}\left(x^2-x^1\right) \geq 0 \Rightarrow f\left(x^2\right) \geq f(x^1)
+    \end{equation*}
+\end{dn}
+\begin{dl} 
+Cho hàm $f: \R^n \rightarrow \R$ liên tục Lipschitz và khả vi tại $x \in \R^n$. Ta có,
+\begin{equation*}
+    \nabla f(x) \in \partial f(x)
+\end{equation*}
+\end{dl}
+
+\begin{vd} [Hàm khả vi nhưng không trơn]
+    Ta sẽ chứng minh hàm số sau: 
+    \begin{equation}
+    \label{eq:vd1.5}
+    f(x) = 
+        \begin{cases}
+        0, &x = 0\\
+        x^2\cos(\dfrac{1}{x}), &x \neq 0
+        \end{cases}
+    \end{equation}
+    liên tục Lipscitz, khả vi tại mọi điểm nhưng không trơn (không khả vi liên tục).
+    \begin{cm}
+    Đầu tiên ta chỉ ra tính khả vi. Xét hàm $g(x) = x^2\cos(\dfrac{1}{x})$ khả vi tại mọi $x$ khác 0 và có đạo hàm:
+    \begin{equation}
+    \label{eq:f_prime}
+        g^\prime(x) = \sin(\dfrac{1}{x}) + 2x\cos(\dfrac{1}{x})
+    \end{equation}
+    Do $g^\prime (x)$ liên tục khi $x \neq 0$, nên $f$ khả vi liên tục tại mọi $x \neq 0$. Mặt khác, 
+\begin{equation}
+    f(0+x) -f(0) = x^2\cos(\dfrac{1}{x})
+\end{equation}
+và $\lim_{x \to 0} |x| \cos(\dfrac{1}{x}) = 0$, suy ra hàm $f$ khả vi tại $x =0$ và $f^\prime(0) = 0$. Tuy nhiên, từ \eqref{eq:f_prime}, ta có giới hạn $\lim_{x \to 0} f^\prime(x)$ không tồn tại kéo theo f không khả vi liên tục.\\
+\indent Tiếp theo ta chứng minh $f$ liên tục Lipschitz. Hiển nhiên $f$ liên tục Lipschitz tại $x \neq 0$, ta sẽ chứng minh $f$ liên tục Lipschitz tại $x=0$. Xét $-1 < y < z < 0$, ta có
+\begin{align*}
+|f(z)-f(y)|= & \left|\int_y^z f^{\prime}(x) d x\right| \leq \int_y^z \max _{x \in[y, z]}\left\{\left|f^{\prime}(x)\right|\right\} d x \\
+= & \max _{x \in[y, z]}\left\{\left|\sin \left(\frac{1}{x}\right)+2 x \cos \left(\frac{1}{x}\right)\right|\right\}(z-y) \\
+& \leq(1+2 \cdot 1 \cdot 1)|z-y|=3|z-y|,
+\end{align*}
+do đó thỏa mãn điều kiện Lipschitz. Do tính đối xứng của hàm $f$, điều kiện Lipschitz vẫn được thỏa mãn trong trường hợp $0 < y<z <1$.\\
+\indent Bây giờ, xét trường hợp $-1 < y < 0 $ và $0 < z < 1$, ta có $n |y + z| < |y - z| $ và $f (-z) = f (z)$, vì vậy,
+\begin{equation*}
+     |f (y) - f (z)| = | f (y) - f (-z)| \leq 3 |y + z| \leq 3 |y - z|
+\end{equation*}
+\indent Cuối cùng, xét $y = 0$ và $z \in (-1, 1) \ \{0\}$. Ta có,
+\begin{equation*}
+    |f(0)-f(z)|=\left|z^2 \cos \left(\frac{1}{z}\right)\right| \leq|z| 1 \cdot 1=|0-z|
+\end{equation*}
+và ta được điều phải chứng minh.
+\end{cm}
+\end{vd}
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+    \begin{axis}[
+            width=0.8\textwidth,
+            height=0.6\textwidth,
+            axis on top,
+            legend pos=outer north east,
+            axis lines = center,
+            % xticklabel style = {font=\tiny},
+            % yticklabel style = {font=\tiny},
+            xlabel = $x$,
+            ylabel = $y$,
+            legend style={cells={align=left}},
+            legend cell align={left},
+        ]
+        \addplot[very thick,red,samples=161,domain=0.001:0.2,name path=f] {x^2*cos(180/(x*pi))};
+        \addplot[very thick,red,samples=161,domain=-0.2:0.001,name path=f] {x^2*cos(180/(x*pi))};
+    \end{axis}
+\end{tikzpicture}
+    \caption{: Đồ thị của hàm số\eqref{eq:vd1.5} trên đoạn $[-0.2, 0.2]$}
+    \label{fig:vd1.5}
+\end{figure}
+
+\begin{vd} Xét hàm giá trị tuyệt đối của $x$ trên tập số thực
+$$
+f(x)=|x| .
+$$
+Dưới-vi phân của hàm này tại  $x=0$ được cho bởi
+$$
+\partial f(0)=\operatorname{conv}\{-1,1\}=[-1,1] .
+$$
+\end{vd}
+
+\begin{md}[\cite{Clarke1983}]
+    \label{convex_compact}
+    Cho hàm $G: \R^n \to \R$ liên tục Lipschitz tại lân cận $x^0 \in \R^n$, ta có $\partial G(x)$ nửa liên tục trên tại $x^0$ và là một tập con khác rỗng lồi và compact của $\R^n$.
+\end{md}
+
+% \begin{cm} 
+% Theo định nghĩa \ref{daohamtheohuong}, $f^\prime (x; v)$ tồn tại với mọi $v \in \R^n$ và $f^\prime = \nabla f(x)^T v$
+% \end{cm}
+
+\begin{bd}[\cite{Clarke1983}]\label{lem:2.7}
+ Giả sử $\left\{f_i, i=1,2,3, \ldots, n\right\}$ là tập hữu hạn các hàm liên tục Lipschitz tại lân cận $x$ và là hàm chính quy.
+    Đặt
+    $$
+    \psi(x)=\max \left\{f_i(x), i=1,2,3, \ldots, n\right\}
+    $$
+    vậy
+    $\partial \psi(x)=\operatorname{conv}\left\{\partial f_i(x), i \in I(x)\right\}$
+    trong đó $I(x)$ là tập chỉ số $i$ thỏa mãn $f_i(x)=\psi(x)$.
+    \end{bd}

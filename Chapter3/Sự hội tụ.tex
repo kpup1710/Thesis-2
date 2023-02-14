@@ -1,0 +1,280 @@
+\section{Sự hội tụ và tính đúng đắn của thuật toán}
+\begin{bd}\label{lem-max_norm} Khi $k$ tiến ra vô cùng
+\[
+\lim_{k\rightarrow\infty}\max_{v\in V^{k}}\left\Vert w_{v}-v\right\Vert =0,
+\]
+
+trong đó $V^{k}$ là tập các đỉnh chính quy của $P^{k}$
+và $w_{v}$ là điểm hữu hiệu yếu tương ứng của $\mathcal{Z}^{+}$
+đạt được bằng việc giải \ref{eq:Pbarv}.
+
+\end{bd}
+
+\begin{cm} Xét đỉnh $v^{k}\in\mathcal{P}^{k}$ được chọn tại bước lặp tứ $k$ và $t_{k}$ giá trị tối ưu của $\left(P^{2}\left(v^{k}\right)\right)$.
+Đặt $w_{v^{k}}=v^{k}+t_{k}\hat{d}$, ta có
+\begin{equation}
+{\rm {\rm Vol}}\left[v^{k},w_{v}^{k}\right]=\left(t_{k}\right)^{p}{\rm Vol}\left[0,\hat{d}\right].\label{eq:Vol_d}
+\end{equation}
+
+Bổ đề sẽ đúng nếu $\max_{v\in V^{k}}\left\Vert w_{v}-v\right\Vert =0$
+tại mồi vài $k\ge0$. Ngược lại, tồn tại $v^{k}\in V^{k}$ sao cho
+$\left\Vert w_{v^{k}}-v^{k}\right\Vert =\max_{v\in V^{k}}\left\Vert w_{v}-v\right\Vert >0$.
+Ta cũng có, $\mathcal{P}^{k}\subseteq\mathcal{P}^{k+1}\setminus\left(v^{k}-{\rm int}\mathbb{R}_{+}^{p}\right)$,
+do $\left[v^{k},w_{v^{k}}\right]\subseteq\mathcal{P}^{k}$ được suy ra từ định nghĩa của $w_{v^{k}}$, thể tích của $\mathcal{P}^{k}$
+thỏa mãn
+\begin{equation}
+{\rm Vol}\mathcal{P}^{k+1}-{\rm Vol}\mathcal{P}^{k}\ge{\rm Vol}\left[v^{k},w_{v}^{k}\right].\label{eq:Vol_P^k}
+\end{equation}
+
+Kết hợp \ref{eq:Vol_d} với \ref{eq:Vol_P^k}, ta được
+\[
+{\rm Vol}\mathcal{P}^{k+1}-{\rm Vol}\mathcal{P}^{k}\ge\left(t_{k}\right)^{p}{\rm Vol}\left[0,\hat{d}\right].
+\]
+
+Vì vậy
+\[
+\sum_{i=0}^{k}\left({\rm Vol}\mathcal{P}^{i+1}-{\rm Vol}\mathcal{P}^{i}\right)\ge\left(\sum_{i=0}^{k}\left(t_{i}\right)^{p}\right){\rm Vol}\left[0,\hat{d}\right].
+\]
+
+Ta suy ra
+\[
+{\rm Vol}\mathcal{Y}^{\diamond}\ge{\rm Vol}\mathcal{P}^{k+1}\ge{\rm Vol}\mathcal{P}^{k+1}-{\rm Vol}\mathcal{P}^{0}\ge\left(\sum_{i=0}^{k}\left(t_{i}\right)^{p}\right){\rm Vol}\left[0,\hat{d}\right],
+\]
+với mọi $k\ge1$. Do đó, bằng việc cho $k\rightarrow\infty$, chuỗi dương $\sum_{i=0}^{k}\left(t_{i}\right)^{p}$ bị chặn trên bởi
+${\rm Vol}\mathcal{Z}^{\diamond}/{\rm Vol}\left[0,\hat{d}\right]$,
+do đó hội tụ và $\lim_{i\rightarrow\infty}t_{i}=0$.
+VÌ $\hat{d}$ bị chặn, cho bất kỳ $i\ge1$, ta có
+\[
+\lim_{i\rightarrow\infty}\max_{v\in V^{i}}\left\Vert w_{v}-v\right\Vert =\lim_{i\rightarrow\infty}\left\Vert w_{v^{i}}-v^{i}\right\Vert =\lim_{i\rightarrow\infty}t_{i}\left\Vert \hat{d}\right\Vert =0.
+\]
+\end{cm}
+
+\begin{bd}\label{lem-sol_at_border} Khi nghiệm $(\bar{x},\bar{y})$
+của bài toán \ref{prob_QBP} thỏa mãn $\exists i:f_{i}\left(\bar{x}\right)=m_{i}$,
+thì $\bar{x}$ có thể được xác định bằng việc giải $\varphi\left(\bar{z}\right)$ với $\bar{z}$ là nghiệm tối ưu của bài toán
+\[
+\min\left\{ \varphi\left(z\right)\mid z\in\left\{ M-\left(M_{j}-m_{j}\right)e^{j}\mid j=1,2,\dots,p\right\} \right\} .
+\]
+\end{bd}
+\begin{cm} Do $(\bar{x},\bar{y})$ là nghiệm của bài toán \ref{prob_QBP}, ta có
+\begin{equation}
+h\left(\bar{x},\bar{y}\right)\leq\varphi\left(z\right),\quad\forall z\in\left\{ M-\left(M_{j}-m_{j}\right)e^{j}\mid j=1,2,\dots,p\right\} .\label{eq:h_phi}
+\end{equation}
+
+Xét $z^{i}=M-\left(M_{i}-m_{i}\right)e^{i}$, vì $f_{i}\left(\bar{x}\right)=m_{i}$ và $f\left(\bar{x}\right)\leq M$, we have $f\left(\bar{x}\right)\leq z^{i}$
+cho nên $\bar{x},\bar{y}$ là một nghiệm chấp nhận được của bài toán
+\[
+\varphi\left(z^{i}\right)=\min\{h(x,y)\mid (x,y)\in \mathcal{G},f(x)\leq z^{i}\},
+\]
+do đó
+\begin{equation}
+\varphi\left(z^{i}\right)\leq h\left(\bar{x},\bar{y}\right).\label{eq:phi_h}
+\end{equation}
+
+Từ \ref{eq:h_phi} và \ref{eq:phi_h}, ta có
+\[
+h\left(\bar{x},\bar{y}\right)=\varphi\left(z^{i}\right).
+\]
+
+Vì lẽ đó, $(\bar{x},\bar{y})$ có thể được xác định bằng cách chọn nghiệm tối ưu tốt nhất sau khi giải $p$ bài toán $\varphi\left(z^{j}\right),j=1,2,\dots,p$.
+\end{cm}
+
+\begin{bd}\label{lem-sol_on_MinZ} Với bất kỳ $z\in\mathcal{Z}^{\diamond}$
+sao cho $\varphi\left(z\right)$ có nghiệm tối ưu, nếu ta liên tiếp giải $\left(P^{2}\left(v^{k}\right)\right)$ với đỉnh xuất phát $v^{0}\equiv z$
+để nhận được $p$ điểm mới $v^{k}-(v_{i}^{k}-w_{i}^{k})e^{i}$ được thêm vào $V^{k+1}$ và loại bất kỳ đỉnh $v\in V^{k+1}$ từ $V^{k+1}$ nếu $\varphi\left(v\right)$ vô nghiệm, hai phát biểu sau sẽ đúng,
+
+i) Nếu $\nexists(\bar{x},\bar{y})\in \mathcal{G}$ sao cho $f\left(\bar{x}\right)\in{\rm Min}\mathcal{Z}\cap\left(z-\mathbb{R}_{+}^{p}\right)$,
+ta sẽ nhận được $V^{k}=\emptyset$ khi $k$ tiến ra vô cùng.
+
+ii) Nếu $\exists(\bar{x},\bar{y})\in \mathcal{G}$ sao cho $f\left(\bar{x}\right)\in{\rm Min}\mathcal{Z}\cap\left(z-\mathbb{R}_{+}^{p}\right)$,
+ta có thể tách một chuỗi $\left\{ u^{k}\right\} _{k=0}^{\infty},u^{k}\in V^{k}$ với $u^{0}\equiv z$ sao cho nếu $w_{u^{k}}$ là nghiệm hữu hiệu yếu của $\mathcal{Z}^{+}$ được suy ra từ nghiệm $\left(x^{k},t_{k}\right)$
+của bài toán $(P^{2}(u^{k}))$, thì khi $k$ tiến ra vô cùng
+\[
+\lim_{k\rightarrow\infty}\left\Vert w_{u^{k}}-f\left(\bar{x}\right)\right\Vert =0.
+\]
+
+\end{bd}
+
+\begin{cm}
+    i) Vì $\nexists(\bar{x},\bar{y})\in \mathcal{G}$ sao cho $f\left(\bar{x}\right)\in{\rm Min}\mathcal{Z}\cap\left(z-\mathbb{R}_{+}^{p}\right)$, bằng việc ký hiệu
+\begin{eqnarray*}
+A & = & {\rm Min}\mathcal{Z}\cap\left(z-\mathbb{R}_{+}^{p}\right),\\
+B & = & \left(z-\mathbb{R}_{+}^{p}\right)\cap\left\{ f\left(x\right)\mid (x,y)\in \mathcal{G}\right\} ,
+\end{eqnarray*}
+ta có
+\[
+A\cap B=\emptyset.
+\]
+
+Vì vậy, ta có thể giả sử rằng khoảng cách infimum giữa hai tập từ là khoảng cách Hausdoff là một số $\varepsilon>0$.
+
+Mặt khác, theo bổ đề \ref{lem-max_norm}, ta có thể chọn một số
+$k$ sao cho
+\[
+\lim_{k\rightarrow\infty}\max_{v\in V^{k}}\left\Vert w_{v}-v\right\Vert <\varepsilon.
+\]
+
+Do đó, vì $w_{v}\in A,\forall v\in V^{k}$, không tồn tại
+$v\in V^{k}$ sao cho $\exists b\in B:b\leq v$ vì khoảng cách Hausdoff $\varepsilon>0$.
+
+Như một hệ quả, $\nexists(x,y)\in \mathcal{G}$ sao cho
+$f\left(x\right)\leq v,\forall v\in V^{k}$, vì vậy $\varphi\left(v\right)$
+vô nghiệm với mọi $v\in V^{k}$ kéo theo $\forall v\in V^{k}$
+bị loại khỏi $V^{k}$.
+
+ii) Ta giả sử rằng tồn tại một vài $v^{k}\in V^{k}$ thỏa mãn $v^{k}>f\left(\bar{x}\right)$ và xét $p$ điểm
+\[
+v^{k,i}=v^{k}-\left(v_{i}^{k}-w_{v^{k},i}\right)e^{i},i=1,2,\dots,p.
+\]
+
+Ta sẽ chứng minh rằng
+\[
+\exists i:v_{i}^{k,i}\geq f_{i}\left(\bar{x}\right),
+\]
+giải sử sai, ta có
+\[
+v_{i}^{k,i}<f_{i}\left(\bar{x}\right),\forall i,
+\]
+
+Mặt khác, ta cũng có
+\[
+w_{v^{k},i}\leq v_{i}^{k,i},\forall i,
+\]
+vì thế
+\[
+w_{v^{k},i}<f_{i}\left(\bar{x}\right),\forall i.
+\]
+
+NHư vậy, ta kết luận rằng $w_{v^{k}}<f\left(\bar{x}\right)$, nhưng điều dẫ đến mâu thuẫn bởi $w_{v^{k}},f\left(\bar{x}\right)\in{\rm WMin}\mathcal{Z}^{\diamond}$, vậy giả sử phản chứng sai và ta có
+\[
+\exists i:v_{i}^{k,i}\geq f_{i}\left(\bar{x}\right).
+\]
+
+Cũng bởi vì $v^{k}>f\left(\bar{x}\right)$ và $v_{j}^{k}=v_{j}^{k,i},\forall j\neq i$,
+ta có
+\[
+\exists i:v^{k,i}\geq f\left(\bar{x}\right).
+\]
+
+Dễ thấy $v^{k,i}\in V^{k+1}$, ta có thể trích ra một dãy $\left\{ u^{k}\right\} _{k=0}^{\infty},u^{k}\in V^{k}$ với $u^{0}\equiv z$ sao cho $u^{k}>f\left(\bar{x}\right)$ bởi $u^{0}=z>f\left(\bar{x}\right)$.
+
+Bây giờ ta sẽ chứng minh rằng, khi $k$ tiến ra vô cùng
+\[
+\lim_{k\rightarrow\infty}\left\Vert w_{u^{k}}-f\left(\bar{x}\right)\right\Vert =0.
+\]
+
+Vì $u^{k+1}=u^{k}-\left(u_{i}^{k}-w_{u^{k},i}\right)e^{i}$ với một vài  $i$, ta có $u^{k+1}<u^{k}$, cho nên dãy $\left\{ u^{k}\right\} _{k=0}^{\infty}$
+là một dãy giảm và vì thế hội tụ do có chặn dưới $f\left(\bar{x}\right)$.
+
+Nếu $\left\{ u^{k}\right\} _{k=0}^{\infty}$ hội tụ tại điểm $u\in{\rm Min}\mathcal{Z}\cap\left(z-\mathbb{R}_{+}^{p}\right)$ sao cho $u>f\left(\bar{x}\right)$, ta có mâu thuẫn bởi $u,f\left(\bar{x}\right)\in{\rm Min}\mathcal{Z}\cap\left(z-\mathbb{R}_{+}^{p}\right)$,
+vì vậy
+\[
+\lim_{k\rightarrow\infty}\left\Vert u^{k}-f\left(\bar{x}\right)\right\Vert =0.
+\]
+
+Kết hợp với bổ đề \ref{lem-max_norm}, cho bất kỳ $\varepsilon>0$,
+ta có thể tìm được một $u^{t}\in\left\{ u^{k}\right\} _{k=0}^{\infty}$ sao cho $\left\Vert w_{u^{t}}-u^{t}\right\Vert <\frac{\varepsilon}{2}$
+and $\left\Vert u^{t}-f\left(\bar{x}\right)\right\Vert <\frac{\varepsilon}{2}$. 
+
+Ta có bất đẳng thức tam giác
+\[
+\left\Vert w_{u^{t}}-f\left(\bar{x}\right)\right\Vert \leq\left\Vert w_{u^{t}}-u^{t}\right\Vert +\left\Vert u^{t}-f\left(\bar{x}\right)\right\Vert <\varepsilon.
+\]
+
+Và vì vậy ta phải có
+\[
+\lim_{k\rightarrow\infty}\left\Vert w_{u^{k}}-f\left(\bar{x}\right)\right\Vert =0.
+\]
+
+\end{cm}
+
+\begin{bd}\label{lem-converge} Tại bước lặp thứ $k$, đặt
+$w_{v^{k}}$ là nghiệm hữu hiệu yếu của $\mathcal{Z}^{+}$
+được suy ra từ nghiệm $\left(x^{k},t_{k}\right)$ của bài toán $(P^{2}(v^{k}))$, ta xét trường hợp $\nexists i:w_{v^{k},i}=m_{i}$, thì khi $k$ tiến ta vô cùng
+\[
+\lim_{k\rightarrow\infty}\left\Vert \varphi(f(x^{k}))-\varphi(v^{k})\right\Vert =0.
+\]
+\end{bd}
+
+\begin{cm} Do $f,g,h$ là các hàm liên tục nhận giá trị hữu hạn và $X$ là tập lồi compact và khác rỗng, khi ấy ta có $\varphi$ cũng là hàm liên tục nhận giá trị hữu hạn.
+
+Mặt khác, từ bổ đề \ref{lem-max_norm}
+\[
+\lim_{k\rightarrow\infty}\left\Vert w_{v^{k}}-v^{k}\right\Vert \le\lim_{k\rightarrow\infty}\max_{v\in V^{k}}\left\Vert w_{v}-v\right\Vert =0.
+\]
+
+Vì $\nexists i:w_{v^{k},i}=m_{i}$, cho nên $w_{v^{k}}\in{\rm Min}\mathcal{Z}$ và ta có $w_{v^{k}}=v^{k}+t_{k}\hat{d}=f\left(x^{k}\right)$.
+
+Vì $\lim_{k\rightarrow\infty}\left\Vert w_{v^{k}}-v^{k}\right\Vert =0$
+và $\varphi$ là hàm liên tục, ta có
+\[
+\lim_{k\rightarrow\infty}\left\Vert \varphi(w_{v^{k}})-\varphi(v^{k})\right\Vert =0.
+\]
+
+Vì thế
+\[
+\lim_{k\rightarrow\infty}\left\Vert \varphi(f(x^{k}))-\varphi(v^{k})\right\Vert =\lim_{k\rightarrow\infty}\left\Vert \varphi(w_{v^{k}})-\varphi(v^{k})\right\Vert =0.
+\]
+\end{cm}
+
+\begin{dl} Nếu bài toán \ref{prob_OP} có nghiệm tối ưu, cho bất kỳ
+$\varepsilon>0$, thuật toán dừng sau hữu hạn bước lặp và trả về một nghiệm $\varepsilon-$ tối ưu cho bài toán \ref{prob_OP}.
+\end{dl}
+
+\begin{cm} Theo bổ đề \ref{lem-sol_at_border}, nếu nghiệm tối ưu toàn cục $(\bar{x},\bar{y})$ trong mệnh đề \ref{prop-QWP_Y} thỏa mãn $\exists i:f_{i}\left(\bar{x}\right)=m_{i}$ tức là $f\left(\bar{x}\right)\in{\rm WMin}\mathcal{Z}\setminus{\rm Min}\mathcal{Z}$, ta sẽ có $\bar{x}$ xác định bởi thuật toán được đề xuất.
+
+Mặt khác, khi $f\left(\bar{x}\right)$ is on ${\rm Min}\mathcal{Z}$,
+vì $V^{k}$ là tập các đỉnh của đa hộp đảo xấp xỉ trong không gian ảnh, ta phải có $v^{k}\in V^{k}$ sao cho $f\left(\bar{x}\right)\in{\rm Min}\mathcal{Z}\cap\left(v^{k}-\mathbb{R}_{+}^{p}\right)$.
+Áp dụng bổ đề \ref{lem-sol_on_MinZ}.ii), tồn tại dãy các cặp
+$\left(u^{t},w_{u^{t}}\right)$ sao cho
+\[
+\lim_{k\rightarrow\infty}\left\Vert w_{u^{k}}-f\left(\bar{x}\right)\right\Vert =0,
+\]
+vì vậy
+\[
+\lim_{k\rightarrow\infty}\left\Vert \varphi\left(w_{u^{k}}\right)-\varphi\left(f\left(\bar{x}\right)\right)\right\Vert =0,
+\]
+ta vì thế có thể tìm $k>0$ sao cho
+\[
+\left\Vert \varphi\left(w_{u^{k}}\right)-\varphi\left(f\left(\bar{x}\right)\right)\right\Vert <\frac{\varepsilon}{2}.
+\]
+
+Và nhờ có bổ đề \ref{lem-converge}, ta có
+\[
+\lim_{k\rightarrow\infty}\left\Vert \varphi(w_{u^{k}})-\varphi(u^{k})\right\Vert =0.
+\]
+
+Từ cách xây dựng các cận trên $\alpha_{k}$ và cận dưới $\beta_{k}$,
+ta có
+\[
+0\le\alpha_{k}-\beta_{k}=h(x^{k},y^{k})-\varphi(v^{k})=\varphi(f(x^{k}))-\varphi(v^{k}).
+\]
+
+Trong trường hợp ta chọn $v^{k}=u^{k}$, sao cho
+\[
+\left\Vert \varphi\left(f\left(\bar{x}\right)\right)-\varphi(u^{k})\right\Vert <\frac{\varepsilon}{2},
+\]
+ta sẽ nhận được
+\begin{eqnarray*}
+0 & \leq & \alpha_{k}-\beta_{k}\\
+ & = & \varphi(f(x^{k}))-\varphi(f(u^{k}))\\
+ & = & \varphi(w_{u^{k}})-\varphi(f(u^{k}))\\
+ & \leq & \Big\| \varphi\left(w_{u^{k}}\right)-\varphi\left(f\left(\bar{x}\right)\right)\Big\| +\Big\| \varphi\left(f\left(\bar{x}\right)\right)-\varphi(u^{k})\Big\| \\
+ & < & \varepsilon.
+\end{eqnarray*}
+
+Hơn nữa, bổ đề \ref{lem-sol_on_MinZ}.i) chỉ ra rằng nếu ta chọn một đỉnh $v^{k}\in V^{k}$ sao cho không tồn tại nghiệm chấp nhận được của ${\rm Min}\mathcal{Z}\cap\left(v^{k}-\mathbb{R}_{+}^{p}\right)$, tập đỉnh $V^{k}$ sẽ trở thành tập rỗng sau hữu hạn bước lặp và ta có thể tiếp với các đỉnh $v^{k}\in V^{k}$ khác. Thêm vào đó, nếu ta chọn một đỉnh $v^{k}\in V^{k}$ sao cho 
+\[
+\nexists (x,y)\in\mathcal{G}:f\left(x\right)\in\left(v^{k}-\mathbb{R}_{+}^{p}\right),
+\]
+bài toán $\varphi\left(v^{k}\right)$ sẽ vô nghiệm kéo theo
+$v^{k}$ bị loại khỏi $V^{k}$ và thuật toán tiếp tục với một đỉnh
+$v^{k}\in V^{k}$ khác.
+
+Như vậy, ta có thể kết luận rằng thuật toán kết thúc sau hữu hạn bước lặp và $x^{*}$ là một nghiệm $\varepsilon-$ tối ưu cho bài toán \ref{prob_OP}.
+\end{cm}
+
+
+
+
+

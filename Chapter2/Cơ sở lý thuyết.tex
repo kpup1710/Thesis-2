@@ -1,0 +1,59 @@
+\section{Cơ sở lý thuyết}
+
+Xét bao hàm vi phân:
+\begin{equation}
+    \label{eq:inclusion}
+    \dot x(t) \in F(x(t), t), \quad x(0) = x_0
+\end{equation}
+trong đó, $F(x(t), t)$ là ánh xạ đa trị. Ta gọi $x(.)$ là một trạng thái của \eqref{eq:inclusion} nếu $x(.)$ liên tục tuyệt đối với điều kiện ban đầu $x_0$ và tồn tại một hàm đo được $f(x(t), t) \in F(x(t), t)$ sao cho:
+\begin{equation*}
+    \dot x(t) = f(x(t), t), \text{ với hầu hết } t \in [0, T)
+\end{equation*}
+
+
+
+\begin{md}[\cite{Aubin1984}]
+    \label{state_existance}
+    Nếu ánh xạ đa trị $F$ trong \eqref{eq:inclusion} là nửa lên tục trên với tập giá trị là lồi compact, vậy thì tồn tại ít nhất một trạng thái $x(t): [0, T) \to \R^n$ của bao hàm vi phân \eqref{eq:inclusion}
+\end{md}
+\begin{bd}[\cite{Hosenini2016}] 
+    \label{lemma 2.2}
+    Giả sử $T (x)$ là một ánh xạ đa trị nửa liên tục trên,
+vậy thì với mọii hàm liên tục $g(x)$, $\Theta(g(x))T (x)$ cũng là một ánh xạ nửa liên tục trên.
+\end{bd}
+
+\begin{md}[Chain rule \cite{Clarke1983}]
+    \label{chain_rule}
+    Cho $x(t): [0, \infty) \to \R^n, \ \mathcal{Y}: \R^n \to \R$. Nếu $x$ khả vi liên tục hầu khắp nơi và $\mathcal{Y}(x)$ là chính quy Lipschitz tại lân cận $x(t)$ thì,
+    \begin{equation*}
+        \dot{\mathcal{Y}}(x(t)) = \zeta^T \dot{x(t)}, \quad \forall \zeta \in \partial \mathcal{Y}(x(t)), \text{ với hầu hết $t \in [0, \infty)$}
+    \end{equation*}
+\end{md}
+
+\begin{dn}[\cite{gen_convex}]
+    \label{psuedomonotone_def}
+    Cho tập lồi khác rỗng $\Lambda \subseteq \R^n$, ánh xạ đa trị $F: \Lambda \rightrightarrows \R^n$ được gọi là \textit{giả đơn điệu tăng} trên $\Lambda$ nếu với bất kỳ $x, \tilde{x} \in \Lambda$
+    \begin{equation*}
+        \exists \eta_x \in F(x): \eta_x^T (\tilde{x} - x) \geq 0 \Rightarrow \forall \eta_{\tilde{x}} \in F(\tilde{x}): \eta_{\tilde{x}}^T (\tilde{x} - x) \geq 0.
+    \end{equation*} 
+\end{dn}
+Hơn nữa, một ánh xạ liên tục là giả lồi khi và chỉ khi dưới vi phân của nó là ánh xạ giả đơn điệu.
+\begin{bd}[\cite{Liu2021}]
+    \label{opimal_solution_lemma}
+    Giả sử $x^*$ là nghiệm tối ưu của bài toán \eqref{NSP}. Với mọi $x \in X$,
+    \begin{equation*}
+        \xi^T (x - x^*) \geq 0, \quad \forall \xi \in \partial r
+    \end{equation*}
+\end{bd}
+\begin{cm}
+    Từ mệnh đề \ref{normal_cone_prop} kết hợp với giả thiết $x^*$ là nghiệm tối ưu của bài toán \eqref{NSP}, ta có $0 \in N_X(x^*) + \partial r(x^*)$. Tức là tồn tại $\xi^* \in \partial r(x^*)$ thỏa mãn
+    \begin{equation} \label{hehe}
+        -\xi^* \in N_X(x^*).
+    \end{equation} 
+    Vì $s_i$ là hàm tựa lồi, từ định lý \ref{quasiconvex_theo}, tập mức dưới của $s_i$ là tập lồi. Vì thế, miền chấp nhận được $X$ là tập lồi. Từ mệnh đề \ref{normal_cone_prop} và \eqref{hehe}, ta có $\xi^T (x - x^*) \geq 0,\ \forall x \in X$. Hơn nữa, từ định nghĩa \ref{psuedomonotone_def}, ta có $\partial r$ là hàm giả đơn điệu. Như vậy, với $x \in X$ bất kỳ, 
+    $$ \xi^T(x - x^*)  \geq 0, \quad \forall \xi \in \partial r$$.
+\end{cm}
+
+\begin{dn}[\cite{Liu2021}]
+    Một ánh xạ đa trị $\mathcal{V}: \Lambda \subseteq \R^n \rightrightarrows \R^n$ được gọi là nửa liên tục trên tại $x \in \Lambda$ nếu với bất kỳ tập mở $\mathcal{A} \supset \mathcal{V}(z)$, tồn tại lân cận $\mathcal{B}$ của $z$ thỏa mãn $\mathcal{V}(\mathcal{B}) \subseteq \mathcal{A}$. $\mathcal{V}$ nửa liên tục trên trên $\Lambda$ nếu $\mathcal{V}$ nửa liên tục trên tại mọi điểm thuộc $\Lambda$.
+\end{dn}

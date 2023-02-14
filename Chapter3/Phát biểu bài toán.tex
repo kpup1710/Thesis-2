@@ -1,0 +1,115 @@
+\section{Phát biểu bài toán}
+Bài toán tối ưu hai cấp tựa lồi được xét trong đồ án này được phát biểu như sau:
+\begin{align}
+    \min \  &{h}(x,y) \tag*{(QBP)}\label{prob_QBP} \\
+    \text{s.t.} \quad & {g}(x,y) \leq 0, y\in\mathbb{R}_{+}^{m}, \nonumber\\ 
+                     & x \in {\text{Argmin}}\{f(x) \mid x\in \mathcal{X}\},  \nonumber
+\end{align}
+trong đó, các dữ kiện đi kèm bao gồm:\\
+\noindent \textbf{(A1)} $\mathcal{X} = \{x \in \mathbb{R}^n \mid s(x)\leq 0 \}$ là tập lồi khác rỗng và bị chặn; 
+
+\noindent \textbf{(A2)} Hàm vector ${h}: \mathbb{R}^m \times \mathbb{R}^n \rightarrow \mathbb{R}$ liên tục và các hàm vector ${g}: \mathbb{R}^m \times \mathbb{R}^n \rightarrow \mathbb{R}^{\ell}, {f}: \mathbb{R}^n \rightarrow \mathbb{R}^p, {s}: \mathbb{R}^n \rightarrow \mathbb{R}^q$ khả vi liên tục, $m, n, \ell, p , q \geq 2$;
+
+\noindent \textbf{(A3)} Các hàm mục tiêu $h, f$là giải lồi và chính quy; 
+
+\noindent \textbf{(A4)} Các hàm ràng buộc $g, s$ là tựa lồi;
+
+Bài toán \ref{prob_QBP}
+bao hàm một lớp lớn các bài toán tối ưu lồi bao gồm bài toán quy hoạch tích lồi, quy hoạch song tuyến tính và quy hoạch toàn phương. \\
+\indent Định nghĩa tập ảnh $\mathcal{Z}:=\{z\in\mathbb{R}^{p}\mid z=f(x),x\in X\}$ và $\mathcal{Z}^{+}:=\mathcal{Z}+\mathbb{R}_{+}^{p}=\{z\in\mathbb{R}^{p}\mid\exists z^{0}\in\mathcal{Z},z^{0}\leq z\}$ và tập $\mathcal{G}=\left\{(x,y)\mid x\in X,y\in\mathbb{R}_{+}^{m},g(x,y)\le0\right\}$.\\
+\indent Vì $\mathcal{X}$ bị chặn và $f$ bao gồm các hàm liên tục, $\mathcal{Z}$ bị chặn. Ta vì thế có thể xác định một hộp $[m,M] \subset \R^p$ chứa $\mathcal{Z}$, i.e., $m\leq\mathcal{Z}\leq M$. Để xác định $m$, ta có thể giải bài toán sau mới mỗi $m_{i},i=1,2,\dots,p$:
+\begin{equation}\label{P_i}
+    \min\;f_{i}(x),\;\;{\rm s.t.}\;x\in \mathcal{X}.    \tag*{\ensuremath{(P^i)}}
+\end{equation}
+Vì $f_{i}(x)$ là hàm giả lồi, bất kỳ cực tiểu địa phương đều là cực tiểu toàn cục. Ta hoàn toàn có thể áp dụng thuật toán hệ động lực được trình bày trong chương 2 để giải \ref{P_i}. Tuy nhiên, lập luận tương tự không thể được áp dụng để tìm $M$ bởi vì các bài toán
+$\max\;f_{i}(x),\;\;{\rm s.t.}\;x\in \mathcal{X}$ là không lồi. Thay vào đó, chúng ta bao $\mathcal{X}$ trong một tập đơn hình $\Delta$ tập đỉnh
+$V(\Delta)=\{\Delta^{0},\Delta^{1},\dots,\Delta^{n}\}$, trong đó $\Delta^{0}=\min\{x\in\mathbb{R}^{n}\mid x\in \mathcal{X}\}$
+và $\Delta^{i}=(\Delta_{1}^{i},\Delta_{2}^{i},\dots,\Delta_{n}^{i}),i=1,2,\dots,n$ được đỉnh nghĩa bởi
+\[
+\Delta_{k}^{i}=\begin{cases}
+\Delta_{k}^{0}, & {\rm if}\;k\neq i\\
+U-\sum_{j\neq k}\Delta_{j}^{0}, & {\rm if}\;k=i,
+\end{cases}
+\]
+trong đó $U=\max\{\langle e,x\rangle\mid x\in X\},e\in\mathbb{R}^{n},e=(1,1,\dots,1)^{T}$. Điều này dẫn đến $X\subset\Delta$ và vì thế ta có một cách để xác định $M$
+\begin{align*}
+M_{i}: & =\max\{f_{i}(x)\mid x\in V(\Delta)\}\\
+ & =\max\{f_{i}(x)\mid x\in\Delta\}\\
+ & \geq\max\{f_{i}(x)\mid x\in X\},i=1,2,\dots,p.
+\end{align*}
+
+Bao tập $\mathcal{Z}^{+}$ bởi một tập hữu hiệu tương đương với $\mathcal{Z}$
+\begin{align*}
+\mathcal{Z}^{\diamond}:=\; & \mathcal{Z}^{+}\cap(M-\mathbb{R}_{+}^{p}).
+\end{align*}
+
+\begin{md} \label{lem_MinY} Ta có
+    \begin{itemize}
+        \item[i] $\;{\rm Min}\mathcal{Z}={\rm Min}\mathcal{Z}^{+}={\rm Min}\mathcal{Z}^{\diamond}$; 
+        \item[ii] ${\rm WMin}\mathcal{Z}={\rm WMin}\mathcal{Z}^{+}\cap\mathcal{Z}={\rm WMin}\mathcal{Z}^{\diamond}\cap\mathcal{Z}$.
+    \end{itemize}
+\end{md}
+
+Ta sẽ chuyển đổi bài toán \ref{prob_QBP} về một bài toán tối ưu với hàm mục tiêu đơn điệu giảm bằng việc định nghĩa hàm $\varphi:[m,M] \longrightarrow\mathbb{R}$ như sau:
+\[
+\varphi(z)=\min\{h(x,y)\mid (x,y)\in \mathcal{G},f(x)\leq z\}.
+\]
+Như ta có thể thấy, khi $y$ tăng, $\varphi(z)$ giảm do sự dãn ra của không hữu hiệu $\mathcal{X}$, vì vậy $\varphi$ là một hàm giảm.
+\begin{md}\label{prop-QWP_Y}Bài toán \ref{prob_QBP} tương đương với bài toán tối ưu trên không gian ảnh
+    \begin{equation}
+    \min\{\varphi(z)\mid z\in{\rm WMin}\mathcal{Z}^{+}\cap[m,M]\}\tag*{(OP)}\label{prob_OP}
+    \end{equation}
+\end{md}
+\begin{cm}
+    Bài toán \ref{prob_QBP} tương đương với
+    \[
+    \begin{array}{cl}
+     & \min\{h(x,y)\mid g(x,y)\le0,x\in X_{WE},y\in\mathbb{R}_{+}^{m}\}\\
+    \iff & \min\{h(x,y)\mid x\in X,y\in\mathbb{R}_{+}^{m},g(x,y)\le0,f(x)\in{\rm WMin}\mathcal{Z}\}\\
+    \iff & \min\{h(x,y)\mid (x,y)\in\mathcal{G},f(x)\le z,z\in{\rm WMin}\mathcal{Z},z\in[m,M]\}\\
+    \iff & \min\{\varphi(z)\mid z\in{\rm WMin}\mathcal{Z}\cap[m,M]\}.
+    \end{array}
+    \]
+    
+    Bây giờ ta sẽ chứng minh nếu $\bar{z}$ là nghiệm tối ưu của bài toán $\min\{\varphi(z)\mid z\in{\rm WMin}\mathcal{Z}^{+}\cap[m,M]\}$
+    và $(\bar{x},\bar{y})$ là nghiệm tối ưu của bài toán $\varphi(\bar{z})$, thì $f(\bar{x})$ là nghiệm tối ưu của $\min\{\varphi(z)\mid z\in{\rm WMin}\mathcal{Z}\cap[m,M]\}$ và vì thế \ref{prob_QBP} có nghiệm tối ưu duy nhất $(\bar{x},\bar{y})$.\\
+    \indent Vì $(\bar{x},\bar{y})$ là nghiệm tối ưu của $\varphi(\bar{z})$
+    \begin{equation}
+    \begin{cases}
+    \varphi(\bar{z})=h(\bar{x},\bar{y})\\
+    f(\bar{x})\le\bar{z}\\
+    h(\bar{x},\bar{y})\le h(x,y) & \forall (x,y)\in\mathcal{G},f(x)\le\bar{z},
+    \end{cases}\label{eq:hx_1}
+    \end{equation}
+    vì thế ta có
+    \[
+    \left\{(x,y)\in\mathcal{G}\mid f(x)\le f(\bar{x})\right\} \subseteq\left\{(x,y)\in\mathcal{G} \mid f(x)\le \bar{z}\right\},
+    \]
+    
+    kết hợp với bất đẳnt thức thứ 3 của \eqref{eq:hx_1} ta có
+    
+    \[
+    h(\bar{x},\bar{y})\le h(x,y)\;\;\;\;\;\forall (x,y)\in\mathcal{G},f(x)\le f(\bar{x}).
+    \] 
+    Vì thế $(\bar{x},\bar{y})$ cũng là nghiệm tối ưu của $\varphi(f(\bar{x}))$ và
+    \begin{equation}
+    \varphi(f(\bar{x}))=h(\bar{x},\bar{y}).\label{eq:hx_2}
+    \end{equation}
+    
+    Từ bất đẳng thức thứ nhất của \eqref{eq:hx_1} và \eqref{eq:hx_2}, ta có
+    \begin{equation}
+    \varphi(f(\bar{x}))=\varphi(\bar{z}).\label{eq:fx_z}
+    \end{equation}
+    Vì $f(\bar{x})\le\bar{z}$ và $\bar{z}\in{\rm WMin}\mathcal{Z}^{+}\cap[m,M]$, ta có $f(\bar{x})\in{\rm WMin}\mathcal{Z}^{+}\cap[m,M]$. Mặt khác, $f(\bar{x})\in\mathcal{Z}$ vì vậy
+    \begin{equation}
+    f(\bar{x})\in{\rm WMin}\mathcal{Z}\cap[m,M].\label{eq:fx_WMinZ}
+    \end{equation}
+    Hơn nữa,
+    \begin{equation}
+    \left\{ z\in\mathcal{Z}\mid z\in{\rm WMin}\mathcal{Z}\cap[m,M]\right\} \subseteq\left\{ z\in\mathcal{Z}\mid z\in{\rm WMin}\mathcal{Z}^{+}\cap[m,M]\right\} ,\label{eq:WMinZ}
+    \end{equation}
+    
+    Từ \eqref{eq:fx_z}, \eqref{eq:fx_WMinZ}, \eqref{eq:WMinZ} và
+    do $\bar{z}$ là nghiệm tối ưu của $\min\{\varphi(z)\mid z\in{\rm WMin}\mathcal{Z}^{+}\cap[m,M]\}$, ta phải có $f(\bar{x})$ là nghiệm tối ưu của $\min\{\varphi(z)\mid z\in{\rm WMin}\mathcal{Z}\cap[m,M]\}$.\\
+    \indent Kết luận, ta có thể giải \ref{prob_OP} nhằm mục đích giải \ref{prob_QBP}.
+\end{cm}

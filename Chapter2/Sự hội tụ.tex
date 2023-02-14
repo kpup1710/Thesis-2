@@ -1,0 +1,114 @@
+\section{Sự hội tụ của thuật toán}
+\begin{bd}[\cite{Liu2021}]
+    \label{bd 2.3.1}
+    Cho mô hình \eqref{model} với trạng thái $x(0) \in X$, tồn tại số thực $\alpha > 0 $ sao cho với bất kỳ $c_i(t) \in \Psi(s_i(x(t)))$,
+    \begin{equation}
+        \label{hihi}
+        \prod_{i=1}^m c_i(t) \geq \alpha > 0
+    \end{equation}
+\end{bd}
+\begin{cm}
+    Giả sử \eqref{hihi} không đúng, tồn tại dãy $\{t_n\} \subseteq (0, \infty)$, $\psi_i(s_i(x(t_n)))$ sao cho
+    \begin{equation}
+        \label{hihi1}
+        0 \leq \prod_{i=1}^m (1 - \psi_i(t_n)) \leq \dfrac{1}{n}.
+    \end{equation}
+    Do $\{x(t_n) \}$, $\{\psi_i(t_n) \}$ đều là hai dãy bị chặn và $X$ là tập đóng, cho nên tồn tại hai dãy con $\{ x(t_{n_s})\}$, $\{\psi(t_{n_s})\}$ cùng với $\tilde{x} \in X$ và $\tilde{\psi_i \in [0,1]},\ (i=1, \dots, m)$ thỏa mãn
+    \begin{equation}
+        \begin{aligned}
+            \lim_{n_s \to \infty} x(t_{n_s}) &= \tilde{x} \\
+            \lim_{n_s \to \infty} \psi_i(t_{n_s}) &= \tilde{\psi},\ i = 1, \dots, m
+        \end{aligned}
+    \end{equation}
+    Để ý rằng $\Psi(s_i(.))$ là hàm nửa liên tục trên và $\psi_i(t_{n_s}) \in \Psi(s_i(x(t_{n_s})))$ cho nên $\tilde{\psi} \in \Psi(s_i(\tilde{x})),\ i = 1, \dots, m$.
+    Tại \eqref{hihi1}, cho $n_s \to \infty$, ta có 
+    \begin{equation}
+        \lim_{n_s \to \infty}(1 -  \psi_i(t_{n_s})) = \prod_{i=1}^m (1 - \tilde{\psi}_i) = 0,
+    \end{equation}
+    hay tồn tại ít nhất một $i_0 \in \{1, \dots, m \}$ sao cho $\tilde{\psi}_{i_0} = 1$ nghĩa là $s_{i_0} > 0$. Điều này mâu thuẫn với điều kiện ràng buộc của bài toán \eqref{NSP}. Suy ra, \eqref{hihi} đúng.
+\end{cm}
+
+\begin{dl}[\cite{Liu2021}]
+    Trạng thái $x(t) \in X$ của mô hình \eqref{model} hội tụ đến nghiệm tối ưu của bài toán \eqref{NSP}.
+\end{dl}
+
+\begin{cm}
+    Từ định lý \ref{existance_theo}, ta có $x(t) \in X,\ \forall t \leq 0$. Đặt $x^*$ là một nghiệm tối ưu của bài toán tối ưu \eqref{NSP}, và xét hàm $V(x)$ như sau:
+    \begin{equation}
+        V(x) = \dfrac{1}{2} \Vert x(t) - x^* \Vert^2.
+    \end{equation}
+    Trước hết, ta chỉ ra rằng:
+    \begin{equation}
+        \label{dv}
+        \limsup_{t \to \infty} \dfrac{dV(x(t))}{dt} = 0.
+    \end{equation}
+    Giả sử sai, theo \eqref{lessthan0}, tồn tại số $\kappa > 0$ thỏa mãn
+    \begin{equation}
+        \dfrac{dV(x(t))}{dt} \leq -\kappa \text{ với hầu hết } t > 0.
+    \end{equation}
+    Tích phân hai vế từ $0$ đến $t$ ta nhận được
+    \begin{equation}
+        V(x(t)) - V(x(0)) = \int_{0}^{t} \dfrac{dV(x(s))}{ds} ds \leq -\kappa t \xrightarrow{t \to \infty} -\infty 
+    \end{equation}
+    Điều này mâu thuẫn vì $V(x) \leq 0$. Cho nên, \eqref{dv} đúng và ta có dãy con $\{t_n \} \subseteq [0, \infty)$ thỏa mãn
+    \begin{equation}
+        \label{lim_d}
+        \lim_{n \to \infty} \dfrac{dV(x(t_n))}{dt} = 0.
+    \end{equation}
+    Theo định lý \ref{bounded_theo}, $\{x(t_n)\}$ bị chặn và do đó tồn tại một dãy con $\{x(t_{n_s}) \}$ và $\breve{x}\in X $ sao cho
+    \begin{equation}
+        \label{x_limit}
+        \lim_{n_s \to \infty} x(t_{n_s}) = \breve{x}.
+    \end{equation}
+    Thêm vào đó, vì các ánh xạ đa trị $\Psi, \partial r$ và $\partial P$ là nửa liên tục trên, từ \eqref{x_limit}, tồn tại các $\psi_i(t_n) \in \Psi(s_i(x(t_n))), \xi(t_n) \in \partial r(x(t_n)), \gamma(t_n) \in \partial P(x(t_n))$ thỏa mãn
+    \begin{equation}
+        \label{limits}
+        \begin{aligned}
+            \lim_{n \to \infty} \psi_i(t_n)  &= \breve{\psi_i} \in \Psi(s_i(\breve{x})),\ i = 1, \dots, m,\\
+            \lim_{n \to \infty} \xi(t_n) &= \breve{\xi} \in \partial r(\breve{x}), \\
+            \lim_{n \to \infty} \gamma_(t_n) &= \breve{\gamma} \in \partial P(\breve{x}).
+        \end{aligned}
+    \end{equation}
+    Theo \eqref{dnorm}, \eqref{lim_d} và \eqref{limits}, ta có
+    \begin{equation}
+        \label{hoho}
+        \begin{aligned}
+            0 &= \lim_{n \to \infty}(x(t_n) - x^*)^T 
+            \left\{ \left(\prod_{i=1}^m (1 - \psi_i(t_n)) \right) \xi(t_n) + \gamma(t_n) \right\} \\
+            &= (\breve{x} - x^*)^T \left\{\left( \prod_{i=1}^m (1 - \breve{\psi}_i)  \right) \breve{\xi} + \breve{\gamma}  \right\}
+        \end{aligned}
+    \end{equation}
+    Mặt khác, bổ đề \ref{bd 2.3.1} cho thấy
+    \begin{equation}
+        \prod_{i=1}^m (1 - \psi_i(t_n)) \geq \alpha > 0, \quad \forall  \in \mathbb{N}.
+    \end{equation}
+    Cho $n \rightarrow \infty$ ta có
+    \begin{equation*}
+        \prod_{i=1}^m (1 - \breve{\psi}) \geq \alpha > 0.
+    \end{equation*}
+    Tiếp theo, ta sẽ chỉ ra rằng $\breve{x}$ là một nghiệm tối ưu của bài toán \eqref{NSP}. Giả sử sai, tồn tại $x^* \in X$ thỏa mãn $r(x^*) < r(\breve{x})$. Do $r$ là hảm giả lồi, nên
+    $$ \breve{\xi}^T (\breve{x} - x^*) \geq 0, \quad \forall \breve{\xi} \in \partial r(\breve{x})$$.
+    Kết hợp điều trên với \eqref{hoho}, ta nhận được
+    \begin{equation}
+        \label{lessthan0_1}
+        (\breve{x} - x^*)^T\breve{\gamma} < 0,
+    \end{equation}
+    Tuy nhiên, để ý rằng $s_i(x^*) \leq s_i(\breve{x}) = 0,\ \forall i \in i_0(\breve{x})$, từ tính tựa lồi của các hàm $s_i$ và mệnh đề \ref{md_quasi} ta có
+    $$ \nabla s_i(\breve{x})(\breve{x} - x^*) \geq 0,\ \forall i \in I_0(\breve{x}).$$
+    Tiếp theo, theo \eqref{dP}, tồn tại bộ số $\breve{\lambda}_i \in [0,1]$, $i \in I_0(\breve{x})$ sao cho
+    $$ (\breve{x} - x)^T \breve{\gamma} \left(\sum_{i \in I_0(\breve{x})} \breve{\lambda}_i\nabla s_i(\breve{x}) \right) \geq 0.$$
+    Điều này mâu thuẫn với \eqref{lessthan0_1}. Do đó, $\breve{x}$ là một nghiệm tối ưu của bài toán \eqref{NSP}.\\
+    \indent Cuối cùng, ta chứng minh $\lim_{n \to \infty} x(t) = \breve{x}$. Ta định nghĩa hàm 
+    $$\breve{V(x)} = \dfrac{1}{2} \Vert x - \breve{x} \Vert^2.$$  
+    Ta có thể dễ dàng chỉ ra rằng 
+    \begin{equation*}
+        \dfrac{d}{dt} \breve{V(x(t))} \leq 0,\ \text{với hầu hết } t \geq 0,
+    \end{equation*}
+    kéo theo $\lim_{n \to \infty} \Vert x(t) - \breve{x}$ tồn tại. Từ \eqref{x_limit} ta được
+    \begin{equation*}
+        \lim_{t \to \infty} \Vert x(t) - \breve{x} \Vert^2 = \lim_{n \to \infty} \Vert x(t_n) - \breve{x} \Vert^2 = 0.
+    \end{equation*}
+\end{cm}
+
+
+

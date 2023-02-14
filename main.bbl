@@ -1,0 +1,1330 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{gen_convex}{book}{}
+      \name{author}{1}{}{%
+        {{hash=f9f5c2c2117015c138f80dc7d3404e7b}{%
+           family={Alberto\bibnamedelima Cambini},
+           familyi={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+           given={Laura\bibnamedelima Martein},
+           giveni={L\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin}%
+      }
+      \strng{namehash}{f9f5c2c2117015c138f80dc7d3404e7b}
+      \strng{fullhash}{f9f5c2c2117015c138f80dc7d3404e7b}
+      \strng{bibnamehash}{f9f5c2c2117015c138f80dc7d3404e7b}
+      \strng{authorbibnamehash}{f9f5c2c2117015c138f80dc7d3404e7b}
+      \strng{authornamehash}{f9f5c2c2117015c138f80dc7d3404e7b}
+      \strng{authorfullhash}{f9f5c2c2117015c138f80dc7d3404e7b}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{edition}{1}
+      \field{title}{Generalized Convexity and Optimization}
+      \field{year}{2008}
+    \endentry
+    \entry{Alekseeva2016}{article}{}
+      \name{author}{3}{}{%
+        {{hash=9abe5a3648e397047c32096af7920543}{%
+           family={Alekseeva},
+           familyi={A\bibinitperiod},
+           given={Ekaterina},
+           giveni={E\bibinitperiod}}}%
+        {{hash=ea7c58e6460e8f43d3bdf5fc814d1b00}{%
+           family={Kochetov},
+           familyi={K\bibinitperiod},
+           given={Yury},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=d6716852db8d41b230dbec1231e7bb12}{%
+           family={Talbi},
+           familyi={T\bibinitperiod},
+           given={El-Ghazali},
+           giveni={E\bibinithyphendelim G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {John Wiley {\&} Sons, Ltd}%
+      }
+      \strng{namehash}{e36dc19426bd64c0623660f38ed0f078}
+      \strng{fullhash}{e36dc19426bd64c0623660f38ed0f078}
+      \strng{bibnamehash}{e36dc19426bd64c0623660f38ed0f078}
+      \strng{authorbibnamehash}{e36dc19426bd64c0623660f38ed0f078}
+      \strng{authornamehash}{e36dc19426bd64c0623660f38ed0f078}
+      \strng{authorfullhash}{e36dc19426bd64c0623660f38ed0f078}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0969-6016}
+      \field{journaltitle}{International Transactions in Operational Research}
+      \field{month}{9}
+      \field{number}{5}
+      \field{title}{A matheuristic for the discrete bilevel problem with multiple objectives at the lower level}
+      \field{volume}{24}
+      \field{year}{2017}
+      \field{pages}{959\bibrangedash 981}
+      \range{pages}{23}
+    \endentry
+    \entry{Angulo2014}{article}{}
+      \name{author}{4}{}{%
+        {{hash=28af7fcde41bb57cad00f86362dd12ac}{%
+           family={Angulo},
+           familyi={A\bibinitperiod},
+           given={Eusebio},
+           giveni={E\bibinitperiod}}}%
+        {{hash=03215baeaec0c3a13716ac340afa539d}{%
+           family={Castillo},
+           familyi={C\bibinitperiod},
+           given={Enrique},
+           giveni={E\bibinitperiod}}}%
+        {{hash=22db7ce02f8604c4a369baf33cbf9885}{%
+           family={Garcia-Rodenas},
+           familyi={G\bibinithyphendelim R\bibinitperiod},
+           given={Ricardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=d3ce65c20fd25e38804ef8959bebabbf}{%
+           family={Sanchez-Vizcaino},
+           familyi={S\bibinithyphendelim V\bibinitperiod},
+           given={Jesus},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{f8e62066eb7b40edfc1687cf9350ba92}
+      \strng{fullhash}{a7fbb6054a4803691fa66973cfa6a2e3}
+      \strng{bibnamehash}{f8e62066eb7b40edfc1687cf9350ba92}
+      \strng{authorbibnamehash}{f8e62066eb7b40edfc1687cf9350ba92}
+      \strng{authornamehash}{f8e62066eb7b40edfc1687cf9350ba92}
+      \strng{authorfullhash}{a7fbb6054a4803691fa66973cfa6a2e3}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0305-0548}
+      \field{journaltitle}{Computers \& Operations Research}
+      \field{title}{A continuous bi-level model for the expansion of highway networks}
+      \field{volume}{41}
+      \field{year}{2014}
+      \field{pages}{262\bibrangedash 276}
+      \range{pages}{15}
+    \endentry
+    \entry{Belkhiri2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=08b8d9aa8237997979def69e1a9b6b88}{%
+           family={Belkhiri},
+           familyi={B\bibinitperiod},
+           given={Hadjer},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1536e7df4951761ca459a2b30a3d9d37}{%
+           family={Chergui},
+           familyi={C\bibinitperiod},
+           given={Mohamed\bibnamedelima El-Amine},
+           giveni={M\bibinitperiod\bibinitdelim E\bibinithyphendelim A\bibinitperiod}}}%
+        {{hash=4a1d2427cbab3f66d0b999814bb11299}{%
+           family={Ouaïl},
+           familyi={O\bibinitperiod},
+           given={Fatma\bibnamedelima Zohra},
+           giveni={F\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{8e1cf49ea270044862f69d0abc3af1a6}
+      \strng{fullhash}{8e1cf49ea270044862f69d0abc3af1a6}
+      \strng{bibnamehash}{8e1cf49ea270044862f69d0abc3af1a6}
+      \strng{authorbibnamehash}{8e1cf49ea270044862f69d0abc3af1a6}
+      \strng{authornamehash}{8e1cf49ea270044862f69d0abc3af1a6}
+      \strng{authorfullhash}{8e1cf49ea270044862f69d0abc3af1a6}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1866-1505}
+      \field{journaltitle}{Operational Research}
+      \field{month}{9}
+      \field{number}{4}
+      \field{title}{Optimizing a linear function over an efficient set}
+      \field{volume}{22}
+      \field{year}{2022}
+      \field{pages}{3183\bibrangedash 3201}
+      \range{pages}{19}
+    \endentry
+    \entry{Benson2012}{article}{}
+      \name{author}{1}{}{%
+        {{hash=08ac096c49aa355eeb01cf84e045c69c}{%
+           family={Benson},
+           familyi={B\bibinitperiod},
+           given={Harold\bibnamedelima P.},
+           giveni={H\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      }
+      \strng{namehash}{08ac096c49aa355eeb01cf84e045c69c}
+      \strng{fullhash}{08ac096c49aa355eeb01cf84e045c69c}
+      \strng{bibnamehash}{08ac096c49aa355eeb01cf84e045c69c}
+      \strng{authorbibnamehash}{08ac096c49aa355eeb01cf84e045c69c}
+      \strng{authornamehash}{08ac096c49aa355eeb01cf84e045c69c}
+      \strng{authorfullhash}{08ac096c49aa355eeb01cf84e045c69c}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-2916}
+      \field{journaltitle}{Journal of Global Optimization}
+      \field{month}{3}
+      \field{number}{3}
+      \field{title}{An outcome space algorithm for optimization over the weakly efficient set of a multiple objective nonlinear programming problem}
+      \field{volume}{52}
+      \field{year}{2012}
+      \field{pages}{553\bibrangedash 574}
+      \range{pages}{22}
+      \verb{doi}
+      \verb 10.1007/s10898-011-9786-y
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/s10898-011-9786-y
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/s10898-011-9786-y
+      \endverb
+    \endentry
+    \entry{Bonnel2015}{article}{}
+      \name{author}{2}{}{%
+        {{hash=74db7c6ee1fa4f61b3768e15a226dd0b}{%
+           family={Bonnel},
+           familyi={B\bibinitperiod},
+           given={Henri},
+           giveni={H\bibinitperiod}}}%
+        {{hash=9fd043f4f90c65d02c2f82267eec3da3}{%
+           family={Collonge},
+           familyi={C\bibinitperiod},
+           given={Julien},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{5907f353feda03f59611ec8ae6868170}
+      \strng{fullhash}{5907f353feda03f59611ec8ae6868170}
+      \strng{bibnamehash}{5907f353feda03f59611ec8ae6868170}
+      \strng{authorbibnamehash}{5907f353feda03f59611ec8ae6868170}
+      \strng{authornamehash}{5907f353feda03f59611ec8ae6868170}
+      \strng{authorfullhash}{5907f353feda03f59611ec8ae6868170}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-2916}
+      \field{journaltitle}{Journal of Global Optimization}
+      \field{month}{7}
+      \field{number}{3}
+      \field{title}{Optimization over the Pareto outcome set associated with a convex bi-objective optimization problem: theoretical results, deterministic algorithm and application to the stochastic case}
+      \field{volume}{62}
+      \field{year}{2015}
+      \field{pages}{481\bibrangedash 505}
+      \range{pages}{25}
+    \endentry
+    \entry{Bracken1973}{article}{}
+      \name{author}{2}{}{%
+        {{hash=6f582b227aa45369e0ee82e4e73dc7a5}{%
+           family={Bracken},
+           familyi={B\bibinitperiod},
+           given={Jerome},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ea01e93e89da1844152da223315e90b5}{%
+           family={McGill},
+           familyi={M\bibinitperiod},
+           given={James\bibnamedelima T.},
+           giveni={J\bibinitperiod\bibinitdelim T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {INFORMS}%
+      }
+      \strng{namehash}{4d01a6ed9e2da31862aebdefb5934ad2}
+      \strng{fullhash}{4d01a6ed9e2da31862aebdefb5934ad2}
+      \strng{bibnamehash}{4d01a6ed9e2da31862aebdefb5934ad2}
+      \strng{authorbibnamehash}{4d01a6ed9e2da31862aebdefb5934ad2}
+      \strng{authornamehash}{4d01a6ed9e2da31862aebdefb5934ad2}
+      \strng{authorfullhash}{4d01a6ed9e2da31862aebdefb5934ad2}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0030364X, 15265463}
+      \field{journaltitle}{Operations Research}
+      \field{number}{1}
+      \field{title}{Mathematical Programs with Optimization Problems in the Constraints}
+      \field{urlday}{21}
+      \field{urlmonth}{11}
+      \field{urlyear}{2022}
+      \field{volume}{21}
+      \field{year}{1973}
+      \field{urldateera}{ce}
+      \field{pages}{37\bibrangedash 44}
+      \range{pages}{8}
+      \verb{urlraw}
+      \verb http://www.jstor.org/stable/169087
+      \endverb
+      \verb{url}
+      \verb http://www.jstor.org/stable/169087
+      \endverb
+    \endentry
+    \entry{Calvete2011}{article}{}
+      \name{author}{3}{}{%
+        {{hash=efc4d1e39994a18fcd8fccefb8c08da2}{%
+           family={Calvete},
+           familyi={C\bibinitperiod},
+           given={Herminia\bibnamedelima I.},
+           giveni={H\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=9e586d0fe30969e7e45a68ce18d0aee1}{%
+           family={Gale},
+           familyi={G\bibinitperiod},
+           given={Carmen},
+           giveni={C\bibinitperiod}}}%
+        {{hash=55ce389225d9411258020c62985caacd}{%
+           family={Oliveros},
+           familyi={O\bibinitperiod},
+           given={Maria-Jose},
+           giveni={M\bibinithyphendelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{8c6474a7e2b9fd54f2603af309542030}
+      \strng{fullhash}{8c6474a7e2b9fd54f2603af309542030}
+      \strng{bibnamehash}{8c6474a7e2b9fd54f2603af309542030}
+      \strng{authorbibnamehash}{8c6474a7e2b9fd54f2603af309542030}
+      \strng{authornamehash}{8c6474a7e2b9fd54f2603af309542030}
+      \strng{authorfullhash}{8c6474a7e2b9fd54f2603af309542030}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0305-0548}
+      \field{journaltitle}{Computers \& Operations Research}
+      \field{note}{Project Management and Scheduling}
+      \field{number}{1}
+      \field{title}{Bilevel model for production-distribution planning solved by using ant colony optimization}
+      \field{volume}{38}
+      \field{year}{2011}
+      \field{pages}{320\bibrangedash 327}
+      \range{pages}{8}
+    \endentry
+    \entry{Clarke1983}{book}{}
+      \name{author}{1}{}{%
+        {{hash=ffb6f8f793c55907c8e9603d8704885c}{%
+           family={Clarke},
+           familyi={C\bibinitperiod},
+           given={Frank\bibnamedelima H.},
+           giveni={F\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{2}{%
+        {Society for Industrial}%
+        {Applied Mathematics}%
+      }
+      \strng{namehash}{ffb6f8f793c55907c8e9603d8704885c}
+      \strng{fullhash}{ffb6f8f793c55907c8e9603d8704885c}
+      \strng{bibnamehash}{ffb6f8f793c55907c8e9603d8704885c}
+      \strng{authorbibnamehash}{ffb6f8f793c55907c8e9603d8704885c}
+      \strng{authornamehash}{ffb6f8f793c55907c8e9603d8704885c}
+      \strng{authorfullhash}{ffb6f8f793c55907c8e9603d8704885c}
+      \field{sortinit}{C}
+      \field{sortinithash}{4d103a86280481745c9c897c925753c0}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Optimization and Nonsmooth Analysis}
+      \field{year}{1990}
+      \verb{doi}
+      \verb 10.1137/1.9781611971309
+      \endverb
+      \verb{eprint}
+      \verb https://epubs.siam.org/doi/pdf/10.1137/1.9781611971309
+      \endverb
+      \verb{urlraw}
+      \verb https://epubs.siam.org/doi/abs/10.1137/1.9781611971309
+      \endverb
+      \verb{url}
+      \verb https://epubs.siam.org/doi/abs/10.1137/1.9781611971309
+      \endverb
+    \endentry
+    \entry{Franceschi2018}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=05cdd990e609aa7ae907cc1229d8b35d}{%
+           family={Franceschi},
+           familyi={F\bibinitperiod},
+           given={Luca},
+           giveni={L\bibinitperiod}}}%
+        {{hash=f247df2d5de3a9ccb24aa9ee9fdaf277}{%
+           family={Frasconi},
+           familyi={F\bibinitperiod},
+           given={Paolo},
+           giveni={P\bibinitperiod}}}%
+        {{hash=810f538b5dc1ef52eb54d3d08054a1b8}{%
+           family={Salzo},
+           familyi={S\bibinitperiod},
+           given={Saverio},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c8e4a18b75b05c7a24bba3b6f243fd73}{%
+           family={Grazzi},
+           familyi={G\bibinitperiod},
+           given={Riccardo},
+           giveni={R\bibinitperiod}}}%
+        {{hash=8b5942a7f10e47d565321b3dce4730d3}{%
+           family={Pontil},
+           familyi={P\bibinitperiod},
+           given={Massimiliano},
+           giveni={M\bibinitperiod}}}%
+      }
+      \name{editor}{2}{}{%
+        {{hash=dc770b9b0d58d3008bbb3906497d898c}{%
+           family={Dy},
+           familyi={D\bibinitperiod},
+           given={Jennifer},
+           giveni={J\bibinitperiod}}}%
+        {{hash=112eb0b147c4a7f674d015a86e5dea70}{%
+           family={Krause},
+           familyi={K\bibinitperiod},
+           given={Andreas},
+           giveni={A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {PMLR}%
+      }
+      \strng{namehash}{0aa8c691cf50cd76092e3479efe173ee}
+      \strng{fullhash}{6b3b633bf4f375a1d764ee28c81d2808}
+      \strng{bibnamehash}{0aa8c691cf50cd76092e3479efe173ee}
+      \strng{authorbibnamehash}{0aa8c691cf50cd76092e3479efe173ee}
+      \strng{authornamehash}{0aa8c691cf50cd76092e3479efe173ee}
+      \strng{authorfullhash}{6b3b633bf4f375a1d764ee28c81d2808}
+      \strng{editorbibnamehash}{83be554d58af5be1788b5c3616f0e92a}
+      \strng{editornamehash}{83be554d58af5be1788b5c3616f0e92a}
+      \strng{editorfullhash}{83be554d58af5be1788b5c3616f0e92a}
+      \field{sortinit}{F}
+      \field{sortinithash}{2638baaa20439f1b5a8f80c6c08a13b4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 35th International Conference on Machine Learning}
+      \field{month}{10--15 Jul}
+      \field{series}{Proceedings of Machine Learning Research}
+      \field{title}{Bilevel Programming for Hyperparameter Optimization and Meta-Learning}
+      \field{volume}{80}
+      \field{year}{2018}
+      \field{pages}{1568\bibrangedash 1577}
+      \range{pages}{10}
+    \endentry
+    \entry{Gao2011}{article}{}
+      \name{author}{4}{}{%
+        {{hash=e15b707ceede14d9a8d83359dd585dd3}{%
+           family={Gao},
+           familyi={G\bibinitperiod},
+           given={Ya},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0c789b32177871041a88496e9fd1bea9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Guangquan},
+           giveni={G\bibinitperiod}}}%
+        {{hash=ea2acbfa454e023189d3a6658b8b0e2a}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=d3fd958b2b05ec478562d706212dbe58}{%
+           family={Wee},
+           familyi={W\bibinitperiod},
+           given={Hui-Ming},
+           giveni={H\bibinithyphendelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{a4d485ea1915b268967b51923fc9a2e9}
+      \strng{fullhash}{d4aa82b5110720d8356ae7e2480431f1}
+      \strng{bibnamehash}{a4d485ea1915b268967b51923fc9a2e9}
+      \strng{authorbibnamehash}{a4d485ea1915b268967b51923fc9a2e9}
+      \strng{authornamehash}{a4d485ea1915b268967b51923fc9a2e9}
+      \strng{authorfullhash}{d4aa82b5110720d8356ae7e2480431f1}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-2916}
+      \field{journaltitle}{Journal of Global Optimization}
+      \field{month}{10}
+      \field{number}{2}
+      \field{title}{Particle swarm optimization for bi-level pricing problems in supply chains}
+      \field{volume}{51}
+      \field{year}{2011}
+      \field{pages}{245\bibrangedash 254}
+      \range{pages}{10}
+    \endentry
+    \entry{Stackelberg1934}{article}{}
+      \name{author}{1}{}{%
+        {{hash=4a4958599e03a725816843f2c6875534}{%
+           family={Hicks},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi R.},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{4a4958599e03a725816843f2c6875534}
+      \strng{fullhash}{4a4958599e03a725816843f2c6875534}
+      \strng{bibnamehash}{4a4958599e03a725816843f2c6875534}
+      \strng{authorbibnamehash}{4a4958599e03a725816843f2c6875534}
+      \strng{authornamehash}{4a4958599e03a725816843f2c6875534}
+      \strng{authorfullhash}{4a4958599e03a725816843f2c6875534}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0013-0133}
+      \field{journaltitle}{The Economic Journal}
+      \field{month}{06}
+      \field{number}{178}
+      \field{title}{{Marktform und Gleichgewicht}}
+      \field{volume}{45}
+      \field{year}{1935}
+      \field{pages}{334\bibrangedash 336}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.2307/2224643
+      \endverb
+    \endentry
+    \entry{Horst2007}{article}{}
+      \name{author}{4}{}{%
+        {{hash=3f5e0100ce1212b0ce46c7af9dc66af7}{%
+           family={Horst},
+           familyi={H\bibinitperiod},
+           given={R.},
+           giveni={R\bibinitperiod}}}%
+        {{hash=9781cd5a4a9cc6ca99c02d4d430289d4}{%
+           family={Thoai},
+           familyi={T\bibinitperiod},
+           given={N.\bibnamedelimi V.},
+           giveni={N\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+        {{hash=a2dea02190dd3505b7481a8d5d835b4c}{%
+           family={Yamamoto},
+           familyi={Y\bibinitperiod},
+           given={Y.},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=80f8f9ce7d6419d95a370e33393bc374}{%
+           family={Zenke},
+           familyi={Z\bibinitperiod},
+           given={D.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{df69c5c0633f2167e85c5f3b97eb556e}
+      \strng{fullhash}{03df3571b027edde2094d6f3f4a22684}
+      \strng{bibnamehash}{df69c5c0633f2167e85c5f3b97eb556e}
+      \strng{authorbibnamehash}{df69c5c0633f2167e85c5f3b97eb556e}
+      \strng{authornamehash}{df69c5c0633f2167e85c5f3b97eb556e}
+      \strng{authorfullhash}{03df3571b027edde2094d6f3f4a22684}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-2878}
+      \field{journaltitle}{Journal of Optimization Theory and Applications}
+      \field{month}{9}
+      \field{number}{3}
+      \field{title}{On Optimization over the Efficient Set in Linear Multicriteria Programming}
+      \field{volume}{134}
+      \field{year}{2007}
+      \field{pages}{433\bibrangedash 443}
+      \range{pages}{11}
+    \endentry
+    \entry{Horst1999}{article}{}
+      \name{author}{2}{}{%
+        {{hash=91500a4f9bbb63fe6c338119216dc7d7}{%
+           family={Horst},
+           familyi={H\bibinitperiod},
+           given={Reiner},
+           giveni={R\bibinitperiod}}}%
+        {{hash=fd7ab8a03734c9d13fd96af60a6d7608}{%
+           family={Thoai},
+           familyi={T\bibinitperiod},
+           given={Nguyen\bibnamedelima V.},
+           giveni={N\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{4b69352b0f0e24fdf4a7e24079dd5a98}
+      \strng{fullhash}{4b69352b0f0e24fdf4a7e24079dd5a98}
+      \strng{bibnamehash}{4b69352b0f0e24fdf4a7e24079dd5a98}
+      \strng{authorbibnamehash}{4b69352b0f0e24fdf4a7e24079dd5a98}
+      \strng{authornamehash}{4b69352b0f0e24fdf4a7e24079dd5a98}
+      \strng{authorfullhash}{4b69352b0f0e24fdf4a7e24079dd5a98}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0377-2217}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{number}{2}
+      \field{title}{Maximizing a concave function over the efficient or weakly-efficient set1Research supported by the "Deutsche Forschungsgemeinschaft" through the "Graduiertenkolleg Mathematische Optimierung" at the University of Trier and through the project DECOMP.1}
+      \field{volume}{117}
+      \field{year}{1999}
+      \field{pages}{239\bibrangedash 252}
+      \range{pages}{14}
+    \endentry
+    \entry{Hosenini2016}{article}{}
+      \name{author}{1}{}{%
+        {{hash=3cb3998c3668a9582db23761609961e7}{%
+           family={Hosseini},
+           familyi={H\bibinitperiod},
+           given={Alireza},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{3cb3998c3668a9582db23761609961e7}
+      \strng{fullhash}{3cb3998c3668a9582db23761609961e7}
+      \strng{bibnamehash}{3cb3998c3668a9582db23761609961e7}
+      \strng{authorbibnamehash}{3cb3998c3668a9582db23761609961e7}
+      \strng{authornamehash}{3cb3998c3668a9582db23761609961e7}
+      \strng{authorfullhash}{3cb3998c3668a9582db23761609961e7}
+      \field{sortinit}{H}
+      \field{sortinithash}{23a3aa7c24e56cfa16945d55545109b5}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0893-6080}
+      \field{journaltitle}{Neural Networks}
+      \field{title}{A non-penalty recurrent neural network for solving a class of constrained optimization problems}
+      \field{volume}{73}
+      \field{year}{2016}
+      \field{pages}{10\bibrangedash 25}
+      \range{pages}{16}
+    \endentry
+    \entry{Aubin1984}{book}{}
+      \name{author}{1}{}{%
+        {{hash=06ec28f516ba459206afd3a101369c82}{%
+           family={Jean-Pierre\bibnamedelima Aubin},
+           familyi={J\bibinithyphendelim P\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Arrigo\bibnamedelima Cellina},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer Berlin, Heidelberg}%
+      }
+      \strng{namehash}{06ec28f516ba459206afd3a101369c82}
+      \strng{fullhash}{06ec28f516ba459206afd3a101369c82}
+      \strng{bibnamehash}{06ec28f516ba459206afd3a101369c82}
+      \strng{authorbibnamehash}{06ec28f516ba459206afd3a101369c82}
+      \strng{authornamehash}{06ec28f516ba459206afd3a101369c82}
+      \strng{authorfullhash}{06ec28f516ba459206afd3a101369c82}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{subtitle}{Set-Valued Maps and Viability Theory}
+      \field{title}{Differential Inclusions}
+      \field{year}{1990}
+    \endentry
+    \entry{Jorge2005}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6d1bcd89f68067ef6ce6601db343a21a}{%
+           family={Jorge},
+           familyi={J\bibinitperiod},
+           given={Jesús\bibnamedelima M.},
+           giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \strng{namehash}{6d1bcd89f68067ef6ce6601db343a21a}
+      \strng{fullhash}{6d1bcd89f68067ef6ce6601db343a21a}
+      \strng{bibnamehash}{6d1bcd89f68067ef6ce6601db343a21a}
+      \strng{authorbibnamehash}{6d1bcd89f68067ef6ce6601db343a21a}
+      \strng{authornamehash}{6d1bcd89f68067ef6ce6601db343a21a}
+      \strng{authorfullhash}{6d1bcd89f68067ef6ce6601db343a21a}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-2916}
+      \field{journaltitle}{Journal of Global Optimization}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{A Bilinear Algorithm for Optimizing a Linear Function over the Efficient Set of a Multiple Objective Linear Programming Problem}
+      \field{volume}{31}
+      \field{year}{2005}
+      \field{pages}{1\bibrangedash 16}
+      \range{pages}{16}
+    \endentry
+    \entry{Kalashnikov2018}{article}{}
+      \name{author}{4}{}{%
+        {{hash=623c597686031018773f838ff3b15620}{%
+           family={Kalashnikov},
+           familyi={K\bibinitperiod},
+           given={Vyacheslav},
+           giveni={V\bibinitperiod}}}%
+        {{hash=66093c5bda09d3906847e1072f977351}{%
+           family={Dempe},
+           familyi={D\bibinitperiod},
+           given={Stephan},
+           giveni={S\bibinitperiod}}}%
+        {{hash=190378ca3f1a207645cf63f70392a6c9}{%
+           family={Mordukhovich},
+           familyi={M\bibinitperiod},
+           given={Boris},
+           giveni={B\bibinitperiod}}}%
+        {{hash=dc7ee5dba59905f19f805e72e809af52}{%
+           family={Kavun},
+           familyi={K\bibinitperiod},
+           given={Sergii\bibnamedelima V.},
+           giveni={S\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Hindawi}%
+      }
+      \strng{namehash}{76f216048280fbfdb0aecba4e97fb52a}
+      \strng{fullhash}{9e172472cdd703373b2c7021537405b6}
+      \strng{bibnamehash}{76f216048280fbfdb0aecba4e97fb52a}
+      \strng{authorbibnamehash}{76f216048280fbfdb0aecba4e97fb52a}
+      \strng{authornamehash}{76f216048280fbfdb0aecba4e97fb52a}
+      \strng{authorfullhash}{9e172472cdd703373b2c7021537405b6}
+      \field{sortinit}{K}
+      \field{sortinithash}{c02bf6bff1c488450c352b40f5d853ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1024-123X}
+      \field{journaltitle}{Mathematical Problems in Engineering}
+      \field{month}{12}
+      \field{title}{Bilevel Optimal Control, Equilibrium, and Combinatorial Problems with Applications to Engineering}
+      \field{volume}{2017}
+      \field{year}{2017}
+      \field{pages}{7190763}
+      \range{pages}{1}
+    \endentry
+    \entry{Le2003}{article}{}
+      \name{author}{3}{}{%
+        {{hash=726f3c1df06cbfaf6816c32d891e8b4a}{%
+           family={Le\bibnamedelima Thi},
+           familyi={L\bibinitperiod\bibinitdelim T\bibinitperiod},
+           given={H.\bibnamedelimi A.},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=fc193595847ac91092e12794e3448e01}{%
+           family={Pham\bibnamedelima Dinh},
+           familyi={P\bibinitperiod\bibinitdelim D\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=be02246cd8075a1e874693f01576e222}{%
+           family={Muu},
+           familyi={M\bibinitperiod},
+           given={L.\bibnamedelimi D.},
+           giveni={L\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{3027ebfa732d7b69df12a61fb2c5e4db}
+      \strng{fullhash}{3027ebfa732d7b69df12a61fb2c5e4db}
+      \strng{bibnamehash}{3027ebfa732d7b69df12a61fb2c5e4db}
+      \strng{authorbibnamehash}{3027ebfa732d7b69df12a61fb2c5e4db}
+      \strng{authornamehash}{3027ebfa732d7b69df12a61fb2c5e4db}
+      \strng{authorfullhash}{3027ebfa732d7b69df12a61fb2c5e4db}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-2878}
+      \field{journaltitle}{Journal of Optimization Theory and Applications}
+      \field{month}{6}
+      \field{number}{3}
+      \field{title}{Simplicially-Constrained DC Optimization over Efficient and Weakly Efficient Sets}
+      \field{volume}{117}
+      \field{year}{2003}
+      \field{pages}{503\bibrangedash 531}
+      \range{pages}{29}
+    \endentry
+    \entry{Lin2014}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e54b07f75e1a03f8cab05b058583f46e}{%
+           family={Lin},
+           familyi={L\bibinitperiod},
+           given={Gui-Hua},
+           giveni={G\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=35a86ab180e02ced2d4757de86d6ea3b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Mengwei},
+           giveni={M\bibinitperiod}}}%
+        {{hash=8b1c749f0aa5334e3f9bac679717c143}{%
+           family={Ye},
+           familyi={Y\bibinitperiod},
+           given={Jane\bibnamedelima J.},
+           giveni={J\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+      }
+      \strng{namehash}{92b2c64f27a5e74bcb1a8fa961b95fb9}
+      \strng{fullhash}{92b2c64f27a5e74bcb1a8fa961b95fb9}
+      \strng{bibnamehash}{92b2c64f27a5e74bcb1a8fa961b95fb9}
+      \strng{authorbibnamehash}{92b2c64f27a5e74bcb1a8fa961b95fb9}
+      \strng{authornamehash}{92b2c64f27a5e74bcb1a8fa961b95fb9}
+      \strng{authorfullhash}{92b2c64f27a5e74bcb1a8fa961b95fb9}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1436-4646}
+      \field{journaltitle}{Mathematical Programming}
+      \field{month}{4}
+      \field{number}{1}
+      \field{title}{On solving simple bilevel programs with a nonconvex lower level program}
+      \field{volume}{144}
+      \field{year}{2014}
+      \field{pages}{277\bibrangedash 305}
+      \range{pages}{29}
+    \endentry
+    \entry{Liu2021}{article}{}
+      \name{author}{3}{}{%
+        {{hash=448c2eef8cc5449b736ed6d207e69af6}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Na},
+           giveni={N\bibinitperiod}}}%
+        {{hash=2f3ea981fa5a715a69118b48e576a9f5}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Jun},
+           giveni={J\bibinitperiod}}}%
+        {{hash=73b33a64b0a0eff5bc1b224865835c74}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Sitian},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{81ff4d842ee1b49d1583a0dfbd793c10}
+      \strng{fullhash}{81ff4d842ee1b49d1583a0dfbd793c10}
+      \strng{bibnamehash}{81ff4d842ee1b49d1583a0dfbd793c10}
+      \strng{authorbibnamehash}{81ff4d842ee1b49d1583a0dfbd793c10}
+      \strng{authornamehash}{81ff4d842ee1b49d1583a0dfbd793c10}
+      \strng{authorfullhash}{81ff4d842ee1b49d1583a0dfbd793c10}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0893-6080}
+      \field{journaltitle}{Neural Networks}
+      \field{title}{A one-layer recurrent neural network for nonsmooth pseudoconvex optimization with quasiconvex inequality and affine equality constraints}
+      \field{volume}{147}
+      \field{year}{2022}
+      \field{pages}{1\bibrangedash 9}
+      \range{pages}{9}
+    \endentry
+    \entry{Lu2016}{article}{}
+      \name{author}{4}{}{%
+        {{hash=ea2acbfa454e023189d3a6658b8b0e2a}{%
+           family={Lu},
+           familyi={L\bibinitperiod},
+           given={Jie},
+           giveni={J\bibinitperiod}}}%
+        {{hash=5c5c854635ea5ac6f325f64abf04be6d}{%
+           family={Han},
+           familyi={H\bibinitperiod},
+           given={Jialin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=847a9c7c3b18054f518fc4f2c005b702}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Yaoguang},
+           giveni={Y\bibinitperiod}}}%
+        {{hash=0c789b32177871041a88496e9fd1bea9}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Guangquan},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{efc2f3d3e2113bd472c4877f892c6a4d}
+      \strng{fullhash}{d5e211415a41e91202fdbf24f6e440fa}
+      \strng{bibnamehash}{efc2f3d3e2113bd472c4877f892c6a4d}
+      \strng{authorbibnamehash}{efc2f3d3e2113bd472c4877f892c6a4d}
+      \strng{authornamehash}{efc2f3d3e2113bd472c4877f892c6a4d}
+      \strng{authorfullhash}{d5e211415a41e91202fdbf24f6e440fa}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0020-0255}
+      \field{journaltitle}{Information Sciences}
+      \field{title}{Multilevel decision-making: A survey}
+      \field{volume}{346-347}
+      \field{year}{2016}
+      \field{pages}{463\bibrangedash 487}
+      \range{pages}{25}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.ins.2016.01.084
+      \endverb
+    \endentry
+    \entry{Lukac2008}{article}{}
+      \name{author}{3}{}{%
+        {{hash=bb65b71cbd2772d23ad79793efc4619f}{%
+           family={Lukac},
+           familyi={L\bibinitperiod},
+           given={Zrinka},
+           giveni={Z\bibinitperiod}}}%
+        {{hash=7a2a7976c3306818ad32d3b7ec988942}{%
+           family={Soric},
+           familyi={S\bibinitperiod},
+           given={Kristina},
+           giveni={K\bibinitperiod}}}%
+        {{hash=d3e52d848d7893066327827725dd6215}{%
+           family={Rosenzweig},
+           familyi={R\bibinitperiod},
+           given={Visnja\bibnamedelima Vojvodic},
+           giveni={V\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
+      }
+      \strng{namehash}{2659c6374fe33d6fc37175703c65759d}
+      \strng{fullhash}{2659c6374fe33d6fc37175703c65759d}
+      \strng{bibnamehash}{2659c6374fe33d6fc37175703c65759d}
+      \strng{authorbibnamehash}{2659c6374fe33d6fc37175703c65759d}
+      \strng{authornamehash}{2659c6374fe33d6fc37175703c65759d}
+      \strng{authorfullhash}{2659c6374fe33d6fc37175703c65759d}
+      \field{sortinit}{L}
+      \field{sortinithash}{7c47d417cecb1f4bd38d1825c427a61a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0377-2217}
+      \field{journaltitle}{European Journal of Operational Research}
+      \field{number}{3}
+      \field{title}{Production planning problem with sequence dependent setups as a bilevel programming problem}
+      \field{volume}{187}
+      \field{year}{2008}
+      \field{pages}{1504\bibrangedash 1512}
+      \range{pages}{9}
+    \endentry
+    \entry{MacKay2019}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=0e038892a901b890397227216326550d}{%
+           family={Mackay},
+           familyi={M\bibinitperiod},
+           given={Matthew},
+           giveni={M\bibinitperiod}}}%
+        {{hash=6259dc4c347f400aaf2ff608a961361c}{%
+           family={Vicol},
+           familyi={V\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+        {{hash=84ea1e1827f6cca18c0b5a3fb06cc35e}{%
+           family={Lorraine},
+           familyi={L\bibinitperiod},
+           given={Jonathan},
+           giveni={J\bibinitperiod}}}%
+        {{hash=834f50f5d5a332c21effd10f07daf79e}{%
+           family={Duvenaud},
+           familyi={D\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=7bfa5101481b4cfcddf46d2915b6ad49}{%
+           family={Grosse},
+           familyi={G\bibinitperiod},
+           given={Roger},
+           giveni={R\bibinitperiod}}}%
+      }
+      \strng{namehash}{c4f414622856d1542445d97bbe956ab8}
+      \strng{fullhash}{1817f373b10e1ba324fed80ca6202d42}
+      \strng{bibnamehash}{c4f414622856d1542445d97bbe956ab8}
+      \strng{authorbibnamehash}{c4f414622856d1542445d97bbe956ab8}
+      \strng{authornamehash}{c4f414622856d1542445d97bbe956ab8}
+      \strng{authorfullhash}{1817f373b10e1ba324fed80ca6202d42}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{International Conference on Learning Representations}
+      \field{title}{Self-Tuning Networks: Bilevel Optimization of Hyperparameters using Structured Best-Response Functions}
+      \field{year}{2019}
+    \endentry
+    \entry{Mitsos2008}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e56363c80535b637a5107d1a3708edf7}{%
+           family={Mitsos},
+           familyi={M\bibinitperiod},
+           given={Alexander},
+           giveni={A\bibinitperiod}}}%
+        {{hash=a4c00b675b4aad46ae504403bbecb4d5}{%
+           family={Lemonidis},
+           familyi={L\bibinitperiod},
+           given={Panayiotis},
+           giveni={P\bibinitperiod}}}%
+        {{hash=c0eeb8dc3710d72275171d08734e7be1}{%
+           family={Barton},
+           familyi={B\bibinitperiod},
+           given={Paul\bibnamedelima I.},
+           giveni={P\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+      }
+      \strng{namehash}{a7fce2fa0f46370305d2f3d4aaabb281}
+      \strng{fullhash}{a7fce2fa0f46370305d2f3d4aaabb281}
+      \strng{bibnamehash}{a7fce2fa0f46370305d2f3d4aaabb281}
+      \strng{authorbibnamehash}{a7fce2fa0f46370305d2f3d4aaabb281}
+      \strng{authornamehash}{a7fce2fa0f46370305d2f3d4aaabb281}
+      \strng{authorfullhash}{a7fce2fa0f46370305d2f3d4aaabb281}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-2916}
+      \field{journaltitle}{Journal of Global Optimization}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{Global solution of bilevel programs with a nonconvex inner program}
+      \field{volume}{42}
+      \field{year}{2008}
+      \field{pages}{475\bibrangedash 513}
+      \range{pages}{39}
+    \endentry
+    \entry{Muu2000}{article}{}
+      \name{author}{1}{}{%
+        {{hash=7d7c7f46fc2206481786ce36ff287f49}{%
+           family={Muu},
+           familyi={M\bibinitperiod},
+           given={Le},
+           giveni={L\bibinitperiod}}}%
+      }
+      \strng{namehash}{7d7c7f46fc2206481786ce36ff287f49}
+      \strng{fullhash}{7d7c7f46fc2206481786ce36ff287f49}
+      \strng{bibnamehash}{7d7c7f46fc2206481786ce36ff287f49}
+      \strng{authorbibnamehash}{7d7c7f46fc2206481786ce36ff287f49}
+      \strng{authornamehash}{7d7c7f46fc2206481786ce36ff287f49}
+      \strng{authorfullhash}{7d7c7f46fc2206481786ce36ff287f49}
+      \field{sortinit}{M}
+      \field{sortinithash}{4625c616857f13d17ce56f7d4f97d451}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Vietnam Journal of Mathematics}
+      \field{month}{01}
+      \field{title}{On the construction of initial polyhedral convex set for optimization problems over the efficient set and bilevel linear programs}
+      \field{volume}{28}
+      \field{year}{2000}
+      \field{pages}{77\bibrangedash 82}
+      \range{pages}{6}
+    \endentry
+    \entry{Nash1950}{article}{}
+      \name{author}{1}{}{%
+        {{hash=6de4913ee803384986db742befd3f429}{%
+           family={Nash},
+           familyi={N\bibinitperiod},
+           given={John\bibnamedelima F.},
+           giveni={J\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+      }
+      \strng{namehash}{6de4913ee803384986db742befd3f429}
+      \strng{fullhash}{6de4913ee803384986db742befd3f429}
+      \strng{bibnamehash}{6de4913ee803384986db742befd3f429}
+      \strng{authorbibnamehash}{6de4913ee803384986db742befd3f429}
+      \strng{authornamehash}{6de4913ee803384986db742befd3f429}
+      \strng{authorfullhash}{6de4913ee803384986db742befd3f429}
+      \field{sortinit}{N}
+      \field{sortinithash}{22369a73d5f88983a108b63f07f37084}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the National Academy of Sciences}
+      \field{number}{1}
+      \field{title}{Equilibrium points in <i>n</i>-person games}
+      \field{volume}{36}
+      \field{year}{1950}
+      \field{pages}{48\bibrangedash 49}
+      \range{pages}{2}
+    \endentry
+    \entry{Pen1997}{article}{}
+      \name{author}{2}{}{%
+        {{hash=2a02c89aee424a20b8178415af6c16bc}{%
+           family={Penot},
+           familyi={P\bibinitperiod},
+           given={J.-P.},
+           giveni={J\bibinithyphendelim P\bibinitperiod}}}%
+        {{hash=679abce623829a79a6a068a80f3c851b}{%
+           family={Quang},
+           familyi={Q\bibinitperiod},
+           given={P.\bibnamedelimi H.},
+           giveni={P\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{27760c75a67d8f0ba8f1b756422132a5}
+      \strng{fullhash}{27760c75a67d8f0ba8f1b756422132a5}
+      \strng{bibnamehash}{27760c75a67d8f0ba8f1b756422132a5}
+      \strng{authorbibnamehash}{27760c75a67d8f0ba8f1b756422132a5}
+      \strng{authornamehash}{27760c75a67d8f0ba8f1b756422132a5}
+      \strng{authorfullhash}{27760c75a67d8f0ba8f1b756422132a5}
+      \field{sortinit}{P}
+      \field{sortinithash}{ff3bcf24f47321b42cb156c2cc8a8422}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Optimization Theory and Applications}
+      \field{month}{2}
+      \field{number}{2}
+      \field{title}{{Generalized Convexity of Functions and Generalized Monotonicity of Set-Valued Maps}}
+      \field{volume}{92}
+      \field{year}{1997}
+      \field{pages}{343\bibrangedash 356}
+      \range{pages}{14}
+    \endentry
+    \entry{Ren2016}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7783fc89322bbf4b7e5a6dae2395e4f3}{%
+           family={Ren},
+           familyi={R\bibinitperiod},
+           given={Aihong},
+           giveni={A\bibinitperiod}}}%
+        {{hash=c78503aaa49a656724e2cb1160afaf62}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Yuping},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \strng{namehash}{eb354b2be098d52957acda3033b5920a}
+      \strng{fullhash}{eb354b2be098d52957acda3033b5920a}
+      \strng{bibnamehash}{eb354b2be098d52957acda3033b5920a}
+      \strng{authorbibnamehash}{eb354b2be098d52957acda3033b5920a}
+      \strng{authornamehash}{eb354b2be098d52957acda3033b5920a}
+      \strng{authorfullhash}{eb354b2be098d52957acda3033b5920a}
+      \field{sortinit}{R}
+      \field{sortinithash}{5e1c39a9d46ffb6bebd8f801023a9486}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0307-904X}
+      \field{journaltitle}{Applied Mathematical Modelling}
+      \field{number}{1}
+      \field{title}{A novel penalty function method for semivectorial bilevel programming problem}
+      \field{volume}{40}
+      \field{year}{2016}
+      \field{pages}{135\bibrangedash 149}
+      \range{pages}{15}
+      \verb{doi}
+      \verb https://doi.org/10.1016/j.apm.2015.04.041
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S0307904X15003522
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S0307904X15003522
+      \endverb
+    \endentry
+    \entry{example4}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=668efb83666c0ef5971bdff6e2f8b5c0}{%
+           family={Sinha},
+           familyi={S\bibinitperiod},
+           given={Ankur},
+           giveni={A\bibinitperiod}}}%
+        {{hash=8bafe15c788d2e611aec6337d49a3385}{%
+           family={Malo},
+           familyi={M\bibinitperiod},
+           given={Pekka},
+           giveni={P\bibinitperiod}}}%
+        {{hash=b11d1da0cc2920eef235d484e6b858ef}{%
+           family={Deb},
+           familyi={D\bibinitperiod},
+           given={Kalyanmoy},
+           giveni={K\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cham}%
+      }
+      \list{publisher}{1}{%
+        {Springer International Publishing}%
+      }
+      \strng{namehash}{a3dbd9707a8d0618b7e0bd17bef2d589}
+      \strng{fullhash}{a3dbd9707a8d0618b7e0bd17bef2d589}
+      \strng{bibnamehash}{a3dbd9707a8d0618b7e0bd17bef2d589}
+      \strng{authorbibnamehash}{a3dbd9707a8d0618b7e0bd17bef2d589}
+      \strng{authornamehash}{a3dbd9707a8d0618b7e0bd17bef2d589}
+      \strng{authorfullhash}{a3dbd9707a8d0618b7e0bd17bef2d589}
+      \field{sortinit}{S}
+      \field{sortinithash}{b164b07b29984b41daf1e85279fbc5ab}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Evolutionary Multi-Criterion Optimization}
+      \field{isbn}{978-3-319-15934-8}
+      \field{title}{Towards Understanding Bilevel Multi-objective Optimization with Deterministic Lower Level Decisions}
+      \field{year}{2015}
+      \field{pages}{426\bibrangedash 443}
+      \range{pages}{18}
+    \endentry
+    \entry{Thang2020}{article}{}
+      \name{author}{5}{}{%
+        {{hash=598403bd41de880facd4a0710d1101c3}{%
+           family={Thang},
+           familyi={T\bibinitperiod},
+           given={Tran\bibnamedelima Ngoc},
+           giveni={T\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=ba0160cd251c17e8147366090123d081}{%
+           family={Solanki},
+           familyi={S\bibinitperiod},
+           given={Vijender\bibnamedelima Kumar},
+           giveni={V\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=7f1fb30c60eca3c494adaf9e541a978c}{%
+           family={Dao},
+           familyi={D\bibinitperiod},
+           given={Tuan\bibnamedelima Anh},
+           giveni={T\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=9ae74b46a5237077319e20d49420e74d}{%
+           family={Thi\bibnamedelimb Ngoc\bibnamedelima Anh},
+           familyi={T\bibinitperiod\bibinitdelim N\bibinitperiod\bibinitdelim A\bibinitperiod},
+           given={Nguyen},
+           giveni={N\bibinitperiod}}}%
+        {{hash=1b3560b4f6506ccc2392137d625287e7}{%
+           family={Van\bibnamedelima Hai},
+           familyi={V\bibinitperiod\bibinitdelim H\bibinitperiod},
+           given={Pham},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IOS Press}%
+      }
+      \strng{namehash}{433a9d6968c0f778e12fb37039957816}
+      \strng{fullhash}{125447eedc640f5aa3903931f5478fb8}
+      \strng{bibnamehash}{433a9d6968c0f778e12fb37039957816}
+      \strng{authorbibnamehash}{433a9d6968c0f778e12fb37039957816}
+      \strng{authornamehash}{433a9d6968c0f778e12fb37039957816}
+      \strng{authorfullhash}{125447eedc640f5aa3903931f5478fb8}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1875-8967}
+      \field{journaltitle}{Journal of Intelligent {\&} Fuzzy Systems}
+      \field{note}{5}
+      \field{title}{A monotonic optimization approach for solving strictly quasiconvex multiobjective programming problems}
+      \field{volume}{38}
+      \field{year}{2020}
+      \field{pages}{6053\bibrangedash 6063}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.3233/JIFS-179690
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.3233/JIFS-179690
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.3233/JIFS-179690
+      \endverb
+    \endentry
+    \entry{Tuy2000}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=35173b5163b4603a07e8cc0e2ef38b31}{%
+           family={Tuy},
+           familyi={T\bibinitperiod},
+           given={Hoang},
+           giveni={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{fullhash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{bibnamehash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{authorbibnamehash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{authornamehash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{authorfullhash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \field{extraname}{1}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{SIAM Journal on Optimization}
+      \field{title}{Monotonic Optimization: Problems and Solution Approaches}
+      \field{volume}{2}
+      \field{year}{2000}
+      \field{pages}{464\bibrangedash 494}
+      \range{pages}{31}
+    \endentry
+    \entry{Tuy1999}{inbook}{}
+      \name{author}{1}{}{%
+        {{hash=35173b5163b4603a07e8cc0e2ef38b31}{%
+           family={Tuy},
+           familyi={T\bibinitperiod},
+           given={Hoang},
+           giveni={H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Vietnam Journal of Mathematics}%
+      }
+      \strng{namehash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{fullhash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{bibnamehash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{authorbibnamehash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{authornamehash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \strng{authorfullhash}{35173b5163b4603a07e8cc0e2ef38b31}
+      \field{extraname}{2}
+      \field{sortinit}{T}
+      \field{sortinithash}{9af77f0292593c26bde9a56e688eaee9}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Normal sets, polyblocks and monotonic optimization}
+      \field{volume}{2}
+      \field{year}{1999}
+    \endentry
+    \entry{Ukkusuri2013}{article}{}
+      \name{author}{3}{}{%
+        {{hash=e27baff2aea873abc65ea5e24361ca3e}{%
+           family={Ukkusuri},
+           familyi={U\bibinitperiod},
+           given={Satish},
+           giveni={S\bibinitperiod}}}%
+        {{hash=2e079d0404ae7b5b2385c592daa90de5}{%
+           family={Doan},
+           familyi={D\bibinitperiod},
+           given={Kien},
+           giveni={K\bibinitperiod}}}%
+        {{hash=35a8b99f7a3e1b8ddc1696f7d0ff52aa}{%
+           family={Aziz},
+           familyi={A\bibinitperiod},
+           given={H.M.\bibnamedelimi Abdul},
+           giveni={H\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \strng{namehash}{46b589c8f4ba7f82973a9e76fa5e3120}
+      \strng{fullhash}{46b589c8f4ba7f82973a9e76fa5e3120}
+      \strng{bibnamehash}{46b589c8f4ba7f82973a9e76fa5e3120}
+      \strng{authorbibnamehash}{46b589c8f4ba7f82973a9e76fa5e3120}
+      \strng{authornamehash}{46b589c8f4ba7f82973a9e76fa5e3120}
+      \strng{authorfullhash}{46b589c8f4ba7f82973a9e76fa5e3120}
+      \field{sortinit}{U}
+      \field{sortinithash}{6901a00e45705986ee5e7ca9fd39adca}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1877-0428}
+      \field{journaltitle}{Procedia - Social and Behavioral Sciences}
+      \field{note}{20th International Symposium on Transportation and Traffic Theory (ISTTT 2013)}
+      \field{title}{A Bi-level Formulation for the Combined Dynamic Equilibrium based Traffic Signal Control}
+      \field{volume}{80}
+      \field{year}{2013}
+      \field{pages}{729\bibrangedash 752}
+      \range{pages}{24}
+    \endentry
+    \entry{White1993}{article}{}
+      \name{author}{2}{}{%
+        {{hash=19b56b5827a4ae29fe67870684641447}{%
+           family={White},
+           familyi={W\bibinitperiod},
+           given={D.\bibnamedelimi J.},
+           giveni={D\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=aefd8f6578afaa0a8c59a6a65a2b4134}{%
+           family={Anandalingam},
+           familyi={A\bibinitperiod},
+           given={G.},
+           giveni={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{609d73abeafea1238503980676e2b4e9}
+      \strng{fullhash}{609d73abeafea1238503980676e2b4e9}
+      \strng{bibnamehash}{609d73abeafea1238503980676e2b4e9}
+      \strng{authorbibnamehash}{609d73abeafea1238503980676e2b4e9}
+      \strng{authornamehash}{609d73abeafea1238503980676e2b4e9}
+      \strng{authorfullhash}{609d73abeafea1238503980676e2b4e9}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1573-2916}
+      \field{journaltitle}{Journal of Global Optimization}
+      \field{month}{12}
+      \field{number}{4}
+      \field{title}{A penalty function approach for solving bi-level linear programs}
+      \field{volume}{3}
+      \field{year}{1993}
+      \field{pages}{397\bibrangedash 419}
+      \range{pages}{23}
+      \verb{doi}
+      \verb 10.1007/BF01096412
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1007/BF01096412
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1007/BF01096412
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

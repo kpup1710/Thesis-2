@@ -1,0 +1,448 @@
+\documentclass[oneside, a4paper]{book}
+\usepackage[left=3.5cm,right=2cm,top=3.5cm,bottom=3cm]{geometry}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{times}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{tikz, pgf} 
+\usetikzlibrary{patterns}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage[ruled, linesnumbered]{algorithm2e}
+\newcommand{\R}{\mathbb{R}}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\ttfamily\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\hypersetup{colorlinks,linkcolor={black},citecolor={blue},urlcolor={red}}  \usepackage{multido}
+
+\newcommand{\Pointilles}[1]{%
+  \par\nobreak
+  \noindent\rule{0pt}{1.5\baselineskip}% Provides a larger gap between the preceding paragraph and the dots
+  \multido{}{#1}{\noindent\makebox[\linewidth]{\dotfill}\endgraf}% ... dotted lines ...
+  \bigskip% Gap between dots and next paragraph
+}
+\lstset{style=mystyle}
+\usepackage{amsmath,amssymb,latexsym,amscd,amsxtra,graphicx,graphpap,amsthm}
+\usepackage{mathtools}
+\usepackage{pb-diagram}
+\usepackage{indentfirst}
+\usepackage{caption}
+\usepackage{aligned-overset}
+\usepackage{picinpar,floatflt}
+\usepackage{longtable}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{fancybox}
+\usepackage[utf8]{vietnam}
+\usepackage[tight,vietnam]{minitoc}
+\usepackage{anyfontsize}
+\usepackage{biblatex}
+\newcommand{\bvec}[1]{\textbf{#1}}
+\usepackage{multicol}
+\usepackage{multirow}
+%\usepackage{commath}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{pst-plot}
+\usepgfplotslibrary{fillbetween} 
+%==================================
+\usepackage{titletoc}
+\titlecontents{chapter}
+  [0pt]
+  {\bfseries}
+  {\chaptername\ \thecontentslabel\enskip}
+  {}
+  {\hfill\contentspage}
+
+%==================================
+
+%==================================
+\renewcommand{\thechapter}{\arabic{chapter}}
+\renewcommand{\thesection}{\arabic{chapter}.\arabic{section}}
+\newcommand{\eproof}{\hfill $\square$}
+%\newcommand{\eproof}{\hfill}
+\newcommand{\chm}{{\bfseries Chứng minh.}}
+\newenvironment{cm}{\chm}{\eproof}
+%===============================
+\theoremstyle{plain}
+\newtheorem{bd}{Bổ đề}[chapter]
+\providecommand*{\bdautorefname}{Bổ đề}
+\newtheorem{md}{Mệnh đề}[chapter]
+\providecommand*{\mdautorefname}{Mệnh đề}
+\newtheorem{hq}{Hệ quả}[chapter]
+\providecommand*{\hqautorefname}{Hệ quả}
+\newtheorem{dl}{\bfseries Định lý}[chapter]
+\providecommand*{\dlautorefname}{Định lý}
+% \newtheorem{algorithm}{\bfseries Thuật toán}[chapter]
+\providecommand*{\algorithmautorefname}{Thuật toán}
+\newtheorem*{namedthm}{\namedthmname}
+\newcounter{namedthm}
+\makeatletter
+\newenvironment{named}[1]
+  {\def\namedthmname{#1}%
+   \refstepcounter{namedthm}%
+   \namedthm\def\@currentlabel{#1}}
+  {\endnamedthm}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{dn}{Định nghĩa}[chapter]
+\providecommand*{\dnautorefname}{Định nghĩa}
+\newtheorem{bt}{Bài toán}[chapter]
+\providecommand*{\btautorefname}{Bài toán}
+\newtheorem{vd}{\bfseries Ví dụ}[chapter]
+\providecommand*{\mdautorefname}{Mệnh đề}
+
+\theoremstyle{remark}
+\newtheorem{kh}{ký hiệu}[chapter]
+\newtheorem{nx}{\bf Nhận xét}[chapter]
+\newtheorem{cy}{Chú ý}[chapter]
+
+\renewcommand{\baselinestretch}{1.5}
+\setlength{\oddsidemargin}{0.3cm}     %Lề trái tính từ điểm cách mép giấy 2.54cm
+\setlength{\topmargin}{-1cm}          %Lề trên tính từ điểm cách mép giấy 2.54cm
+\setlength{\headsep}{0.5cm}                %Khoang cach tu  Headerline tới Khối chữ
+\textwidth=15.5cm
+\textheight=24.5cm
+\renewcommand{\bibname}{Tài liệu tham khảo}
+\renewcommand{\large}{\fontsize{14pt}{14pt}\selectfont}
+\renewcommand{\Large}{\fontsize{16pt}{16pt}\selectfont}
+\renewcommand{\LARGE}{\fontsize{15pt}{15pt}\selectfont}
+\renewcommand{\th}{\fontsize{18pt}{18pt}\selectfont}
+\makeatletter
+\def\ps@myheadings{
+\def\@evenhead{\hfil\thepage\hfil}
+\def\@oddhead{
+\hfil\thepage\hfil}}
+\makeatother
+\pagestyle{myheadings}
+
+\usepackage{fancyhdr}
+
+\fancyhf{}
+
+% \fancyhead[C]{\thepage}
+
+\pagestyle{fancy}
+
+\fancypagestyle{plain}
+
+% \fancyhf{} % clear all header and footer fields
+
+\fancyfoot[C]{\bf \thepage}
+\fancypagestyle{firstpage}{% define a custom header OPTION 1 to be applied to specific pages
+  \fancyhf{}
+    \fancyfoot[R]{\bf \ttfamily Trang \thepage}
+% \fancyhead[L]{Trường Đại Học Bách Khoa Hà Nội}
+\fancyfoot[L]{\bf \ttfamily Nhóm 1D}
+}
+\renewcommand{\headrulewidth}{0pt}
+\newenvironment{mproof}{\paragraph{Chứng minh:}}{\hfill$\square$}
+\newenvironment{myproof}[2] {\paragraph{Proof of {#1} {#2} :}}{\hfill$\square$}
+\DeclarePairedDelimiter{\pro}{\langle}{\rangle}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\usepackage{xpatch}
+\makeatletter
+\AtBeginDocument{\xpatchcmd{\@thm}{\thm@headpunct{.}}{\thm@headpunct{}}{}{}}
+\makeatother
+
+\addbibresource{refs.bib}
+
+
+\begin{document}
+	
+\thispagestyle{empty}
+%\thispagestyle{headings}
+\setcounter{page}{1}%
+\pagenumbering{roman}
+%\addcontentsline{toc}{chapter}{{Trang bìa phụ}}
+%\newgeometry{top=2.0cm,bottom=3.0cm,left=3.5cm,right=2.8cm}
+%\begin{titlepage}
+
+%\setlength{\fboxrule}{1pt}
+%\thisfancypage{\setlength{\fboxsep}{2pt}\setlength{\fboxrule}{2pt}\doublebox}{} 
+%\setlength{\fboxrule}{1pt}
+%\thisfancypage{\setlength{\fboxsep}{0pt}\setlength{\shadowsize}{0pt}\doublebox}{}
+% \pagenumbering{gobble}
+\newgeometry{left=2.8cm,right=1.8cm,top=2.5cm,bottom=2cm}
+\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+\draw[blue!70!black,line width=2.5pt] ([xshift=-1cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=2cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=2cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+\end{tikzpicture}
+\begin{center}
+\Large
+\vspace{-1cm}
+{\bfseries TRƯỜNG ĐẠI HỌC BÁCH KHOA HÀ NỘI}\\
+{\bfseries VIỆN TOÁN ỨNG DỤNG VÀ TIN HỌC}
+
+\end{center}
+\vspace{1cm}
+\begin{center}
+	\fontsize{17pt}{15pt}\selectfont
+	\includegraphics[scale=0.06]{HUST_logo}
+	\vspace{1cm}
+	
+	\fontsize{22pt}{15pt}\selectfont
+	\bfseries Phương pháp hệ động lực giải một lớp bài toán\\
+                    tối ưu hai cấp tựa lồi
+\end{center}
+
+\vspace{0.8cm}
+\begin{center}
+	\fontsize{16pt}{16pt}\selectfont 	
+	{\bfseries ĐỒ ÁN II}\\	
+	\fontsize{14pt}{16pt}\selectfont
+	{\bfseries Chuyên ngành: TOÁN TIN}\\
+	\fontsize{14pt}{16pt}\selectfont
+	{\bfseries Chuyên sâu: Tối ưu}\\
+\end{center}
+
+\vspace{2cm}
+\begin{center}
+\fontsize{13pt}{16pt}\selectfont
+\textbf{\begin{tabular}{l l}
+Giảng viên hướng dẫn:& TS. Trần Ngọc Thăng\\
+Sinh viên thực hiện:& Nguyễn Việt Dũng\\
+Lớp:&{\bfseries Chương trình tài năng Toán tin K64}
+\end{tabular}}
+
+\end{center}
+\vspace{2cm}
+\begin{center}
+\LARGE HÀ NỘI -- 2022
+\end{center}
+
+
+\restoregeometry
+
+
+\newpage
+
+\newpage
+\newgeometry{left=2.2cm,right=2.8cm,top=2cm,bottom=2cm}
+\pagenumbering{roman}
+\setcounter{page}{1}
+\thisfancypage{
+	\setlength{\fboxsep}{0.5cm}
+	\fbox}{}
+
+\fontsize{13pt}{16pt}\selectfont
+\bigbreak
+\begin{center}
+	{\bfseries NHẬN XÉT CỦA GIẢNG VIÊN HƯỚNG DẪN}
+\end{center}
+\bigbreak
+% \fancyhf{}
+% \thispagestyle{myheadings}
+\fontsize{12pt}{14pt}\selectfont
+\begin{enumerate}
+	\item [{\bfseries 1.}]{\bfseries Mục tiêu và nội dung của đồ án:}
+    \noindent\Pointilles{5}
+	\item [{\bfseries 2.}] {\bfseries Kết quả đạt được:} 
+	\noindent\Pointilles{5}
+	\item [{\bfseries 3.}]{\bfseries Ý thức làm việc của sinh viên:}
+	\noindent\Pointilles{5}
+\end{enumerate}
+\hspace{0.5\textwidth}
+\begin{minipage}{0.5\textwidth}
+	\noindent\begin{center}
+		\textit{Hà Nội, ngày ... tháng ... năm 2022} \\
+		Giảng viên hướng dẫn\\ \vspace{2cm}
+		\textbf{TS. Trần Ngọc Thăng}
+	\end{center}	
+\end{minipage}
+\restoregeometry
+
+
+
+\newpage
+\fontsize{22pt}{16pt}\selectfont
+{\bfseries Lời cảm ơn}
+\fontsize{13pt}{16pt}\selectfont
+\bigskip
+
+Để có thể hoàn thành đồ án này, em xin được gửi lời cảm ơn chân thành và
+sâu sắc đến thầy TS. Trần Ngọc Thăng, thầy đã tận tình giảng dạy và hướng dẫn em trong suốt quá trình học tập và làm bài báo cáo.
+
+
+
+\begin{minipage}{0.5\textwidth}
+\end{minipage}
+\hspace{0.5\textwidth}
+\begin{minipage}{0.5\textwidth}
+	\noindent\begin{center}
+		\vspace{1cm}
+		\textit{Hà Nội, tháng ... năm 2022} \\
+		Tác giả đồ án\\ \vspace{1cm}
+		\textbf{Nguyễn Việt Dũng}
+	\end{center}	
+\end{minipage}
+
+\bigskip
+
+
+
+
+\tableofcontents % Làm xuất hiện mục lục.
+% \pagestyle{myheadings}
+
+
+\newpage
+
+
+
+
+%\addcontentsline{toc}{chapter}{Danh sách bảng}
+% \thispagestyle{firstpage}
+\pagenumbering{arabic}
+\setcounter{page}{1}
+%\fontsize{22pt}{16pt}\selectfont
+%{\bfseries Bảng ký hiệu}
+%\fontsize{13pt}{16pt}\selectfont
+%\bigskip
+% \addcontentsline{toc}{chapter}{\bfseries Bảng ký hiệu và chữ viết tắt}
+%\thispagestyle{empty}
+
+%\pagenumbering{arabic}
+%\setcounter{page}{1}%
+%%\pagenumbering{arabic}
+%\addcontentsline{toc}{chapter}{Bảng ký hiệu}
+
+% \begin{tabular}
+% 	{@{\hspace{-0.1cm}} l @{\hspace{1.2cm}}p{11.5cm}l}
+% 	$\mathbb R$ & tập các số thực\\
+% 	$\mathbb R^n$ & không gian Euclid $n$ chiều\\
+% 	$\nabla f(x)$ & véctơ gradient của hàm $f$ tại điểm $x$\\
+% 	$P_C$& phép chiếu mêtric lên tập $C$\\
+% 	VI& bài toán bất đẳng thức biến phân\\
+% 	DVI & bài toán đối ngẫu với bài toán bất đẳng thức biến phân\\
+% 	CP& bài toán bù\\
+% 	LCP & bài toán bù tuyến tính
+% \end{tabular}
+
+%\newpage
+%\addcontentsline{toc}{chapter}{\bfseries Danh sách bảng}
+%\listoftables
+%\thispagestyle{empty}
+
+%\newpage
+%\addcontentsline{toc}{chapter}{\bfseries Danh sách hình vẽ}
+%\listoffigures
+
+\chapter*{Mở đầu}
+\large
+\setlist{nosep}
+Bài toán tối ưu hai cấp được thử nghiệm lần đầu tiên với mô hình toán học đề xuất bởi Bracken và McGill vào năm 1973 \cite{Bracken1973}, dựa trên công thức có dạng mô hình Stackelberg \cite{Stackelberg1934}. Sự khác biệt giữ lớp bài toán này là lớp bài toán tối ưu một cấp nằm ở cấu trúc phân tầng, ở đó ràng buộc của bài toán tối ưu này chịu tác động bởi một bài toán khác. Cụ thể, bài toán tối ưu hai cấp tổng quá được phát biểu như sau:
+\begin{equation} \tag*{(GBP)}\label{GBP}
+    \begin{aligned}
+        & \min f(x, y) \quad \text { s.t. } \\
+        & g_1(x, y) \leq 0, \quad x \in \mathbb{R}_{+}^{n_1}, \quad y \text { thuộc tập nghiệm của bài toán } \\
+        R(x): & \min \left\{d(y) \mid g_2(C(x), y) \leq 0, \quad y \in \mathbb{R}_{+}^{n_2}\right\}
+\end{aligned}
+\end{equation}
+trong đó, ánh xạ $C: \R^{n_1} \to \R^m$ và các hàm $f(x; y), d(y), g_1(x; y), g_2(u; y)$ liên tục, tập $D:= \{(x, y) \in \R^{n1}_+ \times \R^{n_2}_+\ |\ g_1(x, y) \leq 0, g_2(C(x), y) \leq 0  \}$ khác rỗng và compact.\\
+\indent Không giống như bài toán tối ưu một cấp, khi ta có thể liên tưởng bài toán này với một tác tử đang cố gắng đạt được mục tiêu. Bài toán tối ưu hai cấp tương tự với việc hai tác tử cố gắng đạt được mục tiêu trong khi tác động qua lại lẫn nhau thông qua các quyết định của chúng trong quá khứ. Hơn nữa, phần lớn các bài toán trong thực tế chịu tác động bởi nhiều tác nhân, số lượng các nghiên cứu liên quan đến tối ưu hai cấp đã tăng đáng kể trong thập kỷ vừa qua và ứng dụng của chúng đã lan rộng đến nhiều lĩnh vực. Một số nghiên cứu có tính thực tiễn ví dụ như bài toán cân bằng Nash trong kinh tế \cite{Nash1950}, bài toán tối ưu điều khiển \cite{Kalashnikov2018}, bài toán thiết kế mạng lưới giao thông vận tải \cite{Ukkusuri2013,Angulo2014}, bài toán quản lý chuỗi cung ứng \cite{Gao2011,Lukac2008}, bài toán học máy \cite{Franceschi2018,MacKay2019},... \\
+\indent Có hai cách để phân loại bài toán tối ưu hai cấp, ,một số nhà nghiên cứu phân loại theo lớp hàm, ví dụ như tuyến tính \cite{Belkhiri2021,Muu2000,Jorge2005}, lồi \cite{Bonnel2015,Horst1999}, không lồi \cite{Lin2014,Mitsos2008}, hoặc rời rạc \cite{Alekseeva2016,Calvete2011}. Các nhà nghiên cứu khác phân loại theo ngữ cảnh của bài toán, ví dụ bài toán optimistic và bài toán pessimistic, bài toán tối ưu trên tập nghiệp hữu hiệu, bài toán tối ưu đa mục tiêu và bài toán tối ưu hai cấp cùng với bài toán tối ưu hai cấp đa mục tiêu.\\
+\indent Về khía cạnh phương pháp giải, các phương pháp giải chính xác với cách tiếp cận cổ điện đã được nghiên cứu qua hàng thập kỷ. Có thể kể đến như là phương pháp điểm tới hạn, phương pháp nhánh cận, phương pháp hướng giảm, phương pháp hàm phạt và phương pháp miền tin cậy. Ngoài ra ta còn có các phương pháp heuristic với thuật toán tiến hóa, thuật toán tìm kiếm lân cận và các thuật toán dựa trên mạng nơ-ron \cite{Lu2016}.\\
+\indent Mục tiêu của đồ án này là nghiên cứu bài toán tối ưu hai cấp dưới dạng bài toán tối ưu trên tập nghiệm hữu hiệu. Cụ thể, bài toán cấp dưới được xét có hàm mục tiêu là hàm vector và bài cấp trên là hàm vô hướng. Chủ đề này đã được chú ý rộng rãi từ nhiều năm trước, với các hàm mục tiêu có dạng tuyến tính hoặc lồi ở cả hai bài toán cấp trên và cấp dưới \cite{Horst2007,Le2003,Ren2016}, trong khi đó các lớp hàm tổng quát hơn vẫn chưa được nghiên cứu sâu \cite{Mitsos2008}.Các hướng tiếp cận phổ biến bao gồm phương pháp hàm phạt với việc chuyển đổi bài toán về trường hợp tối ưu một cấp \cite{White1993,Le2003}, và thuật toán nhánh cận, với việc giải các bài toán con với ràng buộc nới lỏng \cite{Belkhiri2021,Horst1999,Muu2000}. Đồ án này tập trung vào việc giải bài toán tối ưu hai cấp với hàm mục tiêu giả lồi ở cả bài toán cấp trên và cấp dưới và đồng thời đề xuất một phương pháp nhánh cận dựa trên phương pháp của tiến sĩ Trần Ngọc Thăng \cite{Thang2020} nhưng với hướng tiếp cận hệ động lực.\\
+
+Nội dung chính của đồ án gồm 3 chương cụ thể như sau:
+\begin{itemize}
+	\item \textbf{Chương 1: Một số khái niệm và kết quả cơ bản.} Chương này trình bày một số khái niệm cơ sở phục vụ cho việc xây dựng nội
+	dung những chương tiếp theo. Đầu tiên, Mục 1.1 trình bày về hàm
+	tựa lồi, hàm tựa lõm và giả lồi cùng nhiều ví dụ minh họa và tính chất quan trọng. Đây là lớp hàm bao quát khá rộng và vẫn giữ được tính chất một nghiệm cực tiểu địa phương cũng là nghiệm tối ưu toàn cục. Tiếp theo, Mục 1.2 tập trung và các lớp hàm không trơn và các khái niệm liên quan ví dụ như đạo hàm theo hướng tổng quát. Các khái niệm về tập chuẩn, tập chuẩn đảo, đa hộp, đa hộp đảo được trình bày ở Mục 1.3 cùng nhiều tính chất thú vị liên quan.
+	\item \textbf{Chương 2: Bài toán quy hoạch giả lồi không trơn.} Chương này giới thiệu về bài toán quy hoạc giả lồi không trơn với hàm mục tiêu đúng như tên gọi của bài toán và các ràng buộc bất đẳng thức gồm các hàm tựa lồi khả vi liên tục. Đây là một lớp bài toán quan trọng và sẽ được giải bởi phương pháp hệ động lực đề xuất bởi Liu cùng các cộng sự \cite{Liu2021}. Mô hình của thuật toán cùng với các chứng minh về sự tồn tại nghiệm và sự hội tụ sẽ được trình bày chi tiết tại chương này.
+	\item \textbf{Chương 3: Bài toán tối ưu hai cấp tựa lồi (QBP)}. Chương này nghiên cứu về bài toán tối ưu hai cấp tựa lồi (QBP) và đề xuất thuật toán dựa trên mối liên hệ với bài toán quy hoạch giả lồi không trơn cùng với thuật toán xấp xỉ trong bằng đa hộp đảo. Tính đúng đắn và sự hội tụ của thuật toán sẽ được trình bày chi tiết ở đây. Cuối cùng, một số ví dụ tính toán sẽ được đưa ra nhằm minh họa tính hiệu quả của thuật toán.
+\end{itemize}
+
+\indent Đồ án được hoàn thành dưới sự hướng dẫn của TS. Trần Ngọc Thăng
+tại Viện Toán ứng dụng và Tin học, Trường Đại Học Bách Khoa Hà Nội.
+Mặc dù đã nỗ lực hết sức, tuy nhiên trong khoảng thời gian cho phép,
+việc nghiên cứu và trình bày không thể tránh khỏi nhầm lẫn thiếu sót,
+tôi mong nhận được sự giúp đỡ đóng góp của thầy cô và bạn bè để đồ
+án được hoàn thiện hơn.
+
+\chapter{Một số khái niệm và kết quả cơ bản}
+Chương này của đồ án trình bày các khái niệm quan trọng và một số kết
+quả liên quan, nhằm phục vụ cho việc xây dựng các lý thuyết và thuật
+toán ở những chương sau. Cụ thể, Mục 1.1 và 1.2 giới thiệu một số lớp
+hàm sẽ được sử dụng trong đồ án và khái niệm liên quan. Các khái
+niệm về tập chuẩn, tập chuẩn đảo, đa hộp, đa hộp đảo được trình bày ở
+Mục 1.3.
+\input{Chapter1/Hàm lồi mở rộng.tex}
+\input{Chapter1/Hàm không trơn.tex}
+% \input{Chapter1/Hàm không trơn.tex}
+\input{Chapter1/Tập chuẩn và đa hộp.tex}
+
+\chapter{Bài toán quy hoạch giả lồi không trơn (NSP)}
+Hai lớp hàm lồi tổng quá là tựa lồi và giả lồi xuất hiện thường xuyên trong các bài toán thực tế. Tuy nhiên, sự khuyết thiếu của tính lồi gây ra nhiều khó khăn trong việc giải các bài toán tối ưu giả lồi với các ràng buộc tựa lồi. Nhằm giải quyết vấn đề trên, Liu và các cộng sự \cite{Liu2021} đã đề xuất một phương pháp sử dụng hệ động lực giải xấp xỉ bài toán tối ưu giả lồi với ràng buộc tựa lồi. Trong đó, các chứng minh về sự hội tụ về nghiệm tối ưu được cung cấp một cách đầy đủ. \\
+\indent Bài toán quy hoạch giả lồi không trơn (nonsmooth pseudoconvex programming) xét trong chương này được phát biểu như sau:
+	\begin{align*}
+	\tag*{NSP}
+	\label{NSP}
+    	\min\quad &r(x)   \\ 
+    	s.t. \quad & x \in X,\nonumber 
+	\end{align*}
+trong đó, hàm mục tiêu $r$ là giả lồi không trơn, tập ràng buộc 
+\begin{equation}
+	\label{constraints_1}
+	X = \{x \in \mathbb{R}^n\mid s(x)\leq 0\},\ s(x)=\left(s_1(x), s_2(x), \ldots, s_m(x)\right)^{\top}:\mathbb{R}^n \rightarrow \mathbb{R}^m
+\end{equation}
+ và $s_i(i=1, \ldots, m): \mathbb{R}^n \rightarrow \mathbb{R}$ các hàm tựa lồi khả vi.
+
+\input{Chapter2/Cơ sở lý thuyết.tex}
+\input{Chapter2/Phương pháp hệ động lực.tex}
+\input{Chapter2/Sự hội tụ.tex}
+\input{Chapter2/Thử nghiệm tính toán.tex}
+\chapter{Bài toán tối ưu đa mục tiêu hai cấp tựa lồi (QBP)}
+Chương này của đồ án sẽ đưa mối liên hệ giữa bài toán tối ưu hai cấp tựa lồi (QBP) được xét và bài toán quy hoạch giả lồi không trơn \eqref{NSP}. Qua đó, xây dựng một lược đồ nhánh cận với cốt lõi là phương pháp hệ động lực và thuật toán xấp xỉ trong dựa trên đa hộp đảo nhằm đưa ra nghiệm tối ưu.
+
+\input{Chapter3/Phát biểu bài toán.tex}
+\input{Chapter3/Lược đồ nhánh cận xấp xỉ trong.tex}
+\input{Chapter3/Phương pháp hệ động lực giải bài toán (QBP).tex}
+\input{Chapter3/Sự hội tụ.tex}
+\input{Chapter3/Thử nghiệm tính toán.tex}
+
+\chapter*{Kết luận}                         % Chương 3
+Đồ án này nghiên cứu bài toán tối ưu hai cấp tựa lồi
+(QBP) và đề xuất các thuật toán mới giải bài toán này.
+Chương 1 đã trình bày một số khái niệm cơ sở về các lớp hàm, như
+hàm tựa lồi, hàm tựa lõm, hàm tựa lồi chặt, . . . cùng
+nhiều ví dụ minh họa và tính chất quan trọng. Các khái niệm về tập
+chuẩn, tập chuẩn đảo, đa hộp, đa hộp đảo đã được trình bày ở Mục 1.3
+cùng nhiều tính chất thú vị liên quan.
+
+Chương 2 trình bày  thuật toán giải bài toán quy hoạch giả lồi với các hàm ràng buộc tựa lồi bằng phương pháp hệ động lực. Thuật toán này đóng vai trò trung tâm của lược đồ nhánh cận được trình bày trong Chương 3. Sự đùng đắn và hội tụ của thuật toán được trình bày chi tiết cùng với một vài ví dụ minh họa.
+
+Chương 3 đã đề xuất mới một thuật toán xấp xỉ trong giải bài toán tối ưu hai cập tựa lồi (QBP) sử dụng đa hộp đảo trên không gian ảnh để xác định tập nghiệm hữu hiệu yếu và giải thuật nhánh cận lấy trung tâm là phương pháp hệ động lực để giải cận trên và cận dưới. Tính hội tụ của thuật toán cũng đã được chứng minh đi kèm với các ví dụ minh họa.
+
+Mặc dù đã nỗ lực hết sức, tuy nhiên trong khoảng thời gian cho phép,
+việc nghiên cứu và trình bày không thể tránh khỏi nhầm lẫn thiếu sót,
+tôi mong nhận được sự giúp đỡ đóng góp của thầy cô và bạn bè để đồ
+án được hoàn thiện hơn.
+
+\printbibliography[title={Danh mục tài liệu tham khảo}]
+\end{document}

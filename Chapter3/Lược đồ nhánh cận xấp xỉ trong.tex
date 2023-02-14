@@ -1,0 +1,44 @@
+\section{Thuật toán xấp xỉ trong}
+Một tập $Q \in [m, M ]$ được gọi là tập chuẩn nếu
+$[m, z] \in Q$, $\forall z \in Q$ và đa chuẩn nếu $[z, M ]  Q\in, \forall z \in Q$. Theo mệnh đề \ref{union_iter_normalset}, hợp của một họ hữu hạn các tập chuẩn (đa tập chuẩn) cũng là tập chuẩn (đa tập chuẩn). Hợp của mọi tập chuẩn (đa tập chuẩn) chứa trong $Q$ được gọi là \textit{bao chuẩn}
+(\textit{bao chuẩn đảo}) của $Q$. Để cho thuận tiện, ta ký hiệu bao chuẩn (bao chuẩn đảo) của tập $Q$ bởi $\mathcal{N}\left(Q\right)$ ($\mathcal{M}\left(Q\right)$) đồng thời cũng là đa tập chuẩn nhỏ nhất chứa $Q$. Đa hộp $\mathcal{P}$ là bao chuẩn của hữu hạn các đỉnh $V\subset\left[m,M\right]$, i.e. $\mathcal{P}=\bigcup_{v\in V}\left[m,v\right]$
+hoặc $\mathcal{P}=\mathcal{N}\left(V\right).$ \textit{đa hộp đảo} $\mathcal{P}$ là bao đa chuẩn của tập hữu hạn các đỉnh $V\subset\left[m,M\right]$, i.e. $\mathcal{P}=\bigcup_{v\in V}\left[v,M\right]$
+hoặc $\mathcal{P}=\mathcal{M}\left(V\right).$\\
+\indent Chương này của đồ án sẽ trình bày một thuật toán xấp xỉ trong cho tập $\mathcal{Z}^+$, ở đó, thay vì xác định một đa hộp đảo phía ngoài bởi các đỉnh chính quy $V$, ta sử dụng các đỉnh chính quy của đa hộp đảo tương ứng và xây dựng đa hộp đảo phía trong như sau: 
+\[
+\mathcal{L}\left(V\right)\coloneqq\left[m,M\right]\setminus{\rm int}\left(\mathcal{N}\left(V\right)-\mathbb{R}_{+}^{p}\right).
+\]
+Để cho thuận tiện, xuyên suốt phần còn lại của đồ án, đa hộp đảo sẽ được xây dựng theo cách phía trên. Đa hộp đảo phía trong $\mathcal{L}\left(V\right)$
+được xây dưng như trên sẽ sinh ra các đỉnh chính quy mới và các đỉnh chính quy ban đầu $V$ sẽ được gọi là các đỉnh \textit{chính quy đảo}. Theo mệnh đề \ref{approx_normal_set}, ta có thể xấp xỉ một tập chuẩn đảo compact bởi một đa hộp đảo với sai số nhỏ bất kỳ. Vì vậy, tập chuẩn đảo compact của tập $\mathcal{Z}^{\diamond}$ có thể được xấp xỉ
+bởi một họ các đa hộp đảo. Thuật toán dưới đây sinh một dãy các đa hộp đảo lồng nhau để xấp xỉ trong tập ảnh $\mathcal{Z}^{\diamond}$,
+i.e.
+\[
+\mathcal{P}^{0}\subset\mathcal{P}^{1}\subset\mathcal{P}^{2}\subset\dots\subset\mathcal{P}^{k}\subset\mathcal{P}^{k+1}\subset\dots\subset\mathcal{Z}^{\diamond},
+\]
+trong đó đa hộp đảo xấp xỉ đầu $\mathcal{P}^{0}=\left[M,M\right]$ với $M$ được xác định như đã trình bày trong phần \ref{3.1}.\\
+\indent Tại mỗi bước lặp, quá trình đa hộp đảo $\mathcal{P}^{k+1}$
+được sinh ra từ $\mathcal{P}^{k}$ và đưa ra tập xấp xỉ trong 
+được mô tả như trong thủ tục dưới đây\\
+
+\begin{algorithm}[H]
+\SetAlgorithmName{Procedure}{procedure}{List of Procedures}
+\renewcommand{\thealgocf}{}
+\let\oldnl\nl
+\newcommand{\nonl}{\renewcommand{\nl}{\let\nl\oldnl}}
+\caption{\textit{CopolyblockCut}}
+\label{algo:next_time_step}
+\KwIn{Một đa hộp đảo $V^k$ hoặc tập các đỉnh chính quy, đỉnh chính quy đang xét $v^k$ và giao điểm $w^k$ của tia xuất phát từ $v^k$ theo hướng $\hat{d}$ và $\partial\mathcal{Z^+}$}
+\KwOut{Xấp xỉ trong của tập ảnh}
+Đặt $V^{k+1}\gets V^{k}\setminus\{v^{k}\}$.\\
+\For{$i \gets 1$ \textbf{\textup{to}} $p$}
+{$z^{i} = v^{k}-(v^{k}_{i}-w^{k}_{i})e^{i}$.\\
+\If{$z^{i}_{i}\neq m_{i}$}
+{$V^{k+1}\gets(V^{k+1}\cup\{z^{i}\})$.}}
+%\ForEach{$w\in V^k\setminus \{ v^k \}$}{
+%	\If{$w\leq v^k$ and $\exists i \in \{1,\dots,p\}$ such that $w_i>w^k_i$}{
+%		%\tcc{$w^k_i$ is an improper element}
+%		Remove $w^k_i$.
+%	}
+%}
+\end{algorithm}
+

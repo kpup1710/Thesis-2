@@ -1,0 +1,129 @@
+\section{Phương pháp hệ động lực giải (NSP)}
+Để giải bài toán \eqref{NSP}, ta định nghĩa ánh xạ đa trị $\psi: \R \rightrightarrows [0,1]$ như sau:
+\begin{equation}
+    \label{Psi}
+    \Psi(s) = 
+    \begin{cases}
+        1, &s > 0\\
+        [0, 1], & s= 0\\
+        0, & s < 0
+    \end{cases}
+\end{equation}
+Dễ thấy $\psi (s) = \partial \max \{0, s\}$, và $\Psi$ nửa lên tục trên trên $\R$. Ta tiếp tục định nghĩa hàm $P(x)$ như sau:
+\begin{equation}
+    P(x) = \sum_{i=1}^m \max \{0, s_i(x) \},
+\end{equation}
+trong đó, các hàm $s_i$ được cho trong \eqref{constraints_1}. Mặt khác, ta có bổ đề sau:
+\begin{md}[\cite{Clarke1983}]
+    Cho $G: \R^n \to \R$ là một hàm chính quy. Hàm $\max \{0, G(x) \}$ cũng là một hàm chính quy.
+\end{md}
+\indent Như vậy $P(x)$ là hàm chính quy. Hơn nữa, ta có thể biểu diễn $\partial P(x)$ như sau:
+\begin{equation}
+    \label{dP}
+    \partial P(x) = \sum_{i=1}^m \Psi(g_(x)) \nabla g_i(x).
+\end{equation}
+Với các phân tích ở trên, Liu và các cộng sự \cite{Liu2021} đã đề xuất một mô hình hệ động lực được viết dưới dạng bao hàm vi phân hay hệ động lực để giải bài toán \eqref{NSP}:
+\begin{equation}
+    \label{model}
+    \begin{cases}
+        x(0) &\in X \\
+        \dot x(t) &\in-c(x(t)) \partial r(x(t))-\partial S(x(t))
+    \end{cases}
+\end{equation}
+trong đó,
+\begin{equation}
+    c(x(t))=\left\{\prod_{i=1}^{m} c_i(t) \mid c_i(t) \in 1-\Psi\left(s_i(x(t))\right), i=1,2, \ldots, m\right\}
+\end{equation}
+\indent Trong hệ động lực \eqref{model}, đại lượng $-\partial r(x(t))$ có tác dụng ép trạng thái $x(t)$ đi theo hướng giảm của hàm mục tiêu $r(x)$, đại lượng $\partial S(x(t))$ có tác dụng kéo trạng thái $x(t)$ về tập chấp nhận được $X$, $c(x(t))$ được sử dụng để điều chỉnh hướng đi của trạng thái $x(t)$. Như vậy, nếu tại một thời điểm nào đó $x(t) \notin X$, mô hình \eqref{model} sẽ kéo $x(t)$ trở lại tậm chấp nhận được $X$. Còn nếu $x(t) \in X$, mô hình sẽ đưa trạng thái đó đi theo hướng giảm chấp nhận được của $r(x(t))$.
+
+\begin{bd} [\cite{Liu2021}]
+    \label{lemma 2.2}
+    Giả sử ánh xạ đa trị $\mathcal{U}$ là nửa liên tục trên với tập giá trị lồi compact, và hàm đa trị $\Psi$ được định nghĩa trong \eqref{Psi}. Với bất kỳ hàm liên tục $\mathcal{V}(x): \R^n \to \R$, $\Psi(\mathcal{V}(x))\mathcal{U}(x)$ là một ánh xạ đa trị nửa liên tục trên với miền giá trị lồi compact.
+\end{bd}
+\begin{cm}
+    Dễ thấy với mọi $x \in \R^n$ thì tập $\Psi(\mathcal{V}(x))\mathcal{U}(x)$ là đóng và bị chặn, do đó đây là một tập compact. Từ bổ đề \ref{lemma 2.2}, với mọi ánh xạ liên tục $\mathcal{V}(x)$, $\Psi(\mathcal{V}(x))\mathcal{U}(x)$ là ánh xạ nửa liên tục trên. Chúng ta chỉ còn phải chỉ ra rằng $\Psi(\mathcal{V}(x))\mathcal{U}(x)$ là một ánh xạ đa trị với miền giá trị là tập lồi. \\
+    \indent Thật vậy, với mỗi cặp $\mu_1, \mu_2 
+    \in \Psi(\mathcal{V}(x))\mathcal{U}(x)$, tồn tại $\theta_1, \theta_2 \in \Psi(\mathcal{V}(x))$ và $\nu_1, \nu_2 \in \mathcal{U}(x)$ sao cho,
+    $$ \mu_1 = \theta_1 \nu_1, \ \mu_2 = \theta_2 \nu_2 $$
+    Ta có, 
+    \begin{align*}
+        \alpha \mu_1 + (1- \alpha) \mu_2 &= \alpha  \theta_1 \nu_1 + (1 - \alpha) \theta_2 \nu_2\\
+        &= (\alpha \theta_1 + (1-\alpha) \theta_2) \left( \dfrac{\alpha  \theta_1 \nu_1}{\alpha \theta_1 + (1-\alpha) \theta_2} + \dfrac{(1 - \alpha) \theta_2 \nu_2}{\alpha \theta_1 + (1-\alpha) \theta_2} \right),
+    \end{align*}
+    với giả thiết $\mathcal{U}(x)$ lồi, ta có $\dfrac{\alpha  \theta_1 \nu_1}{\alpha \theta_1 + (1-\alpha) \theta_2} + \dfrac{(1 - \alpha) \theta_2 \nu_2}{\alpha \theta_1 + (1-\alpha) \theta_2} \in \mathcal{U}(x)$\\
+    \indent Từ định nghĩa của $\Psi$, ta có $\Psi(\mathcal{V}(x))$ cũng là hàm lồi, cho nên $\alpha \theta_1 + (1-\alpha) \theta_2 \in \mathcal{V}(x)$. Do đó, 
+    $$  \alpha \mu_1 + (1- \alpha) \mu_2 \in \Psi(\mathcal{V}(x))\mathcal{U}(x),\ \forall \alpha \in [0,1]$$.
+\end{cm}
+
+\begin{dl}[\cite{Liu2021}]
+    \label{existance_theo}
+    Với trạng thái ban đầu $x(0) \in X$ bất kỳ, tồn tại $T >0$ sao cho trạng thái $x(t): [0, T) \to \R^n$ của mô hình \eqref{model} tồn tại và nằm trong $X$. 
+\end{dl}
+
+\begin{cm}
+    Từ bổ đề \ref{convex_compact}, ta có $\partial r$ là một ánh xạ đa trị nửa liên tục trên với miền giá trị lồi compact. Kết hợp với bổ đề \ref{lemma 2.2}, ta có vế phải của mô hình \eqref{model} là ánh xạ đa trị nửa liên tục trên với miền giá trị lồi compact. Do đó, theo mệnh đề \ref{state_existance}, tồn tại ít nhất một trạng thái $x(t): [0, T) \to \R^n$ của mô hình \eqref{model}.\\
+    \indent Vì $x(t)$ là một trạng thái của \eqref{model}, tồn tại $\psi_i(t) \in \Psi(s_i(x(t))), \xi(t) \in \partial r(x(t)), \gamma(t) \in \partial P(x(t))$ thỏa mãn,
+    \begin{equation}
+        \dfrac{d}{dt} x(t) =-\left\{ \prod_{i=1}^{m} (1 - \psi_i(t)) \right\} \xi(t) - \gamma (t), \quad \text{với hầu hết $t \in [0, T)$}.
+    \end{equation}
+    Theo mệnh đề \ref{chain_rule}, ta có thể tính đạo hàm của $P(x(t))$ như sau:
+    \begin{equation}
+        \label{dx}
+        \dfrac{d}{dt}P(x(t)) = \gamma(t)^T \left\{ -\left\{ \prod_{i=1}^{m} (1 - \psi_i(t)) \right\} \xi(t) - \gamma (t) \right\},\quad \text{với hầu hết $t \in [0, T)$}.
+    \end{equation}
+    \indent Giả sử tồn tại $t^\prime > t$ sao cho $x(t) \in X$ và $x(t^\prime) \notin X, \forall t^\prime \in (t, t + \Delta t]$. Từ định nghĩa của $P(x)$ ta có,
+        \begin{align} 
+            P(x(t)) &= 0 \\
+            P(x(t^\prime)) &> 0,\quad \forall t^\prime \in (t, t + \Delta t]
+        \end{align}
+    Mặt khác, từ định nghĩa của $\Psi$ trong \eqref{Psi}, ta có
+    \begin{equation}
+        \prod_{i=1}^{m} (1 - \psi_i(t^\prime)) = 0, \quad \forall t^\prime \in (t, t + \Delta t]
+    \end{equation}
+    Từ đó kết hợp với (2.9) ta được,
+    \begin{equation}
+        \dfrac{d}{dt} P(x(t^\prime)) = \gamma(t)^T \left\{ - \gamma (t) \right\} = -\Vert \gamma(t^\prime) \Vert^2 \leq 0,\quad \text{với hầu hết $t \in (t, t + \Delta t]$}.
+    \end{equation}
+    Điều này kéo theo $P(x(t^\prime)) \leq P(x(t)) = 0$, (mâu thuẫn với 2.11). \\
+    \indent Vì vậy, $x(t) \in X,\ \forall t \in [0, T).$
+\end{cm}
+
+\begin{dl}[\cite{Liu2021}]
+    \label{bounded_theo}
+    Cho $x(0) \in X$, trạng thái $x(t): [0, T) \to \R^n$ của mô hình \eqref{model} bị chặn, và do đó tồn tại ít nhất một trạng thái $x(t): [0, T) \to \R^n$ của mô hình \eqref{model} với trạng thái xuất phát $x(0)$ bất kỳ.
+\end{dl}
+\begin{cm}
+    Cho $x^*$ là nghiệm tối ưu của bài toán \eqref{NSP}, theo định lý \ref{existance_theo}, ta có $x(t) \in X $ với mọi $t \in [0, T)$. Cho nên,
+    \begin{align}
+        \label{dnorm}
+        \dfrac{1}{2}\dfrac{d}{dt} \Vert x(t) - x^* \Vert^2 &= - (x(t) - x^*)^T \left( \prod_{i=1}^{m}(1 - \psi_i(t)) \right) \xi(t)\\
+     &- (x(t) - x^*)^T \gamma(t) \nonumber
+    \end{align}
+    với hầu hết $t \in [0, T)$, trong đo $\psi_i(t), \xi(t), \gamma(t)$ được định nghĩa như trong \eqref{dx}. \\
+    \indent Mặt khác, từ bổ đề \ref{opimal_solution_lemma} và $\prod_{i=1}^{m}(1 - \psi_i(t)) \geq 0$, kéo theo
+    \begin{equation}
+        - (x(t) - x^*)^T \left( \prod_{i=1}^{m}(1 - \psi_i(t)) \right) \xi(t) \leq 0
+    \end{equation}
+    Ký hiệu $I_0(x):= \{i \in \{1, \dots, m \}: s_i(x) = 0 \}$. Như vậy, do $x^*$ thuộc tập chấp nhận được ta hiển nhiên có:
+    $$ s_i(x^*) \leq s_i(x(t)),\ \forall i \in I_0(x(t)) $$.
+    Như vậy, từ định nghĩa \ref{psuedoconvex_def} ta có
+    $$ \nabla s_i(x(t))^T (x(t) - x^*) \geq 0,\ \forall i \in I_0(x(t))$$
+    Tiếp theo, từ \eqref{dP}, ta có tồn tại các bộ số $\lambda_i(t) \in [0,1],\ i \in I_0(x(t)) $ sao cho
+    \begin{equation}
+        (x^* - x(t))^T\gamma(t) = (x^* - x(t))^T\left( \sum_{i \in I_0(x(t))} \lambda_i(t)\nabla s_i(x(t)) \right) \leq 0
+    \end{equation}
+    Do đó, 
+    \begin{equation}
+        \label{lessthan0}
+        \dfrac{1}{2}\dfrac{d}{dt} \Vert x(t) - x^* \Vert^2 \leq 0
+    \end{equation}
+    kéo theo 
+    \begin{equation}
+        % \label{x_limit}
+        \Vert x(t) - x^* \Vert^2 \leq \Vert x(0) - x^* \Vert^2.\ \forall t \in [0, T).
+    \end{equation}
+    Cho nên, các trạng thái $x(t): [0, T) \to \R^n$ của mô hình \eqref{model} với $x(0) \in X$ bị chặn.
+\end{cm}  
+
+
+

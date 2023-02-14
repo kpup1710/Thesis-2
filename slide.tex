@@ -1,0 +1,691 @@
+\documentclass[aspectratio=169]{beamer}
+\usetheme{CambridgeUS}
+\useinnertheme{circles}
+\usefonttheme[onlymath]{serif}
+\usepackage[utf8]{vietnam}
+\usepackage{mathtools,amssymb}
+\usepackage{graphicx}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{tabu}
+\usepackage{adjustbox}
+\usepackage{amsmath,amsthm,amsfonts,amssymb,amscd}
+\usepackage{mathtools, amsfonts}
+\DeclarePairedDelimiter{\pro}{\langle}{\rangle}
+\DeclarePairedDelimiter{\norm}{\lVert}{\rVert}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\definecolor{HustRed}{RGB}{206,22,40}
+% \BeforeBeginEnvironment{block}{\begin{adjustbox}{minipage={\linewidth}, center}}
+% \AfterEndEnvironment{block}{\end{adjustbox}\vspace{1ex}}
+% \addtobeamertemplate{block begin}{%
+% \setlength{\textwidth}{0.9\textwidth}
+% }{}
+\setbeamersize{text margin left=0.05\paperwidth, text margin right=0.05\paperwidth}
+\setbeamertemplate{frametitle continuation}{}
+\setbeamertemplate{title page}[default]
+\setbeamertemplate{sections/subsections in toc}[square]
+\setbeamercolor{block title}{bg=darkred, fg=white}
+\setbeamercolor{block body}{bg=darkred!10}
+\setbeamerfont{block title}{series=\bfseries}
+\setbeamercolor{block title example}{bg=green!50!black, fg=white}
+\setbeamercolor{block body example}{bg=green!10}
+\setbeamerfont{block title example}{series=\bfseries}
+\setbeamertemplate{footline}[text line]{\color{darkred}\hfill\insertshorttitle\strut\hfill\insertshortauthor\hfill\insertframenumber/\inserttotalframenumber}
+\setbeamerfont{footline}{size=\fontsize{6.5}{10}\selectfont}
+\setbeamerfont{title}{size=\huge, series=\bfseries}
+\setbeamerfont{subtitle}{size=\large, series=\mdseries}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamercolor{subtitle}{fg=black}
+\setbeamerfont{institute}{size=\normalsize}
+\setbeamerfont{date}{size=\normalsize, series=\bfseries}
+\setbeamerfont{frametitle}{size=\Large, series=\bfseries}
+\setbeamerfont{framesubtitle}{size=\normalsize, series=\bfseries}
+\setbeamercolor{structure}{fg=darkred}
+\setbeamerfont{item}{series=\bfseries}
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{sections in toc}[square]
+\setbeamerfont{section number projected}{series=\bfseries}
+\setbeamertemplate{subsections in toc}[triangle]
+\setbeamertemplate{subsubsections in toc}[circle]
+\setbeamertemplate{navigation symbols}{}
+\addtobeamertemplate{background canvas}{\transfade[duration=0.33]}{}
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{Nội dung chính}
+    \tableofcontents[sectionstyle=show/shaded, subsectionstyle=show/show/hide]
+  \end{frame}
+}
+\theoremstyle{plain}
+\newtheorem{bd}{Bổ đề}[section]
+\providecommand*{\bdautorefname}{Bổ đề}
+\newtheorem{mde}{Mệnh đề}[section]
+\providecommand*{\mdeautorefname}{Mệnh đề}
+\newtheorem{hq}{Hệ quả}[section]
+\providecommand*{\hqautorefname}{Hệ quả}
+\newtheorem{dl}{\bfseries Định lý}[section]
+\providecommand*{\dlautorefname}{Định lý}
+\newtheorem{algorithm}{\bfseries Thuật toán}[section]
+\providecommand*{\algorithmautorefname}{Thuật toán}
+\newtheorem*{namedthm}{\namedthmname}
+\newcounter{namedthm}
+\makeatletter
+\newenvironment{named}[1]
+  {\def\namedthmname{#1}%
+   \refstepcounter{namedthm}%
+   \namedthm\def\@currentlabel{#1}}
+  {\endnamedthm}
+\makeatother
+
+\theoremstyle{definition}
+\newtheorem{dn}{Định nghĩa}[section]
+\providecommand*{\dnautorefname}{Định nghĩa}
+\newtheorem{bt}{Bài toán}[section]
+\providecommand*{\btautorefname}{Bài toán}
+\newtheorem{vd}{\bfseries Ví dụ}[section]
+\providecommand*{\mdeautorefname}{Mệnh đề}
+
+\theoremstyle{remark}
+\newtheorem{kh}{ký hiệu}[section]
+\newtheorem{nx}{\bf Nhận xét}[section]
+\newtheorem{cy}{Chú ý}[section]
+
+  
+\title{Bài toán bất đẳng thức biến phân\\ với ánh xạ liên tục \\trong không gian Hilbert hữu hạn chiều\vspace{0.5cm}}
+\subtitle{GV hướng dẫn: \parbox[t]{5.5cm}{ThS. Vũ Thị Huệ\\PGS. TS. Nguyễn Thị Thu Thủy}}
+\author[Nguyễn Minh Hiếu \textendash\ Toán tin K63]{Sinh viên thực hiện: Nguyễn Minh Hiếu \textendash\ Toán tin K63}
+\date{}
+\institute{Viện Toán ứng dụng và Tin học \\ Trường đại học Bách khoa Hà Nội}
+\logo{\includegraphics[width=0.0625\paperwidth]{sami.png}\hspace*{0.01\paperwidth}}
+\titlegraphic{
+\begin{tikzpicture}[overlay, remember picture]
+\node[above left] at (current page.south east){\includegraphics[width=0.1\paperwidth]{sami.png}}; 
+\end{tikzpicture}
+}
+
+
+\begin{document}
+
+\begin{frame}[plain,t]
+\titlepage
+\end{frame}
+\begin{frame}{Nội dung chính}
+\begin{columns}[t]
+\begin{column}{0.5\textwidth}
+\tableofcontents[sections={1-3}]
+\end{column}
+\begin{column}{0.45\textwidth}
+\tableofcontents[sections={4-5}]
+\end{column}
+\end{columns}
+\end{frame}
+\section{Phần mở đầu}
+\begin{frame}{Nội dung đồ án}
+\begin{itemize}
+    \item Trình bày khái niệm và ví dụ về bài toán bất đẳng thức biến phân với ánh xạ liên tục trong không gian Hilbert thực hữu hạn chiều, nêu mối liên hệ với bài toán giải phương trình toán tử, bài toán bù, bài toán tối ưu, bài toán điểm bất động và bài toán điểm yên ngựa.
+    \item Trình bày thuật toán chiếu phản xạ gradient và nêu ví dụ giải bài toán bất đẳng thức biến phân trong không gian hữu hạn chiều bằng phương pháp này. 
+\end{itemize}
+\end{frame}
+\section{Toán tử đơn điệu trong không gian $\mathbb{R}^n$}
+\subsection{Tập lồi và hàm lồi}
+\begin{frame}{Tích vô hướng và chuẩn}
+Cho $\mathbb R^n$ là không gian Euclid $n$-chiều với tích vô hướng và chuẩn được ký hiệu và xác định bởi
+\begin{align*}
+\langle x, y \rangle = \sum_{i=1}^nx_iy_i,\quad  \Vert x \Vert = \sqrt{\sum_{i=1}^nx_i^2}
+\end{align*}
+tương ứng, trong đó $x=\begin{bmatrix}x_1 & x_2 & \ldots& x_n\end{bmatrix}^\top, y=\begin{bmatrix}y_1 & y_2 & \ldots& y_n\end{bmatrix}^\top$
+\end{frame}
+
+\begin{frame}{Tập lồi và hàm lồi}\pause
+\begin{block}{Định nghĩa 2.1}
+    Một tập $M\subseteq \mathbb{R}^n$ được gọi là \textit{tập lồi} nếu với mọi $x,y\in M$ và với mọi $\lambda\in[0,1]$ ta có $\lambda x+(1-\lambda)y\in M$.
+\end{block}
+\begin{itemize}
+    \item $M_1=[0,2]$ là tập lồi.
+    \item $M_2=\{x\in\mathbb{R}\enskip|\enskip x^2-1 = 0\}$ không phải là tập lồi.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Tập lồi và hàm lồi}
+\begin{block}{Định nghĩa 2.2}
+    Một tập $A\subseteq\mathbb{R}^n$ được gọi là \textit{tập mở} nếu với mọi $x^0\in A$ thì mọi lân cận của nó cũng thuộc $A$. Tức là 
+    $$
+    \forall x^0\in A,\exists\varepsilon: \varepsilon>0:\ B(x^0,\varepsilon) = \{x\in\mathbb{R}^n\enskip|\enskip\norm{x-x^0}<\varepsilon\}\subset A.
+    $$
+    Khi đó phần bù của $A$, $\mathbb{R}^n\textbackslash A$, được gọi là \textit{tập đóng}.
+\end{block}
+\begin{itemize}
+    \item Tập rỗng $\varnothing$ và $\mathbb{R}^n$ là hai tập vừa đóng vừa mở.
+    \item $M_1=(0,1]$ không phải tập đóng cũng không phải tập mở.
+    \item $M_2=(0,1)$ là tập mở.
+    \item $M_3=[0,1]$ là tập đóng (và cũng là tập lồi).
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Tập lồi và hàm lồi}
+\begin{block}{Định nghĩa 2.3}
+     Một tập $C\subset\mathbb{R}^n$ được gọi là \textit{nón} nếu $$ \forall x\in C, \lambda\geq0:\ \lambda x\in C. $$
+     Tập $C$ là nón lồi nếu nó vừa là nón vừa là tập lồi.
+\end{block}
+Ví dụ tập $C=\{x\in\mathbb{R}^n\enskip|\enskip 3x_1-x_2\geq0, -2x_1+x_2\geq0\}$ là một nón lồi.
+\end{frame}
+
+\begin{frame}{Tập lồi và hàm lồi}
+\begin{block}{Định nghĩa 2.4}
+     Cho $W$ và $V$ là các tập lồi trong $\mathbb{R}^n$ sao cho $W\subseteq V$ và $\varphi: V\to\mathbb{R}$ là hàm khả vi. Hàm $\varphi$ được gọi là
+	\begin{enumerate}
+		\item \textit{lồi mạnh} trên $W$ với hằng số $\tau>0$ nếu với mỗi cặp điểm $u,v\in W$ và với mọi $\alpha\in[0,1]$ ta có 
+		$$
+		\varphi(\alpha u+(1-\alpha)v)\leq\alpha\varphi(u)+(1-\alpha)\varphi(v) - 0.5\alpha(1-\alpha)\tau\norm{u-v}^2;\label{aa}
+		$$
+		\item \textit{lồi chặt} trên $W$ nếu với mọi $u,v\in W$ phân biệt và với mọi $\alpha\in(0,1)$, 
+		$$
+		\varphi(\alpha u+(1-\alpha)v)<\alpha\varphi(u)+(1-\alpha)\varphi(v);\label{bb}
+		$$
+		\item \textit{lồi} trên $W$ nếu với mỗi cặp điểm $u,v\in W$ và với mọi $\alpha\in[0,1]$,
+		$$
+		\varphi(\alpha u+(1-\alpha)v)\leq\alpha\varphi(u)+(1-\alpha)\varphi(v);\label{cc}
+		$$
+    \end{enumerate}
+\end{block}
+
+\end{frame}
+
+\begin{frame}{Tập lồi và hàm lồi}
+\begin{block}{Định nghĩa 2.4 (tiếp)}
+    \begin{enumerate}
+    \setcounter{enumi}{3}
+		\item \textit{giả lồi} trên $W$ nếu với mỗi cặp điểm $u,v\in W$ và với mọi $\alpha\in[0,1]$,
+		$$
+		\pro{\nabla\varphi(v),u-v}\geq 0 \text{ suy ra } \varphi(u)\geq\varphi(v);\label{dd}
+		$$
+		\item \textit{tựa lồi} trên $W$ nếu với mỗi cặp điểm $u,v\in W$ và với mọi $\alpha\in[0,1]$
+		$$
+		\varphi(\alpha u+(1-\alpha)v)\leq\max\{\varphi(u),\varphi(v)\};\label{ee}
+		$$
+		\item \textit{tựa lồi hiện} trên $W$ nếu nó tựa lồi trên $W$ và với mọi $u,v\in W$ phân biệt, mọi $\alpha\in(0,1)$,
+		$$
+		\varphi(\alpha u+(1-\alpha)v)<\max\{\varphi(u),\varphi(v)\}.\label{ff}
+		$$
+	\end{enumerate}
+\end{block}
+Tính bao hàm:
+$
+\ref{aa}\Rightarrow\ref{bb}\Rightarrow\ref{cc}\Rightarrow\ref{dd}\Rightarrow\ref{ff}\Rightarrow\ref{ee}.
+$
+\end{frame}
+
+\subsection{Toán tử đơn điệu và ánh xạ không giãn}
+\begin{frame}{Toán tử đơn điệu và ánh xạ không giãn}\pause
+\begin{block}{Định nghĩa 2.5}
+Cho $W$ và $V$ là các tập lồi trong $\mathbb{R}^n$, $W\subseteq V$, và $Q: V\to\mathbb{R}^n$ là ánh xạ. $Q$ được gọi là toán tử
+	\begin{enumerate}
+		\item \textit{đơn điệu mạnh} trên $W$ nếu
+		$$
+		\exists\tau>0:\ \pro{Q(u)-Q(v),u-v}\geq\tau\norm{u-v}^2\enskip\forall u,v\in W;\label{a}
+		$$ 
+		\item \textit{đơn điệu chặt} trên $W$ nếu
+		$$
+		\pro{Q(u)-Q(v),u-v}>0\enskip\forall u,v\in W, u\neq v;\label{b}
+		$$ 
+		\item \textit{đơn điệu} trên $W$ nếu
+		$$
+		\pro{Q(u)-Q(v),u-v}\geq0\enskip\forall u,v\in W; \label{c}
+		$$ 
+	\end{enumerate}
+\end{block}
+\end{frame}
+\begin{frame}{Toán tử đơn điệu và ánh xạ không giãn}
+\begin{block}{Định nghĩa 2.5 (tiếp)}
+    \begin{enumerate}
+    \setcounter{enumi}{3}
+		\item \textit{giả đơn điệu} trên $W$ nếu
+		$$
+		\pro{Q(v),u-v}\geq 0\Rightarrow \pro{Q(u),u-v}\geq 0\enskip\forall u,v\in W; \label{d}
+		$$ 
+		\item \textit{tựa đơn điệu} trên $W$ nếu
+		$$
+		\pro{Q(v),u-v}>0\Rightarrow\pro{Q(u),u-v}\geq0\enskip\forall u,v\in W; \label{e}
+		$$ 
+		\item \textit{tựa đơn điệu hiện} trên $W$ nếu nó tựa đơn điệu trên $W$ và 
+		$$
+		\pro{Q(v),u-v}>0\Rightarrow\pro{Q(z),u-v}>0 \enskip\exists z\in(0.5(u+v),u). \label{f}
+		$$ 
+	\end{enumerate}
+\end{block}
+Tính bao hàm $\ref{a}\Rightarrow\ref{b}\Rightarrow\ref{c}\Rightarrow\ref{d}\Rightarrow\ref{f}\Rightarrow\ref{e}.$
+\end{frame}
+
+\begin{frame}{Toán tử đơn điệu và ánh xạ không giãn}
+Mối quan hệ giữa tính lồi và tính đơn điệu
+\begin{block}{Mệnh đề 2.1}
+    Cho $W$ là tập con lồi mở của $V$. Hàm khả vi $f: V\to\mathbb{R}$ có tính lồi mạnh với hằng số $\tau$ (lần lượt lồi chặt, lồi, giả lồi, tựa lồi, tựa lồi hiện) trên $W$, nếu và chỉ nếu ánh xạ gradient của nó $\nabla f: U\to\mathbb{R}^n$ có tính đơn điệu mạnh với hệ số $\tau$ (lần lượt đơn điệu chặt, đơn điệu, giả đơn điệu, tựa đơn điệu, tựa đơn điệu hiện) trên $W$.
+\end{block}
+Hàm $f:\mathbb{R}^2\to\mathbb{R}$, $f(x)=ax_1+bx_2$ với $a,b\in\mathbb{R}$ là hằng số, là hàm lồi trên $\mathbb{R}^2$. Đồng thời, $$
+\nabla f(x) = \begin{bmatrix}
+\dfrac{\partial f}{\partial x_1} & \dfrac{\partial f}{\partial x_2}
+\end{bmatrix}^\top
+=\begin{bmatrix}
+a & b
+\end{bmatrix}^\top
+$$
+cũng có tính đơn điệu trên $\mathbb{R}^2$.
+\end{frame}
+
+\begin{frame}{Toán tử đơn điệu và ánh xạ không giãn}
+\begin{block}{Định nghĩa 2.6}
+    Ánh xạ $Q: \mathbb{R}^n\to\mathbb{R}^n$ có tính \textit{liên tục Lipschitz} trên $V$ với hằng số $L$ nếu với mỗi cặp điểm $u,v\in V$, tồn tại số thực $L>0$ sao cho
+	$$
+	\norm{Q(u)-Q(v)}\leq L\norm{u-v}.
+	$$
+\end{block}
+\begin{block}{Định nghĩa 2.7}
+    Ánh xạ $Q: \mathbb{R}^n\to\mathbb{R}^n$ được gọi là ánh xạ \textit{không giãn} trên $V$ nếu nó liên tục Lipschitz trên $V$ với hằng số $L=1$.
+\end{block}
+\end{frame}
+
+\begin{frame}{Toán tử đơn điệu và ánh xạ không giãn}
+\begin{block}{Mệnh đề 2.2}
+    Nếu $T: U\to U$ là ánh xạ không giãn trên $V$, thì ánh xạ $G$ được định nghĩa bởi 
+	\begin{equation}
+	G(u)=u-T(u), 
+	\label{1.6}    
+	\end{equation}
+	là ánh xạ đơn điệu trên $V$.
+\end{block}
+\end{frame}
+
+\subsection{Phép chiếu mêtric}
+\begin{frame}{Phép chiếu mêtric}\pause
+\begin{block}{Định nghĩa 2.8}
+    Cho $V$ là tập lồi đóng trong $\mathbb{R}^n$. Ánh xạ $P_V: \mathbb{R}^n\to V$ được gọi là phép chiếu mêtric của phần tử $x$ lên tập $V$, 
+    $$
+    P_V(x) = \inf_{x\in V}\norm{x-y}\enskip\forall y\in V,
+    $$
+    tức là,
+    $$
+    \norm{x-P_V(x)}\leq\norm{x-y}\enskip\forall y\in V.
+    $$
+\end{block}
+\end{frame}
+
+\begin{frame}{Phép chiếu mêtric}
+\begin{block}{Định lí 2.1}
+    Tập $V$ là tập lồi đóng trong $\mathbb{R}^n$. Phần tử $y\in V$ là ảnh của $x\in V$ qua phép chiếu mêtric lên $V$ khi và chỉ khi
+$$
+\pro{z-y,y}\geq\pro{z-y,x}\enskip\forall z\in V.
+$$
+Khi đó,
+$$
+\norm{y-z}^2\leq\norm{x-z}^2-\norm{x-y}^2\enskip\forall z\in V.
+$$
+\end{block}
+\begin{block}{Định lí 2.2}
+    Tập $V$ là tập lồi đóng trong $\mathbb{R}^n$. Phép chiếu mêtric lên $V$ là ánh xạ không giãn.
+\end{block}
+\end{frame}
+\section{Bài toán bất đẳng thức biến phân và một số bài toán liên quan}
+\subsection{Bài toán bất đẳng thức biến phân}
+\begin{frame}{Phát biểu bài toán}\pause
+\begin{block}{Bài toán}
+    Cho $U$ là tập lồi đóng, khác rỗng, là con của không gian Euclid $n$-chiều $\mathbb{R}^n$, và $G: U\to\mathbb{R}^n$ là ánh xạ liên tục. \textit{Bài toán bất đẳng thức biến phân}, viết tắt là VI, là bài toán tìm điểm $u^*\in U$ thỏa mãn 
+\begin{equation}
+    \pro{G(u^*),u-u^*}\geq 0\enskip \forall u\in U.
+    \label{VI1}\tag{VI}
+\end{equation}
+\end{block}
+\end{frame}
+
+\begin{frame}{Bài toán bất đẳng thức biến phân}
+Cho tập $V = [0,+\infty)\times[0,+\infty)$ và ánh xạ $F: V\to\mathbb{R}^2$,
+$$
+F(x) = \begin{bmatrix}
+x_1^2\\ x_2^2
+\end{bmatrix},
+$$
+bài toán bất đẳng thức biến phân được phát biểu như sau: Tìm điểm $x^*\in V$ thỏa mãn 
+$$
+\pro{F(x^*),x-x^*}\geq 0\enskip\forall x\in V.
+$$
+Ta viết tường minh đẳng thức trên
+$$
+\pro*{\begin{bmatrix}
+(x_1^*)^2\\ (x_2^*)^2
+\end{bmatrix}, \begin{bmatrix}
+x_1\\ x_2
+\end{bmatrix}-\begin{bmatrix}
+x_1^*\\ x_2^*
+\end{bmatrix}}\geq 0 \enskip\forall x\in V.
+$$
+Tương đương với 
+$$
+(x_1^*)^2(x_1-x_1^*)+(x_2^*)^2(x_2-x_2^*)\geq0 \enskip\forall (x_1,x_2)\in[0,+\infty)\times[0,+\infty).
+$$
+\end{frame}
+\begin{frame}{Bài toán bất đẳng thức biến phân}
+Bài toán đối ngẫu: tìm $u^*\in U$ thỏa mãn
+\begin{equation}
+    \pro{G(u), u-u^*}\geq 0\enskip\forall u\in U.
+    \label{VI2}\tag{DVI}
+\end{equation}
+\begin{block}{Bổ đề 3.1}
+    Cho $U$ là một tập con lồi đóng trong không gian $\mathbb{R}^n$ và $G:U\to  \mathbb{R}^n$ là ánh xạ đơn điệu, liên tục trên $U$. Khi đó, $u^*\in U$ là nghiệm của bài toán \eqref{VI1} khi và chỉ khi $u^*$ là nghiệm của bài toán \eqref{VI2}.
+\end{block}
+\end{frame}
+
+\begin{frame}{Bài toán bất đẳng thức biến phân}
+Ta ký hiệu $U^*$ và $U^d$ tương ứng là tập nghiệm của bài toán \eqref{VI1} và \eqref{VI2}.
+\begin{block}{Mệnh đề 3.1 (Bổ đề Minty)}
+\begin{enumerate}
+    \item $U^d$ là tập lồi đóng.
+    \item $U^d\subseteq U^*$.
+    \item Nếu $G$ có tính giả đơn điệu thì $U^*\subseteq U^d.$
+\end{enumerate}
+\end{block}
+\end{frame}
+
+\subsection{Bài toán hệ phương trình toán tử}
+\begin{frame}{Bài toán hệ phương trình toán tử}\pause
+\begin{block}{Mệnh đề 3.2}
+    Với $U=\mathbb{R}^n$, $G:\mathbb R^n \to \mathbb R^n$ trong \eqref{VI1} thì bài toán \eqref{VI1} tương đương với bài toán tìm điểm $u^*\in\mathbb{R}^n$ thỏa mãn
+    $$
+    G(u^*)=0.
+    $$
+\end{block}
+\textbf{Chứng minh:} 
+\begin{itemize}
+    \item Đặt $u=u^*-G(u^*).$\\ Suy ra $\pro{G(u^*),u^*-G(u^*)-u^*}=\pro{G(u^*),-G(u^*)}=-\norm{G(u^*)}^2\geq0.$
+    \item $\pro{G(u^*),u-u^*} = \pro{0,u-u^*}=0$
+\end{itemize}
+\end{frame}
+
+\subsection{Bài toán bù}
+\begin{frame}{Bài toán bù}\pause
+\begin{block}{Mệnh đề 3.3}
+    Đặt $U$ là nón lồi trong $\mathbb{R}^n$. Bài toán \eqref{VI1} tương đương với bài toán bù, là tìm điểm $u^*\in U$ thỏa mãn 
+    \begin{equation*}
+        G(u^*)\in U^\prime,\ \pro{G(u^*),u^*}=0,\label{CP}
+    \end{equation*}
+    với $U^\prime$ là nón đối ngẫu với $U$, 
+    $$
+    U^\prime = \{v\in\mathbb{R}^n\enskip|\enskip\pro{u,v}\geq0\enskip\forall u\in U\}.
+    $$
+\end{block}
+\textbf{Chứng minh:} 
+\begin{itemize}
+    \item Thay $u=2u^*$ và $u=0$. Lần lượt suy ra $\pro{G(u^*),u^*}\geq0$ và $\pro{G(u^*),-u^*}\geq0$.
+    \item $\pro{G(u^*),u}\geq 0\ \forall u\in U$ và $\pro{G(u^*),u^*}=0$.
+\end{itemize}
+\end{frame}
+\subsection{Bài toán điểm bất động}
+\begin{frame}{Bài toán điểm bất động}\pause
+\begin{block}{Mệnh đề 3.4}
+    Đặt $U$ là tập lồi đóng trong $\mathbb{R}^n$. Bài toán điểm bất động là tìm điểm $u^*\in U$ thỏa mãn 
+    \begin{equation*}
+        u^*=T(u^*).
+    \end{equation*}
+    Nếu đặt $G(u)=u-T(u)$ thì bài toán \eqref{VI1} tương đương với bài toán điểm bất động.
+\end{block}
+\textbf{Chứng minh:} tương tự cách chứng minh Mệnh đề 3.2.
+\end{frame}
+
+\begin{frame}{Bài toán điểm bất động}
+\begin{block}{Định lí 3.1}
+Giả sử $U$ là một tập con khác rỗng lồi đóng của $\mathbb{R}^n$. Khi đó $u^*$ là nghiệm của bất đẳng thức biến phân \eqref{VI1} khi và chỉ khi với mỗi $\gamma>0$, $u^*$ là điểm bất động của ánh xạ
+	$$
+	P_U(I-\gamma G): U \rightarrow U, 
+	$$
+	tức là
+	\begin{equation*}
+	u^* =  P_U(u^*-\gamma G(u^*)).
+	\end{equation*}
+\end{block}
+\textbf{Chứng minh:} Biến đổi tương đương $\pro{u^*,u-u^*}\geq\pro{u^*-\gamma G(u^*),u-u^*}.$
+\end{frame}
+\subsection{Bài toán tối ưu}
+\begin{frame}{Bài toán tối ưu}\pause
+Cho $f: U\to \mathbb{R}$ là hàm thực. \textit{Bài toán tối ưu} được định nghĩa là tìm điểm $u^*\in U$ thỏa mãn
+$$
+f(u^*)\leq f(u)\enskip\forall u\in U,
+$$
+nói cách khác, 
+\begin{equation}
+    \min\to\{f(u)\enskip|\enskip u\in U\}. \label{Op}
+\end{equation}
+Ta ký hiệu $U_f$ là tập nghiệm của bài toán này.
+\end{frame}
+
+\begin{frame}{Bài toán tối ưu}
+\begin{block}{Định lí 3.2}
+Giả sử $f: U\to\mathbb{R}$ là hàm khả vi, khi đó 
+\begin{enumerate}
+    \item $U_f\subseteq U^*$, tức là mỗi nghiệm của bài toán \eqref{Op} cũng là nghiệm của bài toán VI \eqref{VI1}, ở đây
+    \begin{equation*}
+        G(u)=\nabla f(u);
+    \end{equation*}
+    \item Nếu $f$ là hàm giả lồi và $G$ được định nghĩa như trên thì $U^*\subseteq U_f$.
+\end{enumerate}
+\end{block}
+\textbf{Chứng minh:}
+\begin{enumerate}
+    \item Đặt $h(\tau) = f(u^*+\tau(u-u^*))$ với $\tau\in[0,1]$. Suy ra $h^\prime(0)=\nabla f(u^*)^\top(u-u^*)\geq 0.$
+    \item Dựa vào định nghĩa giả lồi.
+\end{enumerate}
+\end{frame}
+\subsection{Bài toán điểm yên ngựa}
+\begin{frame}{Bài toán điểm yên ngựa}\pause
+    Cho $X$ là tập lồi đóng trong $\mathbb{R}^l$ và $Y$ là tập lồi đóng trong $\mathbb{R}^m$. Giả sử $L: \mathbb{R}^l\times\mathbb{R}^m\to\mathbb{R}$ là hàm khả vi lồi \textendash\ lõm. \textit{Bài toán điểm yên ngựa} là tìm cặp điểm $x^*\in X$ và $y^*\in Y$ thỏa mãn
+\begin{equation}
+    L(x^*,y)\leq L(x^*,y^*)\leq L(x,y^*)\enskip\forall x\in X, \ \forall y\in Y .\label{SP}
+\end{equation}
+\end{frame}
+
+\begin{frame}{Bài toán điểm yên ngựa}
+Đặt $n=l+m$, $U=X\times Y$ và định nghĩa ánh xạ $G: \mathbb{R}^n\to\mathbb{R}^n$ như sau:
+\begin{equation}
+    G(u)=G(x,y)=\begin{bmatrix}
+    \nabla_xL(x,y) \\ -\nabla_yL(x,y)
+    \end{bmatrix}.\label{111}
+\end{equation}
+Ánh xạ $G$ như trên cũng có tính đơn điệu.
+\begin{block}{Hệ quả 3.1}
+ Các bài toán \eqref{SP} và \eqref{VI1}, \eqref{111} là tương đương nhau.
+\end{block}
+\end{frame}
+
+\begin{frame}{Bài toán điểm yên ngựa}
+    Hãy xét bài toán tối ưu
+\begin{equation}
+    \min\to\{f_0(x)\enskip|\enskip x\in D\}, \label{112}
+\end{equation}
+với 
+\begin{equation}
+    D=\{x\in X\enskip|\enskip f_i(x)\leq 0,\enskip i=1,\ldots,m\}, \label{113}
+\end{equation}
+$f_i: \mathbb{R}^l\to\mathbb{R}$, $i=0,\ldots,m$ là các hàm lồi khả vi, 
+\begin{equation}
+    X=\{x\in\mathbb{R}^l\enskip|\enskip x_j\geq 0\enskip\forall j\in J\},\ J\subseteq\{1,\ldots,l\}.\label{114}
+\end{equation}
+Từ đó, ta có thể định nghĩa hàm Lagrange ứng với các bài toán \eqref{112}--\eqref{114} như sau:
+\begin{equation}
+    L(x,y) = f_0(x) + \sum_{i=1}^m y_if_i(x). \label{115}
+\end{equation}
+\end{frame}
+
+\begin{frame}{Bài toán điểm yên ngựa}
+\begin{block}{Mệnh đề 3.5}
+\begin{enumerate}
+    \item Nếu $(x^*,y^*)$ là điểm yên ngựa của hàm $L$ trong \eqref{115} với $Y=\mathbb{R}^m_+$ thì $x^*$ là nghiệm của các bài toán \eqref{112}--\eqref{114}.
+    \item Nếu $x^*$ là nghiệm của các bài toán \eqref{112}--\eqref{114} và hoặc tất cả các hàm $f_i$, $i=1,\ldots,m$ đều affin hoặc tồn tại điểm $\overline{x}$ thỏa mãn $f_i(\overline{x})<0$ với mọi $i=1,\ldots,m$, thì tồn tại điểm $y^*\in Y=\mathbb{R}^m_+$ thỏa mãn $(x^*,y^*)$ là nghiệm của bài toán điểm yên ngựa \eqref{SP}, \eqref{115}.
+\end{enumerate}
+\end{block}
+Sử dụng Hệ quả 3.1, các bài toán tối ưu \eqref{112}--\eqref{114} có thể được thay thế bởi bài toán \eqref{VI1} (hoặc bài toán CP vì $X$ là nón lồi) với $U=X\times Y$, $Y=\mathbb{R}^m_+$, $f(x)=(f_1(x),\ldots,f_m(x))^\top$ và 
+\begin{equation*}
+    G(u) = \begin{bmatrix}
+    \nabla f_0(x)+\sum_{i=1}^my_i\nabla f_i(x) \\ -f(x)
+    \end{bmatrix}\label{116}
+\end{equation*}
+\end{frame}
+
+\section{Thuật toán chiếu phản xạ gradient và ví dụ minh họa}
+\subsection{Thuật toán và sự hội tụ}
+\begin{frame}{Thuật toán và sự hội tụ}\pause
+Hàm phần dư
+$$
+r(x,y)\coloneqq\norm{y-P_U(x-\lambda G(y))}+\norm{x-y},
+$$
+trong đó $\lambda$ là số thực dương.
+\end{frame}
+\begin{frame}{Thuật toán và sự hội tụ}
+\begin{block}{Thuật toán 4.1}
+\begin{description}
+    \item[Bước 1] Chọn $x_0=y_0\in U$ và $\lambda\in(0,\frac{\sqrt{2}-1}{L})$ với $L$ là hằng số Lipchitz của ánh xạ $G$.
+    \item[Bước 2] Trong vòng lặp thứ $n$, ta tính  
+    $$
+    x_{n+1}=P_U(x_n-\lambda G(y_n)).
+    $$
+    \item[Bước 3] Nếu $r(x_n,y_n)=0$ thì dừng, kết luận nghiệm $x_n=y_n=x_{n+1}$. Ngược lại, tính 
+    $$
+    y_{n+1} = 2x_{n+1} - x_n,
+    $$
+    và $n\coloneqq n+1$ sau đó quay lại Bước 2.
+\end{description}
+\end{block}
+\end{frame}
+
+\begin{frame}{Thuật toán và sự hội tụ}
+\begin{block}{Định lí 4.1}
+Giả sử, bài toán \eqref{VI1} có tập nghiệm là $U^*$ khác rỗng, trong đó ánh xạ $G$ có tính đơn điệu mạnh với hệ số $m$ và liên tục Lipschitz với hằng số $L$.
+Khi đó, dãy $\{x_n\}$ sinh bởi Thuật toán 4.1 hội tụ đến nghiệm của bài toán với tốc độ tuyến tính.
+\end{block}
+\end{frame}
+
+\subsection{Ví dụ minh họa}
+\begin{frame}{Ví dụ minh họa}\pause
+\begin{exampleblock}{Ví dụ 4.1}
+    Bài toán tối ưu
+\begin{equation}
+\begin{aligned}
+    \min f(x) &= x_1^2+x_2^2+x_3^2,\\
+        \text{với\enskip } & x_1+x_2+x_3\leq 1,\\
+        & x_1,x_2,x_3\geq 0.
+\end{aligned}\label{vd}    
+\end{equation}
+\end{exampleblock}
+Ta đưa \eqref{vd} về bài toán bất đẳng thức biến phân: Tìm điểm $x^*\in U$ thỏa mãn 
+$$
+\pro{G(x^*),x-x^*}\geq 0\enskip\forall x\in U,
+$$
+trong đó $U=\{x\in\mathbb{R}^3\mid x_1+x_2+x_3\leq0,\ x_1, x_2, x_3\geq 0\}$, ánh xạ $G=\nabla f: U\to\mathbb{R}^3$, $G(x)=\begin{bmatrix}2x_1 & 2x_2 & 2x_3\end{bmatrix}^\top=2x$ với $x=\begin{bmatrix}x_1&x_2&x_3\end{bmatrix}^\top\in U$.
+\end{frame}
+
+\begin{frame}{Ví dụ minh họa}
+Kiểm tra các điều kiện thuật toán
+\begin{itemize}
+    \item Bài toán \eqref{vd} có nghiệm tối ưu $x^*=\begin{bmatrix}0&0&0\end{bmatrix}^\top$, tức là tập nghiệm $U^*$ của bài toán bất đẳng thức biến phân khác rỗng.
+    \item Xét tính đơn điệu mạnh, với mọi $x,y\in U$ ta có 
+    $$
+    \pro{G(x)-G(y),x-y}=\pro{2x-2y,x-y}=2\norm{x-y}^2.
+    $$
+    Suy ra $G$ đơn điệu mạnh trên $U$ với hệ số $m=2$.
+    \item Xét tính liên tục Lipschitz, với mọi $x,y\in U$ ta có
+    $$
+    \norm{G(x)-G(y)}=\norm{2x-2y}=2\norm{x-y}.
+    $$
+    Suy ra $G$ liên tục Lipschitz trên $U$ với hằng số $L=2$.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ví dụ minh họa}
+Bước khởi tạo, ta chọn $x^0=y^0=\begin{bmatrix}1&0&0\end{bmatrix}^\top\in U$ và $\gamma=0,2\in(0,\frac{\sqrt{2}-1}{2})$\\
+Bước $n=0$, ta có 
+    $$x^0-\gamma G(y^0)= \begin{bmatrix}
+    1\\0\\0
+    \end{bmatrix}-0,2.2\begin{bmatrix}
+    1\\0\\0
+    \end{bmatrix}= \begin{bmatrix}
+    0,6\\0\\0
+    \end{bmatrix}.$$
+    Suy ra 
+    $$x^1=P_U(x^0-\gamma G(y^0))=\begin{bmatrix}
+    0,6\\0\\0
+    \end{bmatrix}.$$
+    Dễ thấy $r(x^0,y^0)=\norm{y^0-x^1}+\norm{x^0-y^0}=0,4\neq0$, ta tính $$
+    y^1 = 2x^1-x^0=2\begin{bmatrix}
+    0,6\\0\\0
+    \end{bmatrix}-\begin{bmatrix}
+    1\\0\\0
+    \end{bmatrix}=\begin{bmatrix}
+    0,2\\0\\0
+    \end{bmatrix}.
+    $$
+\end{frame}
+\begin{frame}{Ví dụ minh họa}
+Bước $n=1$, ta tính 
+    $$x^1-\gamma G(y^1)= \begin{bmatrix}
+    0,6\\0\\0
+    \end{bmatrix}-0,2.2\begin{bmatrix}
+    0,2\\0\\0
+    \end{bmatrix}= \begin{bmatrix}
+    0,52\\0\\0
+    \end{bmatrix}.$$
+    Suy ra 
+    $$x^2=P_U(x^1-\gamma G(y^1))=\begin{bmatrix}
+    0,52\\0\\0
+    \end{bmatrix}.$$
+    Ta thấy $r(x^1,y^1)=\norm{y^1-x^2}+\norm{x^1-y^1}\neq0$, tiếp tục tính $$
+    y^2 = 2x^2-x^1=2\begin{bmatrix}
+    0,52\\0\\0
+    \end{bmatrix}-\begin{bmatrix}
+    0,6\\0\\0
+    \end{bmatrix}=\begin{bmatrix}
+    0,44\\0\\0
+    \end{bmatrix}.
+    $$
+\end{frame}
+\begin{frame}{Ví dụ minh họa}
+    Sử dụng ngôn ngữ lập trình Python trên dòng máy Dell Latitude 7480 Intel core i5\textendash 6200U @ 2.40 GHz 8GB RAM,
+$$\begin{array}{ccc}
+    n & x^{n} & y^{n} \\ \hline \hline 
+    3 & \begin{bmatrix} 0,34400000 & 0 & 0 \end{bmatrix}^\top & \begin{bmatrix} 0,16800000 & 0 & 0 \end{bmatrix}^\top\\
+    4 & \begin{bmatrix} 0,19296000 & 0 & 0 \end{bmatrix}^\top & \begin{bmatrix} 0,10912000 & 0 & 0 \end{bmatrix}^\top\\
+    5 & \begin{bmatrix} 0,14931200 & 0 & 0 \end{bmatrix}^\top & \begin{bmatrix} 0,10566400 & 0 & 0 \end{bmatrix}^\top\\
+    6 & \begin{bmatrix} 0,10704640 & 0 & 0 \end{bmatrix}^\top & \begin{bmatrix} 0,06478080 & 0 & 0 \end{bmatrix}^\top\\
+    7 & \begin{bmatrix} 0,08113408 & 0 & 0 \end{bmatrix}^\top & \begin{bmatrix} 0,05522176 & 0 & 0 \end{bmatrix}^\top\\
+    8 & \begin{bmatrix} 0,05904538 & 0 & 0 \end{bmatrix}^\top & \begin{bmatrix} 0,03695667 & 0 & 0 \end{bmatrix}^\top\\
+    9 & \begin{bmatrix} 0,04426271 & 0 & 0 \end{bmatrix}^\top & \begin{bmatrix} 0,02948004 & 0 & 0 \end{bmatrix}^\top
+\end{array}$$
+\end{frame}
+\begin{frame}{Ví dụ minh họa}
+Sau 30 vòng lặp, thuật toán cho kết quả
+\begin{gather*}
+    x^{30} = \begin{bmatrix}
+    0,79701230\times10^{-6} & 0 & 0
+    \end{bmatrix}^\top,\
+    y^{30} = \begin{bmatrix}
+    0,517417408\times10^{-6} & 0 & 0
+    \end{bmatrix}^\top.
+\end{gather*}
+Như vậy, ta thấy dãy $\{x^n\}$ từ Thuật toán 4.1 dần hội tụ đến nghiệm đúng $x^*=\begin{bmatrix}0&0&0\end{bmatrix}^\top$ của bài toán \eqref{vd}.
+\end{frame}
+\section{Tổng kết}
+\begin{frame}{Tổng kết}\pause
+\begin{itemize}
+    \item Trình bày được bài toán bất đẳng thức biến phân với ánh xạ liên tục và các bài toán liên quan.
+    \item Trình bày được phương pháp giải bài toán bất đẳng thức biến phân và ví dụ minh họa.
+\end{itemize}    
+\end{frame}
+
+\begin{frame}{Tài liệu tham khảo}
+\begin{enumerate}
+    %\item Nguyễn Thị Bạch Kim (2008), {\it Giáo trình Các Phương pháp Tối ưu Lý thuyết và Thuật toán}, NXB Bách Khoa \textendash\ Hà Nội.
+    \item Trần Vũ Thiệu, Nguyễn Thị Thu Thủy (2011), {\it Giáo trình Tối ưu phi tuyến}, NXB Đại học Quốc gia Hà Nội.
+    \item Y. Malitsky (2015), "Projected Reflected Gradient Methods for Monotone Variational Inequalities", {\it SIAM Journal on Optimization}, 25(1), pp. 502--520.
+    \item I.V. Konnov (2001), {\it Combined Relaxation Methods for Variational Inequalities}, Springer Verlag, Berlin, Germany.
+\end{enumerate}
+    
+\end{frame}
+\end{document}
